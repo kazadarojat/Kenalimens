@@ -1,4 +1,4 @@
-# Kenali Mens by Fronstellar
+# Kenali Mens by Fronstellar · v1.3
 
 Aplikasi web interaktif berbahasa Indonesia untuk belajar fisiologi siklus menstruasi, termasuk:
 
@@ -12,9 +12,17 @@ Aplikasi web interaktif berbahasa Indonesia untuk belajar fisiologi siklus menst
 - Transisi mulus lapisan endometrium, ilustrasi ovarium, indikator hormon, dan penunjuk grafik tanpa kedipan saat hari berubah
 - Aksis HPO, ringkasan, kuis 4 soal, dan referensi ilmiah
 
+## Pembaruan v1.3: font & motion design
+
+- **15 pilihan font**: Poppins, Inter, DM Sans, Outfit, Plus Jakarta Sans, Manrope, Nunito Sans, Montserrat, Rubik, Lato, Space Grotesk, Source Sans 3, IBM Plex Sans, Quicksand, dan Merriweather (serif).
+- **Efek interaktif**: empat kartu navigasi fase, progres siklus, progres scroll, orb animasi, pergerakan gradien, respons hover dan klik, transisi saat menggulir.
+- **Tombol efek** di header untuk menonaktifkan animasi dekoratif, menghormati preferensi reduced-motion.
+- Tema, font dan preferensi efek tersimpan lokal melalui localStorage, saat izin penyimpanan browser tersedia.
+- Tetap satu file `index.html`, tanpa backend. Font Google membutuhkan koneksi internet, jika offline tersedia fallback sistem.
+
 ## Pengaturan tampilan
 
-Di header, klik tombol ikon matahari/bulan untuk mengganti tema gelap dan terang. Gunakan menu **Font** untuk memilih tampilan huruf. Kedua pengaturan tetap tersimpan ketika halaman dibuka kembali, selama penyimpanan lokal browser diizinkan. Font Google memakai koneksi internet; jika offline, digunakan font pengganti sistem.
+Di header, klik tombol ikon matahari/bulan untuk mengganti tema gelap dan terang. Gunakan menu **Font** untuk memilih tampilan huruf dari 15 pilihan, serta tombol **Efek** untuk mengatur animasi dekoratif. Kedua pengaturan tetap tersimpan ketika halaman dibuka kembali, selama penyimpanan lokal browser diizinkan. Font Google memakai koneksi internet; jika offline, digunakan font pengganti sistem.
 
 ## Simulasi perdarahan
 
