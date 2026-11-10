@@ -1,6 +1,9 @@
-# Kenali Mens by Fronstellar v1.4
+# Kenali Mens by Fronstellar v1.7
 
 Aplikasi web interaktif berbahasa Indonesia untuk belajar fisiologi siklus menstruasi, termasuk:
+
+- **Header v1.7:** layout dua kolom yang rapi, animasi judul lebih terkendali, dekorasi tidak mengganggu teks, kartu kondisi siklus dengan angka hari lebih jelas, responsif untuk layar kecil
+- **Anatomi v1.6:** uterus, tuba uterina, ovarium, serviks, vagina, dan perjalanan oosit secara skematis
 
 - Pengaturan tema **gelap/terang** dan font **Poppins, Inter, DM Sans, Outfit** dari header; pilihan otomatis disimpan di browser (localStorage)
 - Slider hari, kontrol autoplay, pilihan kecepatan animasi (0,75×, 1×, 1,5×), dan panjang siklus 24–38 hari
