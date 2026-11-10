@@ -1,4 +1,4 @@
-# Kenali Mens by Fronstellar · v1.3
+# Kenali Mens by Fronstellar v1.4
 
 Aplikasi web interaktif berbahasa Indonesia untuk belajar fisiologi siklus menstruasi, termasuk:
 
@@ -11,6 +11,10 @@ Aplikasi web interaktif berbahasa Indonesia untuk belajar fisiologi siklus menst
 - Simulasi perdarahan menstruasi H1–H5: aliran darah dan fragmen lapisan functionale melalui kavum uteri dan serviks dengan gerak kontinu tanpa restart antarhari, indikator intensitas skematis, tombol H1–H5, serta replay simulasi otomatis
 - Transisi mulus lapisan endometrium, ilustrasi ovarium, indikator hormon, dan penunjuk grafik tanpa kedipan saat hari berubah
 - Aksis HPO, ringkasan, kuis 4 soal, dan referensi ilmiah
+
+## Header interaktif v1.4
+
+Judul hero kini muncul per kata dengan gradien bergerak, underline animasi, partikel dekoratif, dan spotlight yang mengikuti kursor. Tombol **Putar ulang judul** dapat mengulang transisi. Semua efek tunduk pada pengaturan **Efek aktif/mati** serta `prefers-reduced-motion`. Tampilan diuji pada desktop, tablet, dan ponsel.
 
 ## Pembaruan v1.3: font & motion design
 
