@@ -1,7 +1,8 @@
-# Menstrual Atlas v1.2
+# Kenali Mens by Fronstellar
 
 Aplikasi web interaktif berbahasa Indonesia untuk belajar fisiologi siklus menstruasi, termasuk:
 
+- Pengaturan tema **gelap/terang** dan font **Poppins, Inter, DM Sans, Outfit** dari header; pilihan otomatis disimpan di browser (localStorage)
 - Slider hari, kontrol autoplay, pilihan kecepatan animasi (0,75×, 1×, 1,5×), dan panjang siklus 24–38 hari
 - Linimasa ovarium dan uterus yang saling tersinkronisasi
 - Grafik relatif FSH, LH, estradiol, dan progesteron, dengan kurva yang dapat disembunyikan
@@ -10,6 +11,10 @@ Aplikasi web interaktif berbahasa Indonesia untuk belajar fisiologi siklus menst
 - Simulasi perdarahan menstruasi H1–H5: aliran darah dan fragmen lapisan functionale melalui kavum uteri dan serviks dengan gerak kontinu tanpa restart antarhari, indikator intensitas skematis, tombol H1–H5, serta replay simulasi otomatis
 - Transisi mulus lapisan endometrium, ilustrasi ovarium, indikator hormon, dan penunjuk grafik tanpa kedipan saat hari berubah
 - Aksis HPO, ringkasan, kuis 4 soal, dan referensi ilmiah
+
+## Pengaturan tampilan
+
+Di header, klik tombol ikon matahari/bulan untuk mengganti tema gelap dan terang. Gunakan menu **Font** untuk memilih tampilan huruf. Kedua pengaturan tetap tersimpan ketika halaman dibuka kembali, selama penyimpanan lokal browser diizinkan. Font Google memakai koneksi internet; jika offline, digunakan font pengganti sistem.
 
 ## Simulasi perdarahan
 
@@ -23,10 +28,9 @@ Buka `index.html` di browser modern (Chrome, Edge, atau Firefox). Semua grafik d
 
 ## Publikasi GitHub Pages
 
-1. Buat repository baru di GitHub.
-2. Upload `index.html` pada root repository.
-3. Buka **Settings → Pages → Build and deployment → Deploy from a branch**.
-4. Pilih `main` dan folder `/(root)`, kemudian simpan.
+1. Gunakan repository `kazadarojat/Kenalimens` yang sudah berisi `index.html`.
+2. Buka **Settings → Pages → Build and deployment → Deploy from a branch**.
+3. Pilih `main` dan folder `/(root)`, kemudian simpan.
 
 ## Publikasi Vercel
 
