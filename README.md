@@ -1,0 +1,44 @@
+# Menstrual Atlas v1.2
+
+Aplikasi web interaktif berbahasa Indonesia untuk belajar fisiologi siklus menstruasi, termasuk:
+
+- Slider hari, kontrol autoplay, pilihan kecepatan animasi (0,75×, 1×, 1,5×), dan panjang siklus 24–38 hari
+- Linimasa ovarium dan uterus yang saling tersinkronisasi
+- Grafik relatif FSH, LH, estradiol, dan progesteron, dengan kurva yang dapat disembunyikan
+- Ilustrasi folikel ovarium, ovulasi oosit sekunder, pembentukan dan regresi korpus luteum
+- Visual potongan uterus dan skema histologi endometrium (lapisan functionale, basale, kelenjar, dan arteri spiralis)
+- Simulasi perdarahan menstruasi H1–H5: aliran darah dan fragmen lapisan functionale melalui kavum uteri dan serviks dengan gerak kontinu tanpa restart antarhari, indikator intensitas skematis, tombol H1–H5, serta replay simulasi otomatis
+- Transisi mulus lapisan endometrium, ilustrasi ovarium, indikator hormon, dan penunjuk grafik tanpa kedipan saat hari berubah
+- Aksis HPO, ringkasan, kuis 4 soal, dan referensi ilmiah
+
+## Simulasi perdarahan
+
+Buka bagian **Uterus & lapisan endometrium → Simulasi aliran menstruasi**. Klik **H1, H2, H3, H4, H5** untuk melihat contoh perubahan intensitas, atau klik **Simulasikan H1–H5** untuk memutar seluruh fase. Aliran mereda secara bertahap pada transisi ke hari nonmenstruasi, dan partikel yang terlihat selalu terus bergerak tanpa mulai ulang saat hari diganti. Efek animasi dikurangi saat sistem mengaktifkan *reduced motion*.
+
+Perhatian: grafik intensitas merupakan ilustrasi kualitatif, bukan estimasi jumlah darah atau durasi menstruasi per individu. Pola hari ke-2/3 yang lebih banyak bukan aturan biologis universal.
+
+## Menjalankan
+
+Buka `index.html` di browser modern (Chrome, Edge, atau Firefox). Semua grafik dan ilustrasi menggunakan SVG dan JavaScript native tanpa dependensi runtime. Font Google bersifat opsional; jika offline, browser menggunakan font sistem.
+
+## Publikasi GitHub Pages
+
+1. Buat repository baru di GitHub.
+2. Upload `index.html` pada root repository.
+3. Buka **Settings → Pages → Build and deployment → Deploy from a branch**.
+4. Pilih `main` dan folder `/(root)`, kemudian simpan.
+
+## Publikasi Vercel
+
+Import repository yang memiliki `index.html`, lalu deploy sebagai static site (tanpa build command).
+
+## Catatan ilmiah
+
+Visualisasi menggambarkan pola *rata-rata* siklus ovulatorik tanpa hamil, dan **bukan** kurva laboratorium pada individu. Sumbu hormon menggunakan kadar relatif yang dinormalisasi per hormon; tidak bermakna konsentrasi darah absolut. Model ovulasi kira-kira 14 hari sebelum menstruasi berikutnya, namun waktu ovulasi dan panjang fase luteal dapat bervariasi. Animasi endometrium adalah skema didaktik, bukan estimasi USG atau histopatologi. Jangan digunakan untuk diagnosis, memprediksi masa subur pribadi, atau menentukan kontrasepsi.
+
+### Referensi
+
+- Reed BG, Carr BR. The Normal Menstrual Cycle and the Control of Ovulation. Endotext. https://www.ncbi.nlm.nih.gov/books/NBK279054/
+- StatPearls. Physiology, Menstrual Cycle. https://www.ncbi.nlm.nih.gov/books/NBK500020/
+- MSD Manual. Menstrual Cycle. https://www.msdmanuals.com/home/women-s-health-issues/biology-of-the-female-reproductive-system/menstrual-cycle
+- ACOG. Fertility Awareness-Based Methods of Family Planning. https://www.acog.org/womens-health/faqs/fertility-awareness-based-methods-of-family-planning
