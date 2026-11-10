@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a1020">
+  <meta name="description" content="Atlas siklus menstruasi interaktif: hormon, folikel ovarium, ovulasi, dan perubahan endometrium. Media pembelajaran fisiologi reproduksi.">
+  <title>Menstrual Atlas | Fisiologi Reproduksi Interaktif</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:dark;--bg:#080d19;--panel:#111a2c;--panel2:#0d1627;--border:#27334b;--text:#edf3ff;--muted:#9daec9;--faint:#71829f;--pink:#fb76ac;--cyan:#5de0e6;--amber:#ffc46b;--violet:#b8a3ff;--green:#7fe0ba;--radius:22px;--ov-phase:#b39bff;--ut-phase:#f17ca8}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:'DM Sans',system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(ellipse at 8% 2%,#1f2341 0,transparent 38%),radial-gradient(ellipse at 96% 22%,#112d37 0,transparent 31%),var(--bg);color:var(--text);min-height:100vh}button,input,select{font:inherit}button{cursor:pointer}a{color:#9bdbff;text-decoration:none}a:hover{text-decoration:underline}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #83dbe6;outline-offset:3px}
+    .container{max-width:1370px;margin:0 auto;padding:0 30px 70px}.nav{height:85px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff17}.brand{display:flex;gap:13px;align-items:center;color:var(--text);font-weight:800;font-family:Outfit,sans-serif;font-size:19px;letter-spacing:.2px}.brand-orbit{display:grid;place-items:center;width:41px;height:41px;border-radius:13px;background:linear-gradient(135deg,#f67aac 0%,#7b80ff 52%,#53d6dd 100%);box-shadow:0 3px 24px #b77bff45;color:white;font-size:28px}.brand small{display:block;font:600 9px 'DM Sans',sans-serif;letter-spacing:2.7px;color:#a5b6d7;text-transform:uppercase}.navlinks{display:flex;align-items:center;gap:29px;font-size:13px;color:#a9bad3}.navlinks a{color:inherit}.nav .righttag{border:1px solid #36405d;padding:9px 14px;border-radius:999px;color:#a9bdd9;font-size:12px}.eyebrow{font-size:11px;letter-spacing:2.4px;text-transform:uppercase;font-weight:800;color:#92d9db;display:flex;align-items:center;gap:9px}.eyebrow:before{content:"";height:6px;width:6px;border-radius:50%;background:#65e9d2;box-shadow:0 0 0 5px #65e9d217}
+    .hero{display:grid;grid-template-columns:1.5fr .85fr;align-items:center;gap:45px;padding:63px 0 48px}.hero h1{font:800 clamp(41px,4.2vw,66px)/1.05 Outfit,sans-serif;letter-spacing:-2.1px;margin:18px 0 19px}.hero h1 span{background:linear-gradient(95deg,#fa8ab8,#c7adff 48%,#77e4e5);background-clip:text;-webkit-background-clip:text;color:transparent}.hero p{color:#aabbcf;font-size:15.5px;line-height:1.83;max-width:660px;margin:0}.hero-pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:24px}.hero-pills span{font-size:11px;font-weight:700;border:1px solid #34415e;border-radius:999px;padding:9px 12px;background:#ffffff05;color:#b6c5df}.hero-pills b{color:#e7efff}.glass-state{background:linear-gradient(135deg,#20223cbb,#122b37bb);border:1px solid #53627a5e;border-radius:25px;padding:24px;position:relative;overflow:hidden;min-height:244px;box-shadow:0 20px 60px #00000020}.glass-state:after{content:"";position:absolute;right:-55px;top:-65px;width:250px;height:250px;border-radius:50%;border:1px solid #f59ac31b;box-shadow:0 0 0 30px #b39fff08,0 0 0 65px #80c8f308;pointer-events:none}.state-top{display:flex;justify-content:space-between;align-items:center;font-weight:700;color:#9bafcc;font-size:12px}.live-dot{width:7px;height:7px;background:#8bebcb;display:inline-block;border-radius:50%;margin-right:5px;box-shadow:0 0 15px #8bebcb}.state-day{font:800 61px/.97 Outfit,sans-serif;letter-spacing:-2px;margin:23px 0 3px}.state-day span{font:600 18px 'DM Sans',sans-serif;color:#9daac9;letter-spacing:0;margin-right:5px}.state-phase{color:#f9a6ca;font:700 19px Outfit,sans-serif;margin-bottom:12px}.state-description{color:#b3c4db;font-size:12.5px;line-height:1.65;max-width:330px}.state-mini{display:flex;gap:9px;margin-top:16px;flex-wrap:wrap}.state-mini span{font-size:10px;border-radius:7px;background:#ffffff0b;color:#d1dff3;padding:8px 10px}
+    .section{background:linear-gradient(150deg,#152036,#10192b);border:1px solid var(--border);border-radius:var(--radius);box-shadow:0 18px 55px #01081228}.controls{padding:25px 30px 28px;margin-bottom:22px}.section-head{display:flex;justify-content:space-between;align-items:start;gap:16px}.section h2{font:700 22px/1.3 Outfit,sans-serif;margin:0 0 7px}.sub{font-size:12px;color:var(--muted);line-height:1.6}.playback{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.round-btn,.pill-btn{background:#263249;border:1px solid #3b4964;color:#e3ecff;display:grid;place-items:center;height:39px;width:39px;border-radius:12px;font-size:18px;transition:background .15s,transform .15s}.round-btn:hover,.pill-btn:hover{background:#394966;transform:translateY(-1px)}.pill-btn{padding:0 16px;width:auto;gap:8px;display:flex;font-size:12px;font-weight:800}.pill-btn.main{background:#c6b0ff;color:#16172b;border-color:#c6b0ff}.pill-btn.main:hover{background:#dfd0ff}.length-control{font-size:12px;font-weight:700;color:#acbed8;display:flex;align-items:center;gap:10px}.length-control select{padding:9px 12px;background:#202e44;border:1px solid #43516c;border-radius:10px;color:white}.range-wrap{display:flex;gap:20px;align-items:center;margin:26px 0 9px}.range-wrap .range-label{font-size:11px;color:#a9b7cc;white-space:nowrap}.day-slider{--p:48%;width:100%;height:7px;border-radius:99px;appearance:none;-webkit-appearance:none;background:linear-gradient(90deg,#e580ad 0%,#a7a4f7 var(--p),#2f3d53 var(--p),#2f3d53 100%);cursor:pointer}.day-slider::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:21px;height:21px;border:4px solid #f1e9ff;border-radius:50%;background:#9f8cfa;box-shadow:0 0 0 5px #a598ff24}.day-slider::-moz-range-thumb{width:14px;height:14px;border:4px solid #f1e9ff;border-radius:50%;background:#9f8cfa}.range-marks{display:flex;justify-content:space-between;font-size:10px;color:#7d90ad;margin:0 0 23px 0}.timeline-wrap{border-top:1px solid #ffffff12;padding-top:23px}.timeline-row{display:grid;grid-template-columns:123px 1fr;align-items:center;gap:17px;margin:12px 0}.timeline-label{font-size:12px;font-weight:700;color:#b0c1da}.timeline-track{display:flex;position:relative;gap:3px;min-height:37px;cursor:pointer}.timeline-segment{height:37px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;letter-spacing:.1px;overflow:hidden;white-space:nowrap}.timeline-segment:first-child{border-radius:8px 0 0 8px}.timeline-segment:last-of-type{border-radius:0 8px 8px 0}.timeline-marker{position:absolute;top:-7px;bottom:-6px;width:2px;background:white;pointer-events:none;z-index:3;box-shadow:0 0 12px #fff9}.timeline-marker:before{content:"";position:absolute;top:-5px;left:-4px;height:10px;width:10px;border-radius:100%;background:white}.track-placeholder{padding:10px;font-size:11px;color:#a5b6d1}
+    .dashboard-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(330px,.9fr);gap:22px}.chart-card,.metrics-card{padding:27px 28px}.card-kicker{display:flex;align-items:center;gap:9px;color:#8fa3c1;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}.tiny-icon{display:grid;place-items:center;width:26px;height:26px;background:#28334e;border:1px solid #485575;border-radius:8px;color:#c3d3ed;font-size:14px}.chart-head{display:flex;justify-content:space-between;align-items:start;gap:14px}.chart-head .sub{max-width:540px}.plot{width:100%;height:auto;display:block;overflow:visible;touch-action:pan-y;cursor:crosshair}.chart-legend{display:flex;flex-wrap:wrap;gap:9px;margin-top:13px}.legend-item{display:flex;align-items:center;gap:8px;border:1px solid #37445d;border-radius:9px;padding:8px 10px;font-size:11px;color:#c8d5eb;background:#ffffff04}.legend-item[aria-pressed="false"]{opacity:.4}.legend-line{width:17px;height:3px;border-radius:4px}.chart-note{font-size:10.5px;color:#8595ad;margin-top:13px}.hormone-list{display:grid;gap:14px;margin-top:21px}.hormone-item{background:#101b2e;border:1px solid #26364f;border-radius:12px;padding:13px 14px}.hormone-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:11px;font-size:12px}.hormone-name{display:flex;align-items:center;gap:8px;font-weight:800}.hormone-dot{height:8px;width:8px;border-radius:50%}.hormone-state{font-size:10px;color:#b6c5da;font-weight:700}.meter{height:6px;background:#30405b;border-radius:20px;overflow:hidden}.meter-fill{height:100%;border-radius:20px;transition:width .3s}.hormone-desc{font-size:10.5px;color:#8d9eb8;line-height:1.5;margin-top:8px}.metrics-note{color:#778ba7;font-size:11px;margin-top:16px;line-height:1.6}
+    .anatomy-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}.anatomy-card{padding:26px;overflow:hidden}.anatomy-card h2{margin-bottom:6px}.anatomy-visual{background:radial-gradient(ellipse at 50% 50%,#20304a 0,#101c2f 70%);border:1px solid #263a55;border-radius:17px;min-height:272px;display:grid;align-items:center;margin-top:18px;position:relative;overflow:hidden}.anatomy-visual svg{display:block;width:100%;max-height:300px}.image-watermark{position:absolute;left:15px;top:14px;font-size:10px;letter-spacing:1.5px;color:#92a5bf;z-index:1}.stage-tag{display:inline-flex;align-items:center;gap:7px;background:#302b4c;color:#d5c9ff;font-size:11px;border:1px solid #58517c;border-radius:7px;padding:8px 10px;font-weight:800;margin-top:17px}.stage-tag.ut{background:#4a2a45;color:#ffc1d8;border-color:#754965}.anatomy-explainer{font-size:13px;color:#b4c4dc;line-height:1.75;margin:10px 0 0;min-height:65px}.keypoint{border-left:2px solid #9b8ef7;padding:9px 13px;background:#aaa5ff0a;font-size:11.5px;color:#bdc9df;line-height:1.7;margin-top:15px;border-radius:0 9px 9px 0}.keypoint.ut{border-left-color:#f080ad;background:#f080ad09}.histology-wrap{margin-top:13px;background:#0c1525;border:1px solid #223550;border-radius:12px;padding:10px}.histology-wrap svg{width:100%;height:auto;display:block;max-height:176px}.viz-caption{font-size:10px;color:#8397b2;padding:0 4px 3px;margin-top:4px}
+    .mechanism{margin-top:22px;padding:30px}.mechanism-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:15px;margin-top:18px}.mechanism-node{border:1px solid #30405d;border-radius:14px;padding:19px;background:#0d192c}.mechanism-number{display:grid;place-items:center;width:29px;height:29px;border-radius:8px;color:#141b30;font-weight:900;font-size:12px;background:#b4a1ff;margin-bottom:16px}.mechanism-node:nth-child(2) .mechanism-number{background:#f49bbf}.mechanism-node:nth-child(3) .mechanism-number{background:#71d9ce}.mechanism-node h3{font-size:14px;margin:0 0 8px;font-family:Outfit,sans-serif}.mechanism-node p{font-size:12px;line-height:1.75;margin:0;color:#a6b9d2}.note-box{display:flex;gap:10px;padding:15px 17px;background:#25445c43;border:1px solid #44728d6e;border-radius:11px;color:#b9d3e7;font-size:11.5px;line-height:1.7;margin-top:17px}.note-box strong{color:#dbf2ff}.bottom-grid{display:grid;grid-template-columns:1fr .85fr;gap:22px;margin-top:22px}.lesson,.quiz{padding:27px}.lesson-row{border-top:1px solid #ffffff14;padding:15px 0}.lesson-row:first-of-type{border-top:none}.lesson-row h3{font:700 14px Outfit,sans-serif;margin:0 0 6px}.lesson-row p{font-size:12px;color:#a8bbd4;line-height:1.75;margin:0}.quiz-question{font-size:13.5px;font-weight:700;line-height:1.55;margin:18px 0 14px}.quiz-options{display:grid;gap:9px}.quiz-option{text-align:left;width:100%;background:#15233a;border:1px solid #34445f;color:#cfdaed;border-radius:10px;padding:11px 13px;font-size:12px;line-height:1.4}.quiz-option:hover{background:#22334e}.quiz-option.correct{background:#1d513e75;border-color:#67d5ad}.quiz-option.wrong{background:#58334580;border-color:#f18fa9}.quiz-option:disabled{cursor:default}.quiz-feedback{min-height:44px;font-size:11px;color:#b8c6db;line-height:1.6;margin-top:13px}.quiz-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:11px;color:#97aaca;margin-top:5px}.quiz-next{background:#c7afff;color:#19172e;border:none;border-radius:9px;font-size:11px;padding:10px 13px;font-weight:800}.quiz-next:disabled{opacity:.5;cursor:not-allowed}
+    .footer{padding:34px 2px 0;color:#8c9eb9;font-size:11px;line-height:1.8}.footer a{display:inline-block;margin:0 7px 0 0}.footer .foot-title{font-weight:800;color:#c2d2e7;font-size:12px;margin-bottom:6px}.footer-rule{border-top:1px solid #26364e;margin-top:25px;padding-top:16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    @media(max-width:1130px){.dashboard-grid{grid-template-columns:minmax(0,1.35fr) minmax(290px,.85fr)}.container{padding-left:22px;padding-right:22px}.hero{gap:22px}.hero h1{font-size:50px}}@media(max-width:920px){.hero{grid-template-columns:1fr}.glass-state{min-height:0}.dashboard-grid,.anatomy-grid,.bottom-grid{grid-template-columns:1fr}.mechanism-grid{grid-template-columns:1fr}.metrics-card .hormone-list{grid-template-columns:1fr 1fr}.navlinks{display:none}.anatomy-visual svg{max-height:330px}}@media(max-width:600px){.container{padding:0 14px 35px}.nav{height:70px}.brand{font-size:16px}.nav .righttag{font-size:10px;padding:7px 10px}.hero{padding:38px 0 27px}.hero h1{font-size:41px;letter-spacing:-1.4px}.hero p{font-size:13px}.glass-state{padding:19px}.controls,.chart-card,.metrics-card,.anatomy-card,.mechanism,.lesson,.quiz{padding:19px}.section h2{font-size:20px}.section-head,.chart-head{flex-direction:column}.playback{width:100%;justify-content:space-between}.range-wrap{gap:10px}.timeline-row{grid-template-columns:1fr;gap:7px}.timeline-segment{font-size:9px}.metrics-card .hormone-list{grid-template-columns:1fr}.chart-legend{gap:6px}.legend-item{padding:7px;font-size:10px}.anatomy-visual{min-height:200px}.anatomy-visual svg{max-height:235px}.hero-pills{gap:6px}.hero-pills span{padding:7px 9px;font-size:10px}.state-day{font-size:53px}}
+
+    /* Fase menstruasi: aliran dinamis dalam potongan uterus dan kendali H1–H5. */
+    .bleeding-dashboard{margin-top:13px;border:1px solid #6e3d5c;border-radius:15px;padding:15px 17px 14px;background:linear-gradient(130deg,#341c35 0%,#1b2235 68%,#182336 100%);scroll-margin-top:24px}
+    .bleeding-top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}.bleeding-title-wrap{display:flex;flex-direction:column;gap:4px}.bleeding-kicker{font-size:9px;letter-spacing:1.65px;color:#e2a7c1;font-weight:800;display:flex;align-items:center;gap:7px}.bleeding-bullet{width:7px;height:7px;border-radius:99px;background:#68768b;box-shadow:0 0 0 3px #ffffff0a}.bleeding-bullet.active{background:#f26382;box-shadow:0 0 0 4px #e9597b2d,0 0 15px #ff73884b}.bleeding-title-wrap strong{font:700 16px Outfit,sans-serif;color:#ffe3ed}.bleeding-current{font-size:11px;color:#abbed3}.bleed-trigger{display:flex;align-items:center;gap:7px;background:#7e3559;border:1px solid #c06c89;border-radius:10px;color:#fff0f4;padding:10px 12px;font-size:11px;font-weight:800;transition:background .2s,transform .2s}.bleed-trigger:hover{background:#a34971;transform:translateY(-1px)}.bleed-trigger.running{background:#4b344f;border-color:#a87b99}
+    .bleeding-days{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin-top:15px}.bleeding-day{border:1px solid #75465f;background:#231e32;color:#c9aabe;border-radius:9px;padding:7px 4px 6px;display:flex;align-items:center;justify-content:flex-end;flex-direction:column;height:57px;transition:background .2s,border-color .2s}.bleeding-day:hover{background:#3d2b43;border-color:#e688a8}.bleeding-day.selected{background:#63354d;border-color:#ffa0bb;box-shadow:inset 0 0 0 1px #ffc1d52a}.bleeding-day .bleeding-bar{height:var(--bleed-h);max-height:25px;min-height:3px;width:72%;border-radius:5px 5px 2px 2px;background:linear-gradient(180deg,#ff9caf 0%,#d7446d 100%);opacity:.7;box-shadow:0 0 10px #ed537326}.bleeding-day.selected .bleeding-bar{opacity:1;box-shadow:0 0 14px #ff6f8f68}.bleeding-day small{margin-top:5px;font-size:10px;font-weight:800}.bleeding-explainer{font-size:11.5px;line-height:1.65;color:#d5c0d2;margin:13px 0 0;min-height:38px}.bleeding-disclaimer{font-size:9.5px;line-height:1.55;color:#a18b9f;border-top:1px solid #a76d8452;padding-top:10px;margin:9px 0 0}
+    @keyframes blood-current{to{stroke-dashoffset:-28}}@keyframes tissue-shift{0%{opacity:.8;transform:translateY(-2px)}60%{opacity:.65}100%{opacity:0;transform:translate(1px,20px)}}
+    .blood-stream{animation:blood-current 1.4s linear infinite}.tissue-particle{transform-box:fill-box;animation:tissue-shift 3s ease-in infinite}.tissue-particle:nth-child(3n){animation-delay:-1.15s}.tissue-particle:nth-child(2n){animation-delay:-2s}
+
+    /* v1.2 - motion continuity: draw once, interpolate properties instead of resetting SVG. */
+    .anatomy-scene{opacity:1;transition:opacity .78s cubic-bezier(.22,1,.36,1);pointer-events:none}
+    #uterus-lining{transition:stroke-width 1.05s cubic-bezier(.25,.8,.22,1)}
+    #bleed-root{opacity:0;transition:opacity .95s cubic-bezier(.22,1,.36,1);pointer-events:none}
+    #bleed-base,#bleed-mid,#bleed-strong,#bleed-fragments{transition:opacity 1s cubic-bezier(.22,1,.36,1)}
+    #bleed-upper{transition:opacity .9s ease,stroke-width 1.05s ease}
+    #bleed-stream{transition:opacity .9s ease,stroke-width 1.05s ease}
+    .blood-stream{animation:blood-current 2.1s linear infinite}
+    .bleed-breath{animation:bleed-breathe 3.8s ease-in-out infinite}
+    @keyframes bleed-breathe{0%,100%{opacity:.76}50%{opacity:1}}
+    .timeline-marker{transition:left .64s cubic-bezier(.22,1,.36,1)}
+    .meter-fill{transition:width .72s cubic-bezier(.22,1,.36,1)}
+    .bleed-current-fill{transition:width .9s cubic-bezier(.22,1,.36,1)}
+    .speed-select{font-size:11px;color:#c9dbf0;background:#202e44;border:1px solid #43516c;border-radius:10px;padding:9px 6px;max-width:115px}
+    .motion-note{display:inline-flex;align-items:center;gap:6px;font-size:10px;color:#abbbd0;margin-top:8px}
+    .motion-note:before{content:"";width:6px;height:6px;border-radius:50%;background:#83e8c9;box-shadow:0 0 9px #83e8c95e}
+    @media (prefers-reduced-motion:reduce){.anatomy-scene,#uterus-lining,#bleed-root,#bleed-base,#bleed-mid,#bleed-strong,#bleed-fragments,#bleed-upper,#bleed-stream,.timeline-marker,.meter-fill{transition:none!important}.bleed-breath{animation:none!important}}
+    @media(max-width:600px){.bleeding-dashboard{padding:13px}.bleeding-top{align-items:flex-start}.bleed-trigger{width:100%;justify-content:center}.bleeding-title-wrap strong{font-size:15px}.bleeding-disclaimer{font-size:9px}}
+    @media(prefers-reduced-motion:reduce){.blood-stream,.tissue-particle{animation:none!important}}
+
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+<div class="container">
+  <header class="nav">
+    <div class="brand"><span class="brand-orbit" aria-hidden="true">◌</span><span>MENSTRUAL ATLAS<small>Interactive physiology</small></span></div>
+    <nav class="navlinks" aria-label="Navigasi"><a href="#eksplorasi">Eksplorasi</a><a href="#anatomi">Anatomi</a><a href="#perdarahan">Perdarahan</a><a href="#mekanisme">Mekanisme</a><a href="#referensi">Referensi</a></nav>
+    <span class="righttag">EDUCATIONAL LAB · v1.1</span>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow">Fisiologi reproduksi • Visual & interaktif</div>
+        <h1 id="hero-title">Satu siklus.<br><span>Ribuan perubahan.</span></h1>
+        <p>Jelajahi bagaimana hipotalamus, hipofisis, ovarium, dan uterus bekerja sinkron. Geser hari untuk melihat perubahan hormon, perkembangan oosit dan folikel, serta struktur endometrium secara bersamaan.</p>
+        <div class="hero-pills"><span>◉ <b>4</b> hormon utama</span><span>◎ Siklus ovarium & uterus</span><span>▤ Endometrium dinamis</span><span>🩸 Simulasi perdarahan</span><span>↔ Panjang siklus fleksibel</span></div>
+      </div>
+      <aside class="glass-state" aria-live="polite">
+        <div class="state-top"><span><i class="live-dot"></i> KONDISI SAAT INI</span><span id="state-index">01 / 28</span></div>
+        <div class="state-day"><span>HARI</span><span id="hero-day">2</span></div>
+        <div class="state-phase" id="hero-phase">Ovulasi</div>
+        <div class="state-description" id="hero-desc">Lonjakan LH memicu pelepasan oosit sekunder dari folikel dominan.</div>
+        <div class="state-mini"><span id="hero-ov">OVARIUM · Ovulasi</span><span id="hero-ut">UTERUS · Proliferatif</span></div>
+      </aside>
+    </section>
+
+    <section class="section controls" id="eksplorasi" aria-labelledby="ctrl-title">
+      <div class="section-head">
+        <div><div class="card-kicker">01 / NAVIGASI SIKLUS</div><h2 id="ctrl-title">Jelajahi hari demi hari</h2><div class="sub">Satu kontrol menggerakkan seluruh visualisasi di bawah.</div></div>
+        <div class="playback">
+          <button class="round-btn" id="prev" aria-label="Hari sebelumnya" title="Hari sebelumnya">‹</button>
+          <button class="pill-btn main" id="play" aria-label="Putar animasi"><span id="play-icon">▶</span><span id="play-text">Putar</span></button>
+          <button class="round-btn" id="next" aria-label="Hari berikutnya" title="Hari berikutnya">›</button>
+          <select id="speed" class="speed-select" aria-label="Kecepatan animasi"><option value="0.75">0,75× lambat</option><option value="1" selected>1× normal</option><option value="1.5">1,5× cepat</option></select>
+          <label class="length-control" for="length">Siklus <select id="length" aria-label="Panjang siklus"><option>24</option><option>26</option><option selected>28</option><option>30</option><option>32</option><option>35</option><option>38</option></select> hari</label>
+        </div>
+      </div>
+      <div class="range-wrap"><span class="range-label">HARI 1</span><input id="day" class="day-slider" type="range" min="1" max="28" value="2" aria-label="Pilih hari dalam siklus"><span class="range-label" id="range-end">HARI 28</span></div>
+      <div class="range-marks" id="range-marks"></div>
+      <div class="timeline-wrap"><div class="timeline-row"><div class="timeline-label">Siklus ovarium</div><div class="timeline-track" id="ovarian-timeline" tabindex="0" role="slider" aria-label="Linimasa siklus ovarium" aria-valuemin="1" aria-valuemax="28" aria-valuenow="14"></div></div><div class="timeline-row"><div class="timeline-label">Siklus uterus</div><div class="timeline-track" id="uterine-timeline" tabindex="0" role="slider" aria-label="Linimasa siklus uterus" aria-valuemin="1" aria-valuemax="28" aria-valuenow="14"></div></div></div>
+    </section>
+
+    <div class="dashboard-grid">
+      <section class="section chart-card" aria-labelledby="chart-title">
+        <div class="card-kicker"><span class="tiny-icon">∿</span>02 / DINAMIKA ENDOKRIN</div>
+        <div class="chart-head"><div><h2 id="chart-title">Grafik empat hormon</h2><div class="sub">Amati lonjakan LH, puncak estradiol praovulasi, dan dominasi progesteron setelah ovulasi.</div></div></div>
+        <svg class="plot" id="hormone-chart" role="img" aria-label="Kurva kadar relatif FSH, LH, estradiol, dan progesteron sepanjang siklus" viewBox="0 0 900 320"></svg>
+        <div class="chart-legend" id="chart-legend" aria-label="Pilih kurva hormon"></div>
+        <div class="chart-note">* Skala dinormalisasi untuk visualisasi pola tiap hormon, <b>bukan konsentrasi serum absolut</b> dan tidak dapat digunakan untuk interpretasi laboratorium. Klik atau sentuh grafik untuk memilih hari.</div>
+      </section>
+      <section class="section metrics-card" aria-labelledby="metrics-title">
+        <div class="card-kicker"><span class="tiny-icon">◈</span>03 / PROFIL HORMONAL</div>
+        <h2 id="metrics-title">Kadar relatif hari ini</h2><div class="sub">Indikator mengikuti garis pada grafik di samping.</div>
+        <div class="hormone-list" id="hormone-list"></div>
+        <div class="metrics-note">FSH dan LH berasal dari hipofisis anterior; estradiol dan progesteron terutama diproduksi ovarium. Kadar sesungguhnya berfluktuasi dalam satu hari dan berbeda antarindividu.</div>
+      </section>
+    </div>
+
+    <div class="anatomy-grid" id="anatomi">
+      <section class="section anatomy-card" aria-labelledby="ovary-title">
+        <div class="card-kicker"><span class="tiny-icon">◎</span>04 / PERKEMBANGAN OVARIUM</div>
+        <h2 id="ovary-title">Perjalanan folikel & oosit</h2><div class="sub">Morfologi disederhanakan, menonjolkan struktur utama.</div>
+        <div class="anatomy-visual"><span class="image-watermark">ILUSTRASI OVARIUM</span><svg id="ovary-svg" viewBox="0 0 500 290" role="img" aria-label="Ilustrasi dinamis perkembangan folikel di dalam ovarium"></svg></div>
+        <div class="stage-tag" id="ovary-stage">◉ Folikel dominan</div>
+        <p class="anatomy-explainer" id="ovary-explainer"></p>
+        <div class="keypoint" id="oocyte-note"></div>
+      </section>
+      <section class="section anatomy-card" aria-labelledby="uterus-title">
+        <div class="card-kicker"><span class="tiny-icon">▤</span>05 / PERUBAHAN ENDOMETRIUM</div>
+        <h2 id="uterus-title">Uterus & lapisan endometrium</h2><div class="sub">Perhatikan perubahan lapisan fungsional, kelenjar, dan pembuluh spiral.</div>
+        <div class="anatomy-visual"><span class="image-watermark">POTONGAN UTERUS</span><svg id="uterus-svg" viewBox="0 0 500 290" role="img" aria-label="Potongan uterus yang memperlihatkan perubahan ketebalan endometrium"></svg></div>
+        <div class="bleeding-dashboard" id="perdarahan" aria-labelledby="bleeding-heading">
+          <div class="bleeding-top">
+            <div class="bleeding-title-wrap"><div class="bleeding-kicker"><span class="bleeding-bullet" id="bleed-indicator"></span> SIMULASI ALIRAN MENSTRUASI</div><strong id="bleeding-heading">Tidak ada perdarahan</strong><span id="bleeding-current" class="bleeding-current">Fase nonmenstruasi</span></div>
+            <button class="bleed-trigger" id="bleed-demo" type="button" aria-label="Putar simulasi menstruasi hari 1 sampai 5"><span id="bleed-demo-icon">▶</span><span id="bleed-demo-text">Simulasikan H1–H5</span></button>
+          </div>
+          <div class="bleeding-days" role="group" aria-label="Pilih hari perdarahan untuk melihat intensitas aliran skematis">
+            <button type="button" class="bleeding-day" data-mday="1" aria-label="Lihat menstruasi hari 1"><span class="bleeding-bar" style="--bleed-h:48%"></span><small>H1</small></button>
+            <button type="button" class="bleeding-day" data-mday="2" aria-label="Lihat menstruasi hari 2"><span class="bleeding-bar" style="--bleed-h:100%"></span><small>H2</small></button>
+            <button type="button" class="bleeding-day" data-mday="3" aria-label="Lihat menstruasi hari 3"><span class="bleeding-bar" style="--bleed-h:82%"></span><small>H3</small></button>
+            <button type="button" class="bleeding-day" data-mday="4" aria-label="Lihat menstruasi hari 4"><span class="bleeding-bar" style="--bleed-h:43%"></span><small>H4</small></button>
+            <button type="button" class="bleeding-day" data-mday="5" aria-label="Lihat menstruasi hari 5"><span class="bleeding-bar" style="--bleed-h:17%"></span><small>H5</small></button>
+          </div>
+          <p class="bleeding-explainer" id="bleeding-explainer" aria-live="polite">Pilih salah satu hari untuk melihat darah dan fragmen endometrium mengalir melalui kavum uteri dan serviks.</p>
+          <div class="motion-note">Gerak kontinu dan transisi halus antarhari</div>
+          <p class="bleeding-disclaimer">Bentuk aliran, jumlah partikel, dan variasi H1–H5 adalah visualisasi ilustratif, bukan prediksi volume darah atau pola klinis individu. Lama menstruasi dapat bervariasi.</p>
+        </div>
+        <div class="histology-wrap"><svg id="endo-svg" viewBox="0 0 500 170" role="img" aria-label="Skema lapisan endometrium, kelenjar, dan pembuluh darah yang berubah sesuai hari"></svg><div class="viz-caption">Pembesaran skematis: stratum functionale (atas) dan stratum basale (bawah), bukan ukuran mikroskopis sebenarnya.</div></div>
+        <div class="stage-tag ut" id="uterus-stage">▤ Fase proliferatif</div>
+        <p class="anatomy-explainer" id="uterus-explainer"></p>
+        <div class="keypoint ut" id="endo-note"></div>
+      </section>
+    </div>
+
+    <section class="section mechanism" id="mekanisme" aria-labelledby="mech-title">
+      <div class="card-kicker">06 / AKSIS HIPOTALAMUS–HIPOFISIS–OVARIUM</div>
+      <h2 id="mech-title">Mengapa semuanya bergerak bersama?</h2>
+      <div class="sub">Tiga hubungan kunci yang menggerakkan siklus menstruasi.</div>
+      <div class="mechanism-grid">
+        <div class="mechanism-node"><div class="mechanism-number">01</div><h3>GnRH → FSH & LH</h3><p>Pulsa GnRH dari hipotalamus merangsang hipofisis anterior. FSH mendukung pertumbuhan folikel dan fungsi sel granulosa, sedangkan LH merangsang sel teka serta memicu ovulasi dan luteinisasi.</p></div>
+        <div class="mechanism-node"><div class="mechanism-number">02</div><h3>Estrogen → Umpan balik positif</h3><p>Estradiol yang tinggi dan menetap menjelang ovulasi membalik umpan balik negatif menjadi positif. Akibatnya terjadi <i>LH surge</i>, disertai peningkatan FSH yang lebih kecil.</p></div>
+        <div class="mechanism-node"><div class="mechanism-number">03</div><h3>Progesteron → Fase sekretori</h3><p>Korpus luteum menghasilkan progesteron. Endometrium menjadi sekretorik dan siap menerima implantasi. Bila tidak ada dukungan hCG, korpus luteum mengalami regresi dan kadar hormon turun.</p></div>
+      </div>
+      <div class="note-box"><span style="font-size:19px">ⓘ</span><span><strong>Konsep penting:</strong> fase folikular ovarium berlangsung bersamaan dengan menstruasi <i>dan</i> fase proliferatif uterus. Hari ovulasi tidak selalu hari ke-14: di model ini diestimasi sekitar 14 hari sebelum menstruasi berikutnya. Ini model siklus ovulatorik reguler, bukan alat prediksi ovulasi atau kontrasepsi.</span></div>
+    </section>
+
+    <div class="bottom-grid">
+      <section class="section lesson" aria-labelledby="lesson-title">
+        <div class="card-kicker">07 / RANGKUMAN KONSEP</div><h2 id="lesson-title">Yang perlu diingat</h2>
+        <div class="lesson-row"><h3>Oosit primer ≠ oosit sekunder ≠ ovum</h3><p>Oosit primer tertahan pada profase I sejak kehidupan janin. Menjelang ovulasi, meiosis I selesai menghasilkan oosit sekunder yang berhenti pada metafase II. Meiosis II selesai hanya setelah fertilisasi.</p></div>
+        <div class="lesson-row"><h3>Endometrium memiliki dua lapisan penting</h3><p>Stratum basale tetap dipertahankan saat menstruasi. Stratum functionale tumbuh kembali di bawah pengaruh estradiol, kemudian menjadi sekretorik oleh progesteron, dan luruh ketika dukungan hormon menurun.</p></div>
+        <div class="lesson-row"><h3>Jika terjadi implantasi</h3><p>Trofoblas embrio menghasilkan hCG yang mempertahankan korpus luteum. Progesteron terus diproduksi sehingga endometrium dipertahankan dan menstruasi tidak berlangsung seperti pada siklus tanpa kehamilan.</p></div>
+      </section>
+      <section class="section quiz" aria-labelledby="quiz-title">
+        <div class="card-kicker">08 / LATIHAN PEMAHAMAN</div><h2 id="quiz-title">Uji pemahamanmu</h2><div class="sub">Empat soal cepat seputar fisiologi menstruasi.</div>
+        <div class="quiz-question" id="quiz-question"></div><div class="quiz-options" id="quiz-options"></div><div class="quiz-feedback" id="quiz-feedback" aria-live="polite"></div>
+        <div class="quiz-footer"><span id="quiz-progress">Soal 1/4</span><button class="quiz-next" id="quiz-next" disabled>Selanjutnya →</button></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer" id="referensi">
+    <div class="foot-title">Referensi medis</div>
+    <div>Dasar fisiologi: <a href="https://www.ncbi.nlm.nih.gov/books/NBK279054/" target="_blank" rel="noopener noreferrer">Endotext: The Normal Menstrual Cycle</a> · <a href="https://www.ncbi.nlm.nih.gov/books/NBK500020/" target="_blank" rel="noopener noreferrer">StatPearls: Physiology, Menstrual Cycle</a> · <a href="https://www.msdmanuals.com/home/women-s-health-issues/biology-of-the-female-reproductive-system/menstrual-cycle" target="_blank" rel="noopener noreferrer">MSD Manual: Menstrual Cycle</a> · <a href="https://www.acog.org/womens-health/faqs/fertility-awareness-based-methods-of-family-planning" target="_blank" rel="noopener noreferrer">ACOG: Fertility Awareness</a>.</div>
+    <div class="footer-rule"><span>© 2026 Menstrual Atlas v1.2 · Media pendidikan biomedis</span><span>Semua ilustrasi dan kurva bersifat skematis. Bukan perangkat diagnosis klinis.</span></div>
+  </footer>
+</div>
+<script>
+(() => {
+  'use strict';
+  const $=id=>document.getElementById(id);
+  const colors={FSH:'#ffca77',LH:'#65dce7',E2:'#f582b3',P4:'#b6a1ff'};
+  const hormoneLabels={FSH:'FSH',LH:'LH',E2:'Estradiol (E₂)',P4:'Progesteron (P₄)'};
+  const descriptions={FSH:'Rekrutmen & maturasi folikel melalui sel granulosa.',LH:'Lonjakan praovulasi memicu pelepasan oosit.',E2:'Mendorong proliferasi endometrium & LH surge.',P4:'Mengubah endometrium menjadi sekretorik.'};
+  const state={day:2,length:28,playing:false,timer:null,demo:false,speed:1,chartSig:"",chartDay:2,chartRaf:null,visible:{FSH:true,LH:true,E2:true,P4:true}};
+  const gauss=(x,mu,s)=>Math.exp(-0.5*((x-mu)/s)**2);
+  const clamp=(x,min,max)=>Math.max(min,Math.min(max,x));
+  const ovDay=()=>state.length-14;
+  const hormones=(day)=>{let ov=ovDay(); return {
+    FSH:clamp(12+23*gauss(day,2,2.8)+29*gauss(day,ov-.8,1.15)+7*gauss(day,state.length,1.8),0,100),
+    LH:clamp(7+91*gauss(day,ov-.85,.8),0,100),
+    E2:clamp(10+77*gauss(day,ov-1.8,2.95)+40*gauss(day,ov+7,3.4),0,100),
+    P4:clamp(4+85*gauss(day,ov+7.2,3.7)/(1+Math.exp(-(day-ov-1)*2)),0,100)
+  }};
+  const ovarianPhase=(d)=>d<ovDay()?'Folikular':d===ovDay()?'Ovulasi':'Luteal';
+  const uterinePhase=(d)=>d<=5?'Menstruasi':d<=ovDay()?'Proliferatif':'Sekretori';
+  const stages=()=>{let d=state.day,ov=ovDay(),n=state.length;
+    if(d<=4)return{title:'Rekrutmen folikel antral',explain:'FSH mendukung pertumbuhan kohort folikel yang telah berkembang dari tahap awal. Banyak folikel memulai pertumbuhan, tetapi umumnya hanya satu menjadi dominan.',oocyte:'Di dalam folikel terdapat oosit primer yang masih tertahan pada profase I.',kind:'early'};
+    if(d<=ov-5)return{title:'Folikel antral berkembang',explain:'Folikel antral membesar, sel granulosa berproliferasi, dan produksi estradiol meningkat. Sebagian besar folikel lain mengalami atresia.',oocyte:'Oosit tetap berada di dalam folikel dan dikelilingi sel kumulus serta zona pelusida.',kind:'antral'};
+    if(d<=ov-2)return{title:'Folikel dominan (Graaf)',explain:'Folikel dominan matang membentuk antrum besar dan menonjol di permukaan ovarium. Estradiol tinggi yang menetap mempersiapkan terjadinya lonjakan LH.',oocyte:'Menjelang ovulasi, lonjakan LH menginduksi kelanjutan meiosis I pada oosit.',kind:'dominant'};
+    if(d===ov-1)return{title:'Praovulasi: lonjakan LH',explain:'Paparan estradiol tinggi memicu umpan balik positif sehingga LH melonjak. Folikel dominan menjalani pematangan akhir dan bersiap ruptur.',oocyte:'Oosit primer menyelesaikan meiosis I menjadi oosit sekunder dan badan polar pertama.',kind:'preov'};
+    if(d===ov)return{title:'Ovulasi: oosit dilepaskan',explain:'Folikel dominan ruptur dan melepaskan kompleks oosit sekunder–kumulus yang kemudian ditangkap fimbriae tuba uterina.',oocyte:'Yang dilepas adalah OOSIT SEKUNDER, terhenti pada metafase II, bukan ovum yang telah menyelesaikan meiosis.',kind:'ovulation'};
+    if(d<=ov+2)return{title:'Pembentukan korpus luteum',explain:'Sisa folikel mengalami luteinisasi dan vaskularisasi menjadi korpus luteum, sehingga sekresi progesteron mulai meningkat.',oocyte:'Oosit sekunder yang tidak dibuahi mengalami degenerasi; tidak ada oosit baru yang dilepaskan pada fase luteal.',kind:'earlyluteal'};
+    if(d<=n-4)return{title:'Korpus luteum aktif',explain:'Sel granulosa-lutein dan teka-lutein membentuk korpus luteum yang mensekresi progesteron dan sebagian estradiol.',oocyte:'Bila terjadi fertilisasi dan implantasi, hCG embrio mempertahankan korpus luteum.',kind:'luteal'};
+    return{title:'Regresi korpus luteum',explain:'Tanpa hCG dari kehamilan, korpus luteum mengalami luteolisis, menjadi jaringan parut (korpus albikans), dan produksi progesteron turun.',oocyte:'Penurunan estrogen dan progesteron mempersiapkan peluruhan endometrium pada siklus berikutnya.',kind:'regression'};
+  };
+  const uterineStage=()=>{let d=state.day,ov=ovDay(),n=state.length;
+    if(d<=5)return{title:'Menstruasi: peluruhan',explain:'Turunnya progesteron dan estradiol dari siklus sebelumnya memicu respons inflamasi lokal, perubahan arteri spiralis, dan peluruhan stratum functionale.',note:'Stratum basale tetap ada dan menjadi sumber regenerasi lapisan fungsional.',kind:'menstrual'};
+    if(d<=ov)return{title:'Fase proliferatif: regenerasi',explain:'Estradiol dari folikel yang tumbuh merangsang proliferasi stroma, epitel, dan kelenjar. Lapisan fungsional menebal, kelenjar relatif lurus.',note:'Peningkatan ketebalan terutama didorong estrogen. Reseptivitas implantasi belum optimal.',kind:'proliferative'};
+    if(d<=n-4)return{title:'Fase sekretori: maturasi',explain:'Progesteron dari korpus luteum menyebabkan kelenjar endometrium berkelok dan mensekresi zat kaya glikogen, edema stroma, serta pemanjangan arteri spiralis.',note:'Endometrium dipersiapkan untuk implantasi. Progesteron mempertahankan keadaan sekretorik.',kind:'secretory'};
+    return{title:'Fase sekretori lanjut: pramenstruasi',explain:'Jika implantasi tidak terjadi, korpus luteum mengalami regresi. Turunnya progesteron/estradiol memicu perubahan jaringan menjelang peluruhan pada siklus berikutnya.',note:'Perdarahan menstruasi baru dihitung sebagai hari 1 pada siklus selanjutnya.',kind:'late'};
+  };
+
+  function updateTimeline(){
+    const ov=ovDay(),n=state.length;
+    const rows=[{el:'ovarian-timeline',parts:[['Folikular',ov-1,'#443965','#d9caff'],['Ovulasi',1,'#8772cd','#ffffff'],['Luteal',n-ov,'#30496c','#c6e7ff']]},
+      {el:'uterine-timeline',parts:[['Menstruasi',5,'#67304e','#ffc1d8'],['Proliferatif',ov-5,'#7a476c','#ffe1ef'],['Sekretori',n-ov,'#3c5972','#d3f0ff']]}];
+    rows.forEach(row=>{let el=$(row.el);el.replaceChildren();row.parts.forEach(([label,days,bg,fg])=>{
+      let segment=document.createElement('div');segment.className='timeline-segment';segment.style.flex=String(Math.max(0,days));segment.style.background=bg;segment.style.color=fg;segment.textContent=label;segment.title=label+' · '+days+' hari (model)';el.append(segment);
+    });let marker=document.createElement('span');marker.className='timeline-marker';marker.style.left=`${(state.day-.5)/n*100}%`;el.append(marker);el.setAttribute('aria-valuenow',state.day);el.setAttribute('aria-valuemax',n);
+    });
+    $('range-end').textContent='HARI '+n;
+    let marks=[];for(let i=1;i<=n;i+=Math.ceil(n/6))marks.push(i);if(marks.at(-1)!==n)marks.push(n);
+    $('range-marks').innerHTML=marks.map(m=>`<span>${m}</span>`).join('');
+  }
+  function moveChartCursor(day){
+    const svg=$('hormone-chart'),group=$('chart-cursor');if(!group)return;
+    const n=state.length,L=62,R=872,w=R-L,B=265,T=24,h=B-T;
+    const x=L+(day-1)/(n-1)*w;
+    group.setAttribute('transform',`translate(${x.toFixed(2)} 0)`);
+    const dx=clamp(x-31,L,R-62)-x;
+    $('cursor-bg').setAttribute('x',dx.toFixed(2));$('cursor-label').setAttribute('x',(dx+31).toFixed(2));
+    $('cursor-label').textContent='HARI '+Math.round(day);
+    let values=hormones(day);
+    for(const key of Object.keys(colors)){
+      const dot=$('cursor-'+key);
+      if(dot)dot.setAttribute('cy',(B-values[key]/100*h).toFixed(2));
+    }
+    state.chartDay=day;
+  }
+  function animateChartCursor(target){
+    if(state.chartRaf!==null){cancelAnimationFrame(state.chartRaf);state.chartRaf=null;}
+    if(reducedMotion||!state.chartSig){moveChartCursor(target);return;}
+    const from=state.chartDay,to=target,t0=performance.now(),duration=650;
+    function frame(now){const t=clamp((now-t0)/duration,0,1),ease=1-Math.pow(1-t,3);
+      moveChartCursor(from+(to-from)*ease);
+      if(t<1)state.chartRaf=requestAnimationFrame(frame);else state.chartRaf=null;
+    }
+    state.chartRaf=requestAnimationFrame(frame);
+  }
+  function drawChart(){
+    const svg=$('hormone-chart'),n=state.length,ov=ovDay(),L=62,R=872,T=24,B=265,w=R-L,h=B-T;
+    const signature=n+'-'+Object.keys(state.visible).map(k=>state.visible[k]?'1':'0').join('');
+    if(state.chartSig===signature&&$('chart-cursor')){animateChartCursor(state.day);return;}
+    if(state.chartRaf!==null){cancelAnimationFrame(state.chartRaf);state.chartRaf=null;}
+    const x=d=>L+(d-1)/(n-1)*w,y=v=>B-v/100*h;
+    let html=`<defs><linearGradient id="chart-bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#23324d" stop-opacity=".32"/><stop offset="1" stop-color="#111a2c" stop-opacity="0"/></linearGradient></defs><rect x="${L}" y="${T}" width="${w}" height="${h}" rx="6" fill="url(#chart-bg)"/>`;
+    const zone1=x(5.5),zone2=x(ov),ovspan=w/(n-1);
+    html+=`<rect x="${L}" y="${T}" width="${Math.max(0,zone1-L)}" height="${h}" fill="#d66e9540" opacity=".27"/><rect x="${Math.max(L,zone2-ovspan/1.8)}" y="${T}" width="${ovspan*1.1}" height="${h}" fill="#81e5e521"/>`;
+    [0,25,50,75,100].forEach(v=>{let yy=y(v);html+=`<line x1="${L}" x2="${R}" y1="${yy}" y2="${yy}" stroke="#45516b" stroke-width=".8" stroke-dasharray="4 6" opacity=".65"/><text x="${L-15}" y="${yy+4}" fill="#8495af" font-size="11" text-anchor="end">${v}</text>`;});
+    let ticks=[1];for(let d=7;d<n-2;d+=7)ticks.push(d);ticks.push(n);
+    [...new Set(ticks)].forEach(d=>{html+=`<text x="${x(d)}" y="${B+23}" font-size="11" fill="#91a3be" text-anchor="middle">${d}</text>`;});
+    html+=`<text x="${(L+R)/2}" y="${B+42}" font-size="11" fill="#879bb8" text-anchor="middle">Hari siklus</text><text x="${L}" y="14" font-size="10" fill="#879bb8">Kadar relatif (%)</text>`;
+    for(const key of ['FSH','LH','E2','P4'])if(state.visible[key]){
+      let path='';for(let i=0;i<=n*8;i++){let d=1+(n-1)*i/(n*8),v=hormones(d)[key];path+=(i?'L':'M')+x(d).toFixed(2)+' '+y(v).toFixed(2)+' ';}
+      html+=`<path d="${path}" fill="none" stroke="${colors[key]}" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>`;
+    }
+    html+=`<g id="chart-cursor"><line x1="0" y1="${T}" x2="0" y2="${B}" stroke="#f2f4ff" stroke-width="1.5" stroke-dasharray="5 5" opacity=".75"/><rect id="cursor-bg" y="1" width="62" height="20" rx="6" fill="#eae8ff"/><text id="cursor-label" y="15" text-anchor="middle" font-weight="800" font-size="10" fill="#1b2131">HARI ${state.day}</text>`;
+    for(const key of Object.keys(colors))if(state.visible[key])html+=`<circle id="cursor-${key}" cx="0" cy="${y(hormones(state.day)[key])}" r="5" fill="${colors[key]}" stroke="#101a2b" stroke-width="2.4"/>`;
+    html+=`</g><rect x="${L}" y="${T}" width="${w}" height="${h}" fill="transparent" id="plot-hit"/>`;
+    svg.innerHTML=html;state.chartSig=signature;moveChartCursor(state.day);
+    $('plot-hit').addEventListener('pointerdown',e=>{const r=svg.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*900;setDay(Math.round(1+(clamp(px,L,R)-L)/w*(n-1)));});
+  }
+  function legend(){const root=$('chart-legend');root.innerHTML='';Object.keys(colors).forEach(k=>{const b=document.createElement('button');b.type='button';b.className='legend-item';b.setAttribute('aria-pressed',String(state.visible[k]));b.innerHTML=`<span class="legend-line" style="background:${colors[k]}"></span>${hormoneLabels[k]}`;b.addEventListener('click',()=>{state.visible[k]=!state.visible[k];legend();drawChart();});root.append(b);});}
+  function hormoneCards(){
+    const root=$('hormone-list'),values=hormones(state.day);
+    if(!root.children.length){
+      for(const k of ['FSH','LH','E2','P4']){
+        root.insertAdjacentHTML('beforeend',`<div class="hormone-item"><div class="hormone-head"><span class="hormone-name"><i class="hormone-dot" style="background:${colors[k]}"></i>${hormoneLabels[k]}</span><span class="hormone-state" id="hstate-${k}"></span></div><div class="meter"><div class="meter-fill" id="hbar-${k}" style="width:0%;background:${colors[k]}"></div></div><div class="hormone-desc">${descriptions[k]}</div></div>`);
+      }
+    }
+    for(const k of ['FSH','LH','E2','P4']){
+      let v=values[k],level=v>=70?'Puncak / tinggi':v>=31?'Sedang':'Rendah';
+      $('hstate-'+k).textContent=level;
+      $('hbar-'+k).style.width=v.toFixed(1)+'%';
+    }
+  }
+  // SVG layer swap only for changing biological structures, not the ongoing blood flow.
+  function crossfadeScene(id,markup){
+    const root=$(id),ns='http://www.w3.org/2000/svg',incoming=document.createElementNS(ns,'g');
+    incoming.setAttribute('class','anatomy-scene');incoming.innerHTML=markup;
+    if(!root.childElementCount||reducedMotion){root.replaceChildren(incoming);return;}
+    incoming.style.opacity='0';let old=[...root.children];
+    // Cap transient layers when someone scrubs the slider rapidly.
+    if(old.length>3){old.slice(0,-3).forEach(node=>node.remove());old=old.slice(-3);}
+    root.appendChild(incoming);
+    // Force initial opacity into style engine before fading the new layer in.
+    void incoming.getBoundingClientRect();
+    requestAnimationFrame(()=>{incoming.style.opacity='1';old.forEach(node=>node.style.opacity='0');});
+    setTimeout(()=>old.forEach(node=>{if(node.isConnected)node.remove();}),830);
+  }
+  const dot=(x,y,r,fill,opacity=1)=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${fill}" opacity="${opacity}"/>`;
+  function drawOvary(){let s=stages(),k=s.kind,d=state.day,ov=ovDay(),isFol=['early','antral','dominant','preov','ovulation'].includes(k);
+    let svg=`<defs><radialGradient id="ov-bg"><stop stop-color="#783c70"/><stop offset=".75" stop-color="#552f5d"/><stop offset="1" stop-color="#382345"/></radialGradient><radialGradient id="fol-fluid"><stop stop-color="#7fe8f0" stop-opacity=".24"/><stop offset="1" stop-color="#87d8ef" stop-opacity=".65"/></radialGradient><radialGradient id="cl-bg"><stop stop-color="#ffe29c"/><stop offset=".75" stop-color="#e9a24b"/><stop offset="1" stop-color="#b96a3e"/></radialGradient></defs>`;
+    svg+=`<path d="M63 162 C48 99 88 60 150 52 C225 31 328 60 382 91 C431 116 433 199 379 231 C310 272 204 252 117 241 C78 236 60 200 63 162Z" fill="url(#ov-bg)" stroke="#cc7fb5" stroke-width="3"/><path d="M78 152 C72 101 112 78 169 65 C251 49 330 80 377 105 C406 121 408 193 365 216" fill="none" stroke="#e99bcb" stroke-opacity=".18" stroke-width="14" stroke-linecap="round"/>`;
+    const babies=[[126,115,14],[177,201,9],[112,184,8],[315,91,10],[343,197,13],[166,91,8],[290,224,7]];
+    babies.forEach(([x,y,r],i)=>svg+=`<circle cx="${x}" cy="${y}" r="${r}" fill="#7b487a" stroke="#e8a8ce" stroke-width="3" opacity=".72"/>${dot(x,y,Math.max(2,r*.28),'#f9dbd0')}`);
+    if(isFol){let radius=k==='early'?25:k==='antral'?42:k==='dominant'?64:k==='preov'?71:71,cx=252,cy=151;
+      svg+=`<circle cx="${cx}" cy="${cy}" r="${radius+7}" fill="#e7a3d2" opacity=".12"/><circle cx="${cx}" cy="${cy}" r="${radius}" fill="url(#fol-fluid)" stroke="#fbb5dc" stroke-width="8"/>`;
+      for(let a=0;a<22;a++){let angle=a*Math.PI*2/22;svg+=dot((cx+(radius-4)*Math.cos(angle)).toFixed(1),(cy+(radius-4)*Math.sin(angle)).toFixed(1),2.8,'#ffbedc',.85);}
+      if(k==='early'){svg+=dot(cx-3,cy+3,9,'#ffcf7d')+dot(cx-3,cy+3,5,'#ffedcd');}
+      else {svg+=`<path d="M ${cx-23} ${cy+18} Q ${cx-8} ${cy+12} ${cx+9} ${cy+31}" stroke="#e5a2c8" stroke-width="11" stroke-linecap="round" fill="none"/>`;
+        svg+=dot(cx-23,cy+19,13,'#f9c968')+`<circle cx="${cx-23}" cy="${cy+19}" r="10" fill="none" stroke="#fae7c6" stroke-width="3"/>`+dot(cx-23,cy+19,4,'#f8f2d7');}
+      if(k==='ovulation'){
+        svg+=`<path d="M 300 95 Q 322 73 345 82" fill="none" stroke="#132037" stroke-width="18"/><path d="M322 88 Q345 66 370 56" stroke="#ffc788" stroke-dasharray="5 7" stroke-width="2" fill="none"/>`;
+        svg+=dot(388,51,18,'#7c557b')+dot(388,51,13,'#ffca75')+dot(388,51,8,'#fae5bd')+dot(388,51,4,'#e7a06a');
+        svg+=`<path d="M398 58 L426 77" stroke="#f5b4d5" stroke-width="1.5"/><text x="429" y="84" font-size="11" fill="#ffe6d5">Oosit II</text>`;
+      }
+    }else{
+      const late=k==='regression',cx=252,cy=150,r=late?28:k==='earlyluteal'?46:60;
+      let pts=[];for(let i=0;i<44;i++){let a=i*Math.PI*2/44,rad=r*(i%4===0?.83:i%3===0?1.04:.96);pts.push(`${(cx+rad*Math.cos(a)).toFixed(1)},${(cy+rad*Math.sin(a)).toFixed(1)}`)}
+      svg+=`<polygon points="${pts.join(' ')}" fill="${late?'#c5afa9':'url(#cl-bg)'}" stroke="${late?'#e7d9d2':'#ffd59a'}" stroke-width="4"/>`;
+      if(!late)for(let i=0;i<12;i++){const a=i/12*Math.PI*2;svg+=`<path d="M${cx+12*Math.cos(a)} ${cy+12*Math.sin(a)} Q${cx+34*Math.cos(a+.18)} ${cy+34*Math.sin(a+.18)} ${cx+(r-7)*Math.cos(a)} ${cy+(r-7)*Math.sin(a)}" stroke="#9c4e56" stroke-width="${k==='earlyluteal'?3:4.5}" stroke-linecap="round" opacity=".7" fill="none"/>`;}else svg+=`<path d="M235 145 Q252 118 265 158 Q240 168 260 177" fill="none" stroke="#fff3ed" stroke-width="3" opacity=".7"/>`;
+    }
+    svg+=`<path d="M389 101 C415 93 452 100 460 129" fill="none" stroke="#86acc8" stroke-width="2" stroke-dasharray="4 6" opacity=".4"/><text x="72" y="270" fill="#c49cbd" font-size="11" letter-spacing="1.2">STROMA OVARIUM</text>`;
+    crossfadeScene('ovary-svg',svg);
+    $('ovary-stage').textContent='◉ '+s.title;$('ovary-explainer').textContent=s.explain;$('oocyte-note').textContent=s.oocyte;
+  }
+  function thickness(){let d=state.day,ov=ovDay(),n=state.length;
+    if(d<=5)return 12+(5-d)*4;
+    if(d<=ov)return 19+(d-5)/Math.max(1,ov-5)*32;
+    if(d<=n-4)return 51+22*Math.sin((d-ov)/(n-4-ov)*Math.PI/2);
+    return 66+(d-(n-4))*(-4);
+  }
+  const bleedIntensity={1:.48,2:1,3:.82,4:.43,5:.17};
+  const bleedDescriptions={
+    1:['Awal peluruhan','Awal menstruasi: penurunan hormon ovarium pada akhir siklus sebelumnya memicu peluruhan stratum functionale.'],
+    2:['Aliran lebih banyak','Model menunjukkan aliran lebih deras: darah bercampur mukus dan fragmen stratum functionale bergerak ke serviks.'],
+    3:['Peluruhan berlangsung','Sebagian jaringan fungsional masih meluruh, sementara proses hemostasis dan perbaikan mulai berlangsung.'],
+    4:['Aliran berkurang','Daerah endometrium yang terluka mengalami perbaikan dan re-epitelisasi; aliran model berkurang.'],
+    5:['Akhir menstruasi','Aliran model tersisa sedikit; stratum basale menjadi sumber regenerasi lapisan fungsional berikutnya.']
+  };
+  const reducedMotion=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function bleedingSvg(){
+    // Built once. Continuous motion is never restarted when a day changes.
+    const trails=[
+      'M194 106 C201 126 228 145 239 170 C253 197 250 232 250 279',
+      'M306 106 C297 125 271 146 261 169 C247 198 252 233 250 279',
+      'M226 103 C233 128 245 149 249 179 C250 203 250 238 250 280',
+      'M275 102 C266 127 260 150 253 180 C250 205 252 244 250 280',
+      'M179 104 C195 112 222 129 242 164 C252 195 251 242 250 281'
+    ];
+    let particleGroups=['','',''];
+    for(let i=0;i<27;i++){
+      const radius=(1.45+(i%4)*.48).toFixed(2),j=i%trails.length;
+      const duration=(2.8+(i%7)*.43).toFixed(2),begin=(-(i*.247+.23)).toFixed(2);
+      const el=reducedMotion
+        ? `<ellipse cx="${246+(i%5)*2}" cy="${117+i*5%145}" rx="${radius}" ry="${(+radius*1.4).toFixed(2)}" fill="${i%4?'#c02d57':'#f17b8a'}"/>`
+        : `<ellipse cx="0" cy="0" rx="${radius}" ry="${(+radius*1.4).toFixed(2)}" fill="${i%4?'#bf2c52':'#f17b8a'}"><animateMotion path="${trails[j]}" dur="${duration}s" begin="${begin}s" repeatCount="indefinite" calcMode="linear"/></ellipse>`;
+      particleGroups[i<8?0:i<17?1:2]+=el;
+    }
+    let fragmentMarkup='';
+    for(let i=0;i<8;i++){
+      const a=i%2===0?'M205 110 C218 130 242 159 247 195 S249 243 250 270':'M296 108 C276 128 261 159 254 194 S251 244 250 270';
+      const duration=(4.8+i*.31).toFixed(2),begin=(-(i*.71)).toFixed(2),sz=3.4+i%3;
+      fragmentMarkup+=`<path d="M${-sz} ${-sz/2} L${sz*.2} ${-sz} L${sz} 0 L${sz*.4} ${sz} L${-sz*.8} ${sz*.5} Z" fill="${i%2?'#e6a0b1':'#c75577'}" stroke="#ab3758" stroke-width=".6">${reducedMotion?'':`<animateMotion path="${a}" dur="${duration}s" begin="${begin}s" repeatCount="indefinite" rotate="auto"/>`}</path>`;
+    }
+    return `<g id="bleed-root" aria-label="Darah dan fragmen lapisan endometrium bergerak menuju serviks">
+      <defs><linearGradient id="bleed-gradient" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ee8092"/><stop offset="1" stop-color="#a61b47"/></linearGradient></defs>
+      <path id="bleed-upper" class="bleed-breath" d="M178 105 Q212 95 234 101 C241 122 248 142 250 169 C252 143 270 118 278 102 Q309 97 326 104" fill="none" stroke="#b73158" stroke-width="5" opacity=".5" stroke-linecap="round"/>
+      <path d="M194 107 C217 132 240 155 247 187 C251 210 249 247 250 270 M305 107 C281 134 262 155 254 190 C250 213 252 243 250 270" fill="none" stroke="#eb6a82" stroke-width="5" opacity=".42" stroke-linecap="round"/>
+      <path id="bleed-stream" class="blood-stream" d="M194 107 C217 132 240 155 247 187 C251 210 249 247 250 270 M305 107 C281 134 262 155 254 190 C250 213 252 243 250 270" fill="none" stroke="url(#bleed-gradient)" stroke-width="4" stroke-dasharray="5 9" stroke-linecap="round" opacity=".9"/>
+      <path d="M244 215 Q250 226 256 215 L254 265 Q250 273 246 265Z" fill="#9f1e45" opacity=".55"/>
+      <g id="bleed-base" fill-opacity=".85">${particleGroups[0]}</g>
+      <g id="bleed-mid" fill-opacity=".76">${particleGroups[1]}</g>
+      <g id="bleed-strong" fill-opacity=".88">${particleGroups[2]}</g>
+      <g id="bleed-fragments" opacity=".7">${fragmentMarkup}</g>
+      <path d="M250 270 C243 276 249 282 250 281 C255 276 252 271 250 270 Z" fill="#d74365" opacity=".65"/>
+    </g>`;
+  }
+  function updateBleedingVisual(){
+    const d=state.day,strength=bleedIntensity[d]||0;
+    const root=$('bleed-root');if(!root)return;
+    root.style.opacity=strength?String(.32+strength*.68):'0';
+    $('bleed-base').style.opacity=strength?'1':'0';
+    $('bleed-mid').style.opacity=String(clamp((strength-.12)/.5,0,1));
+    $('bleed-strong').style.opacity=String(clamp((strength-.48)/.52,0,1));
+    $('bleed-fragments').style.opacity=String(clamp(strength*.95,0,.86));
+    $('bleed-upper').style.strokeWidth=(3.4+strength*3).toFixed(2);
+    $('bleed-stream').style.strokeWidth=(2.5+strength*3).toFixed(2);
+  }
+  function updateBleeding(){
+    const d=state.day,active=d<=5,intensity=bleedIntensity[d]||0;
+    const [title,explain]=active?bleedDescriptions[d]:['Tidak ada perdarahan','Lapisan fungsional endometrium sedang beregenerasi atau dipertahankan. Tidak ada aliran darah menstruasi pada model hari ini.'];
+    $('bleeding-heading').textContent=title;
+    $('bleeding-current').textContent=active?'Hari '+d+' · intensitas relatif '+(intensity>=.8?'tinggi':intensity>=.4?'sedang':'rendah'):'Fase '+uterinePhase(d).toLowerCase();
+    $('bleeding-explainer').textContent=explain;
+    $('bleed-indicator').classList.toggle('active',active);
+    document.querySelectorAll('.bleeding-day').forEach(b=>{const selected=Number(b.dataset.mday)===d;b.classList.toggle('selected',selected);b.setAttribute('aria-pressed',String(selected));});
+  }
+  function drawUterus(){let d=state.day,endo=uterineStage(),t=thickness(),sw=3.7+t/9.5;
+    const svg=`<defs><linearGradient id="myom" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a25a77"/><stop offset="1" stop-color="#673956"/></linearGradient><linearGradient id="endo-lining" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f4b1cb"/><stop offset="1" stop-color="#df7c9e"/></linearGradient></defs>
+      <path d="M128 66 C89 49 56 66 40 94 M372 66 C411 49 444 66 460 94" fill="none" stroke="#b46f8e" stroke-width="16" stroke-linecap="round"/><path d="M128 66 C89 49 56 66 40 94 M372 66 C411 49 444 66 460 94" fill="none" stroke="#e5a3bb" stroke-width="5" stroke-linecap="round"/>
+      <path d="M40 95 Q33 106 44 113 M460 95 Q467 106 456 113" stroke="#cb86a1" stroke-width="9" fill="none" stroke-linecap="round"/>
+      <path d="M118 74 C153 43 197 54 248 66 C299 54 347 43 382 74 C392 102 375 141 330 166 C294 186 278 207 276 231 L277 263 L223 263 L224 231 C222 207 206 186 170 166 C125 141 108 102 118 74Z" fill="url(#myom)" stroke="#d787a5" stroke-width="3"/>
+      <path id="uterus-lining" d="M159 96 Q250 68 341 96 Q316 118 294 139 Q261 169 258 205 L258 252 L242 252 L242 205 Q239 169 206 139 Q184 118 159 96Z" fill="none" stroke="url(#endo-lining)" stroke-width="${sw}" stroke-linejoin="round" opacity=".95"/>
+      <path d="M165 98 Q250 76 335 98 Q309 123 288 145 Q250 181 250 214 Q250 181 212 145 Q191 123 165 98Z" fill="#111a2c" stroke="#ffc7d7" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M249 218 L249 264" fill="none" stroke="#1d293b" stroke-width="5"/>
+      ${bleedingSvg()}
+      <path d="M319 151 L375 189" fill="none" stroke="#ffd2df" stroke-width="1.2"/><circle cx="319" cy="151" r="3" fill="#ffcee0"/><text x="380" y="193" font-size="12" fill="#e9b4ca">Endometrium</text>
+      <path d="M166 150 L102 191" fill="none" stroke="#deb0c8" stroke-width="1.2"/><circle cx="166" cy="150" r="3" fill="#deb0c8"/><text x="23" y="201" font-size="12" fill="#d4b0ce">Miometrium</text>
+      <text x="250" y="288" font-size="11" fill="#849bb6" text-anchor="middle">Kavum uteri & serviks (skematis)</text>`;
+    if(!$('uterus-svg').childElementCount)$('uterus-svg').innerHTML=svg;
+    $('uterus-lining').style.strokeWidth=sw.toFixed(2);
+    updateBleedingVisual();
+    $('uterus-stage').textContent='▤ '+endo.title;$('uterus-explainer').textContent=endo.explain;$('endo-note').textContent=endo.note;
+    drawHistology(endo.kind,t);
+    updateBleeding();
+  }
+  function drawHistology(kind,t){let menstrual=kind==='menstrual',secretory=kind==='secretory'||kind==='late',late=kind==='late';
+    const surface=clamp(137-t*1.26,35,121),base=138,upper=surface;
+    let path=`M 8 ${upper}`;for(let x=8;x<=492;x+=8){let wave=Math.sin(x/24)*2+(secretory?Math.sin(x/8)*2.2:0);path+=` L ${x} ${(upper+wave).toFixed(1)}`;}path+=` L 492 ${base} L 8 ${base}Z`;
+    let svg=`<defs><linearGradient id="endo-f" x1="0" y1="0" x2="0" y2="1"><stop stop-color="${menstrual?'#9a4b64':'#f2a0b7'}"/><stop offset="1" stop-color="#bd567a"/></linearGradient></defs><rect x="8" y="138" width="484" height="25" fill="#8b4f6f"/><rect x="8" y="163" width="484" height="7" fill="#533553"/><path d="${path}" fill="url(#endo-f)" stroke="#ffc2d3" stroke-width="1.5"/>`;
+    // Secretory phase: tortuous glands, proliferative phase: relatively straight glands.
+    let avail=138-upper;
+    for(let i=0;i<9;i++){let x=32+i*53;let yEnd=128,yy=Math.max(upper+7,127-avail*.73);
+      if(!menstrual&&avail>24){
+        let p=secretory?`M${x} ${yEnd} C${x-14} ${yEnd-15},${x+13} ${yy+16},${x-5} ${yy} S${x+12} ${upper+11},${x} ${upper+5}`:`M${x} ${yEnd} Q${x+4} ${(yEnd+upper)/2} ${x} ${upper+7}`;
+        svg+=`<path d="${p}" stroke="#ffe1ec" stroke-width="${secretory?6:4}" opacity=".92" fill="none" stroke-linecap="round"/><path d="${p}" stroke="#9c4b6b" stroke-width="${secretory?2.5:1.7}" fill="none"/>`;
+      }
+      let bx=x+17;let vl=secretory?9:5;
+      svg+=`<path d="M${bx} 138 Q${bx-7} ${126} ${bx+1} ${115} Q${bx+vl} ${102} ${bx-3} ${Math.max(upper+9,86)}" fill="none" stroke="#992a54" stroke-width="2.2" opacity="${menstrual?.4:.7}"/>`;
+    }
+    if(menstrual||late){for(let i=0;i<16;i++){let xx=20+i*30,yy=surface-6-(i%4)*3;svg+=`<path d="M${xx} ${yy} l${3+i%3} 7 l-5 3" stroke="#f37b92" stroke-width="2" fill="none" opacity=".85"/>`;}}
+    if(menstrual){
+      const flow=bleedIntensity[state.day]||0;
+      for(let i=0;i<19;i++){
+        const xx=17+i*25,dy=(i*13)%23,yy=Math.max(28,surface-9-dy),size=1.7+(i%4)*.8;
+        svg+=`<path d="M${xx} ${yy} l${size*1.6} ${-size} l${size} ${size*1.3} l-${size*1.5} ${size}Z" fill="${i%3===0?'#f5aeb5':'#c43e66'}" opacity="${(.3+flow*.55).toFixed(2)}"/>`;
+      }
+      svg+=`<path d="M8 ${surface-3} Q80 ${surface+3} 130 ${surface-4} T245 ${surface-2} T370 ${surface-5} T492 ${surface-2}" stroke="#d73560" stroke-width="${(1+flow*3).toFixed(1)}" stroke-dasharray="6 7" opacity=".7" fill="none"/>`;
+    }
+    if(secretory&&!late){for(let i=0;i<26;i++){let xx=17+i*18,yy=surface+12+((i*17)%Math.max(12,Math.floor(avail-15)));svg+=dot(xx,yy,1.4,'#f7d2bd',.8);}}
+    svg+=`<text x="13" y="12" fill="#b3c8df" font-size="10">KAVUM UTERI</text><text x="13" y="154" fill="#ffe0ed" font-size="10">BASALE</text><text x="487" y="153" text-anchor="end" fill="#ffe0ed" font-size="10">MIOMETRIUM ↓</text>`;
+    crossfadeScene('endo-svg',svg);
+  }
+  function updateHero(){let d=state.day,ov=ovDay(),u=uterinePhase(d),o=ovarianPhase(d);let title,desc;
+    if(d<=5){title='Menstruasi';desc='Lapisan fungsional endometrium meluruh; di ovarium rekrutmen folikel berlangsung.';}
+    else if(d<ov-1){title='Pertumbuhan folikel';desc='Estradiol bertambah, folikel dominan berkembang, dan endometrium beregenerasi.';}
+    else if(d===ov-1){title='Menjelang ovulasi';desc='Estradiol yang tinggi memicu umpan balik positif dan lonjakan LH.';}
+    else if(d===ov){title='Ovulasi';desc='Folikel dominan ruptur dan melepaskan oosit sekunder ke arah tuba uterina.';}
+    else if(d>state.length-4){title='Fase pramenstruasi';desc='Tanpa implantasi, korpus luteum mengalami regresi dan hormon steroid turun.';}
+    else {title='Fase luteal';desc='Progesteron dari korpus luteum mematangkan endometrium menjadi sekretorik.';}
+    $('hero-day').textContent=d;$('hero-phase').textContent=title;$('hero-desc').textContent=desc;$('state-index').textContent=String(d).padStart(2,'0')+' / '+state.length;
+    $('hero-ov').textContent='OVARIUM · '+o;$('hero-ut').textContent='UTERUS · '+u;
+  }
+  function render(){state.day=clamp(state.day,1,state.length);$('day').max=state.length;$('day').value=state.day;$('day').style.setProperty('--p',`${(state.day-1)/(state.length-1)*100}%`);updateHero();updateTimeline();drawChart();hormoneCards();drawOvary();drawUterus();}
+  function setDay(d){if(!Number.isFinite(d))return;const next=clamp(d,1,state.length);if(next===state.day)return;state.day=next;render();}
+  function stop(){
+    if(state.timer!==null)clearInterval(state.timer);
+    state.timer=null;state.playing=false;state.demo=false;
+    $('play-text').textContent='Putar';$('play-icon').textContent='▶';$('play').setAttribute('aria-label','Putar animasi');
+    $('bleed-demo-text').textContent='Simulasikan H1–H5';$('bleed-demo-icon').textContent='▶';$('bleed-demo').classList.remove('running');$('bleed-demo').setAttribute('aria-label','Putar simulasi menstruasi hari 1 sampai 5');
+  }
+  function play(){if(state.playing){stop();return;}stop();state.playing=true;$('play-text').textContent='Jeda';$('play-icon').textContent='Ⅱ';$('play').setAttribute('aria-label','Jeda animasi');state.timer=setInterval(()=>setDay(state.day===state.length?1:state.day+1),Math.round(1250/state.speed));}
+  function playBleeding(startAt=1){
+    if(state.demo){stop();return;}
+    stop();state.demo=true;state.playing=true;setDay(startAt);
+    $('bleed-demo-text').textContent='Hentikan simulasi';$('bleed-demo-icon').textContent='Ⅱ';$('bleed-demo').classList.add('running');$('bleed-demo').setAttribute('aria-label','Hentikan simulasi menstruasi');
+    state.timer=setInterval(()=>{if(state.day>=5){stop();return;}setDay(state.day+1);},Math.round(2450/state.speed));
+  }
+  $('day').addEventListener('input',e=>setDay(Number(e.target.value)));
+  $('length').addEventListener('change',e=>{state.length=Number(e.target.value);if(state.day>state.length)state.day=state.length;render();});
+  $('prev').addEventListener('click',()=>setDay(state.day===1?state.length:state.day-1));
+  $('next').addEventListener('click',()=>setDay(state.day===state.length?1:state.day+1));
+  $('play').addEventListener('click',play);
+  $('speed').addEventListener('change',e=>{state.speed=Number(e.target.value);if(state.playing){const wasDemo=state.demo,current=state.day;stop();if(wasDemo)playBleeding(current);else play();}});
+  $('bleed-demo').addEventListener('click',()=>playBleeding());
+  document.querySelectorAll('.bleeding-day').forEach(button=>button.addEventListener('click',()=>{if(state.demo)stop();setDay(Number(button.dataset.mday));}));
+  for(const el of ['ovarian-timeline','uterine-timeline']){
+    $(el).addEventListener('click',e=>{let box=e.currentTarget.getBoundingClientRect();setDay(Math.floor((e.clientX-box.left)/box.width*state.length)+1);});
+    $(el).addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();setDay(e.key==='Home'?1:e.key==='End'?state.length:state.day+(e.key==='ArrowRight'?1:-1));}});
+  }
+  document.addEventListener('visibilitychange',()=>{if(document.hidden&&state.playing)stop();});
+  document.addEventListener('keydown',e=>{if(['INPUT','SELECT','BUTTON'].includes(document.activeElement?.tagName))return;if(e.key==='ArrowRight')setDay(state.day+1);if(e.key==='ArrowLeft')setDay(state.day-1);});
+
+  const quiz=[
+    {q:'Peristiwa apa yang terutama memicu ovulasi?',options:['Penurunan FSH mendadak','Lonjakan LH setelah paparan estradiol tinggi','Puncak progesteron fase luteal','Penurunan kadar inhibin di akhir siklus'],correct:1,exp:'Estradiol tinggi yang menetap memicu umpan balik positif pada aksis reproduksi sehingga terjadi LH surge.'},
+    {q:'Sel apa yang secara fisiologis dilepaskan saat ovulasi?',options:['Oosit primer yang masih berada di profase I','Oogonium','Oosit sekunder yang tertahan pada metafase II','Ovum yang telah menyelesaikan meiosis II'],correct:2,exp:'Oosit menyelesaikan meiosis I menjelang ovulasi, lalu oosit sekunder tertahan pada metafase II sampai fertilisasi.'},
+    {q:'Hormon dominan yang menginduksi perubahan sekretorik endometrium adalah ...',options:['Progesteron','FSH','Prolaktin','Oksitosin'],correct:0,exp:'Progesteron dari korpus luteum mengubah endometrium yang sudah diproliferasi estrogen menjadi sekretorik.'},
+    {q:'Apa yang paling tepat menjelaskan awal menstruasi pada siklus tanpa kehamilan?',options:['hCG mempertahankan korpus luteum','Estradiol terus meningkat','Korpus luteum mengalami regresi sehingga progesteron turun','Oosit sekunder membelah menjadi blastokista'],correct:2,exp:'Regresi korpus luteum menurunkan progesteron dan estradiol sehingga stratum functionale endometrium luruh.'}
+  ];
+  let qi=0,score=0,answered=false;
+  function renderQuiz(){let q=quiz[qi];answered=false;$('quiz-question').textContent=q.q;$('quiz-options').innerHTML='';$('quiz-feedback').textContent='Pilih satu jawaban untuk melihat pembahasan.';$('quiz-progress').textContent=`Soal ${qi+1}/${quiz.length} · Skor ${score}`;$('quiz-next').disabled=true;$('quiz-next').textContent=qi===quiz.length-1?'Ulangi kuis ↻':'Selanjutnya →';
+    q.options.forEach((opt,index)=>{let b=document.createElement('button');b.className='quiz-option';b.textContent=String.fromCharCode(65+index)+'. '+opt;b.addEventListener('click',()=>{
+      if(answered)return;answered=true;if(index===q.correct)score++;
+      [...$('quiz-options').children].forEach((node,j)=>{node.disabled=true;if(j===q.correct)node.classList.add('correct');else if(j===index)node.classList.add('wrong');});
+      $('quiz-feedback').textContent=(index===q.correct?'✓ Tepat. ':'✕ Belum tepat. ')+q.exp;$('quiz-next').disabled=false;$('quiz-progress').textContent=`Soal ${qi+1}/${quiz.length} · Skor ${score}`;
+    });$('quiz-options').append(b);});
+  }
+  $('quiz-next').addEventListener('click',()=>{if(qi===quiz.length-1){qi=0;score=0;}else qi++;renderQuiz();});
+  legend();render();renderQuiz();
+})();
+</script>
+</body>
+</html>
