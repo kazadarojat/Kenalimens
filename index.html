@@ -204,6 +204,77 @@
     @media(max-width:1100px){.phase-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:750px){.phase-explorer{padding:13px}.phase-card{padding:10px 9px}.phase-card-icon{width:32px;height:32px}.phase-card-content strong{font-size:11px}.phase-card-content small{font-size:9px}.motion-toggle{width:39px;padding:0}.motion-toggle #motion-text{display:none}.appearance-controls{flex-shrink:1;min-width:0}.font-control select{max-width:104px}}
     @media(max-width:420px){.phase-grid{gap:7px}.phase-card{gap:7px}.phase-card-icon{width:27px;height:31px;font-size:17px}.phase-card-arrow{display:none}.phase-card-content strong{font-size:10px}.phase-card-content small{font-size:8px}.motion-toggle{width:35px;height:37px}.theme-toggle{height:37px}.font-control{height:37px}.font-control select{max-width:97px}.brand{font-size:14px}.appearance-controls{gap:4px}}
+
+    /* v1.4 • Hero typography and microinteractions. No external animation libraries. */
+    .hero-copy{position:relative;isolation:isolate;min-width:0;--hero-x:47%;--hero-y:41%}
+    .hero-copy::before{content:"";position:absolute;z-index:-1;inset:-34px -34px 0 -30px;background:radial-gradient(ellipse 370px 250px at var(--hero-x) var(--hero-y),rgba(206,154,255,.14),transparent 76%),radial-gradient(ellipse 235px 185px at 15% 60%,rgba(89,209,226,.06),transparent 72%);pointer-events:none;opacity:.9;transition:opacity .25s ease}
+    .hero-atmosphere{position:absolute;z-index:-1;inset:-45px -22px -20px -25px;overflow:hidden;pointer-events:none}
+    .hero-halo{position:absolute;width:270px;height:270px;right:0;top:1px;border-radius:50%;border:1px solid rgba(188,163,255,.13);box-shadow:0 0 0 25px rgba(151,134,241,.027),0 0 0 75px rgba(117,198,234,.021);transform:rotate(-18deg);opacity:.7}
+    .hero-star{position:absolute;color:#bfa8ff;opacity:.55;font:20px/1 var(--font-display),sans-serif;filter:drop-shadow(0 0 9px #bc99ff70);pointer-events:none}
+    .hs-1{left:12%;top:3%;font-size:16px;animation:km-stardrift 8s ease-in-out infinite alternate}
+    .hs-2{right:19%;top:19%;font-size:26px;color:#90e7ef;animation:km-stardrift 9s -2s ease-in-out infinite alternate}
+    .hs-3{right:6%;top:58%;font-size:34px;color:#f5a7dc;animation:km-stardrift 7s -4s ease-in-out infinite alternate}
+    .hs-4{left:5%;bottom:16%;font-size:12px;color:#7bdccf;animation:km-stardrift 9s -1s ease-in-out infinite alternate}
+    .hs-5{right:31%;bottom:17%;font-size:14px;animation:km-stardrift 11s -5s ease-in-out infinite alternate}
+    .hero-copy .eyebrow{position:relative;z-index:1}
+    .hero-copy .eyebrow::before{animation:km-beacon 3.3s ease-in-out infinite}
+    .kinetic-title{position:relative;z-index:1;max-width:100%;width:max-content;perspective:950px;transform-style:preserve-3d;line-height:1.13!important;letter-spacing:-.045em!important;padding:0 10px 15px 0;margin-bottom:12px!important}
+    .hero h1 .headline-row{display:flex;align-items:baseline;column-gap:.23em;row-gap:0;flex-wrap:wrap;max-width:100%;color:var(--text);background:none;animation:none}
+    .hero h1 .headline-word{display:inline-block;position:relative;white-space:nowrap;background:none;color:var(--text);-webkit-text-fill-color:currentColor;animation:none;transform-origin:50% 75%;transition:filter .3s}
+    .hero h1 .headline-word--gradient{background:linear-gradient(108deg,#f79dcf 0%,#d6aeff 26%,#8adcf3 49%,#f1a4d8 70%,#bca3ff 100%);background-size:270% 100%;background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 18px rgba(171,139,255,.08))}
+    .kinetic-title .headline-row-second{margin-top:0}
+    .headline-underline{display:block;position:absolute;z-index:0;bottom:1px;left:2px;width:min(65%,365px);height:4px;transform:scaleX(1);transform-origin:left center;background:linear-gradient(90deg,#ef86ba 0%,#a7a9ef 57%,#71e0df 100%);border-radius:99px;opacity:.82;box-shadow:0 0 18px #b69aff6b}
+    .headline-underline::after{content:"";position:absolute;right:0;top:-4px;width:11px;height:11px;border-radius:50%;background:#a5eaf0;box-shadow:0 0 16px #a5eaf0a8}
+    .headline-spark{position:absolute;right:-17px;top:-10px;font-size:26px;color:#ffe1f4;filter:drop-shadow(0 0 11px #e7aaff92);line-height:1;pointer-events:none}
+    .hero-copy > p{position:relative;z-index:1}
+    .hero-copy .hero-pills{position:relative;z-index:1}
+    .hero-copy .hero-pills span{position:relative;overflow:hidden;transition:background-color .28s,border-color .28s,box-shadow .28s,transform .3s cubic-bezier(.2,.8,.2,1)}
+    .hero-copy .hero-pills span:hover{transform:translateY(-3px);border-color:#af91db;box-shadow:0 8px 20px #9175dc2b;background:#a88ed617}
+    .hero-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:19px}
+    .hero-replay{background:transparent;border:1px solid rgba(161,155,217,.35);border-radius:9px;padding:8px 11px;color:var(--muted);display:inline-flex;gap:7px;align-items:center;font-size:10.5px;font-weight:700;transition:transform .2s,border-color .2s,background-color .2s,color .2s}
+    .hero-replay:hover:not(:disabled){border-color:#b7a2f5;color:var(--text);background:#a695ed15;transform:translateY(-2px)}
+    .hero-replay:disabled{opacity:.46;cursor:not-allowed}
+    .replay-symbol{font-size:18px;line-height:.9;display:inline-block}
+    .hero-replay:hover:not(:disabled) .replay-symbol{transform:rotate(35deg);transition:transform .25s}
+    .hero-microhint{font-size:10px;color:var(--faint)}
+    .navlinks a{position:relative;transition:color .2s}
+    .navlinks a::after{content:"";position:absolute;bottom:-9px;left:0;width:100%;height:2px;border-radius:4px;background:linear-gradient(90deg,#f58bbb,#8de6f0);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+    .navlinks a:hover::after,.navlinks a:focus-visible::after{transform:scaleX(1)}
+    .navlinks a:hover{color:var(--text)}
+    html[data-theme="light"] .hero-copy::before{background:radial-gradient(ellipse 360px 250px at var(--hero-x) var(--hero-y),rgba(174,129,217,.13),transparent 76%)}
+    html[data-theme="light"] .hero h1 .headline-word--gradient{background-image:linear-gradient(108deg,#bd447f,#7f49b7 30%,#268aa4 52%,#bb457e 73%,#7a61c5);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    html[data-theme="light"] .hero-replay{border-color:#c7d3e5;color:#5a6880}
+    html[data-theme="light"] .hero-replay:hover:not(:disabled){color:#243b61;border-color:#a28cde}
+    html[data-theme="light"] .hero-halo{border-color:#6d67bc20;opacity:.5}
+    html[data-motion="on"] .is-hero-animating .headline-word{animation:km-word-reveal .95s both cubic-bezier(.18,.82,.21,1);animation-delay:var(--word-delay)}
+    html[data-motion="on"] .is-hero-animating .headline-word--gradient{animation:km-word-reveal .95s both cubic-bezier(.18,.82,.21,1),km-spectrum 9s 1.4s linear infinite;animation-delay:var(--word-delay),0s}
+    html[data-motion="on"] .is-hero-animating .headline-underline{animation:km-underline 1.05s .83s both cubic-bezier(.18,.88,.2,1)}
+    html[data-motion="on"] .is-hero-animating .headline-spark{animation:km-spark 1.05s .97s both ease-out,km-twinkle 4s 2s ease-in-out infinite}
+    html[data-motion="on"] .is-hero-animating .eyebrow{animation:km-subtle-enter .7s .07s both ease-out}
+    html[data-motion="on"] .is-hero-animating > p{animation:km-subtle-enter .75s .75s both ease-out}
+    html[data-motion="on"] .is-hero-animating .hero-pills span{animation:km-pill-enter .55s both cubic-bezier(.18,.88,.2,1)}
+    html[data-motion="on"] .is-hero-animating .hero-pills span:nth-child(1){animation-delay:.85s}
+    html[data-motion="on"] .is-hero-animating .hero-pills span:nth-child(2){animation-delay:.94s}
+    html[data-motion="on"] .is-hero-animating .hero-pills span:nth-child(3){animation-delay:1.03s}
+    html[data-motion="on"] .is-hero-animating .hero-pills span:nth-child(4){animation-delay:1.12s}
+    html[data-motion="on"] .is-hero-animating .hero-pills span:nth-child(5){animation-delay:1.21s}
+    html[data-motion="on"] .is-hero-animating .hero-actions{animation:km-subtle-enter .7s 1.3s both ease-out}
+    @keyframes km-word-reveal{0%{opacity:0;transform:translate3d(0,.52em,0) rotateX(-13deg);filter:blur(11px)}65%{opacity:1;filter:blur(1px)}100%{opacity:1;transform:translate3d(0,0,0) rotateX(0);filter:blur(0)}}
+    @keyframes km-spectrum{0%{background-position:0% 50%}100%{background-position:100% 50%}}
+    @keyframes km-underline{0%{opacity:0;transform:scaleX(0)}100%{opacity:.82;transform:scaleX(1)}}
+    @keyframes km-spark{0%{opacity:0;transform:scale(.3) rotate(-50deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+    @keyframes km-twinkle{0%,100%{opacity:.45;scale:.9}50%{opacity:1;scale:1.18}}
+    @keyframes km-subtle-enter{0%{opacity:0;transform:translateY(15px)}100%{opacity:1;transform:translateY(0)}}
+    @keyframes km-pill-enter{0%{opacity:0;transform:translateY(12px) scale(.96)}100%{opacity:1;transform:translateY(0) scale(1)}}
+    @keyframes km-stardrift{0%,100%{opacity:.19;transform:translate3d(-3px,3px,0) rotate(-14deg)}45%{opacity:.58;transform:translate3d(6px,-12px,0) rotate(15deg)}}
+    @keyframes km-beacon{0%,100%{box-shadow:0 0 0 4px #65e9d20f}50%{box-shadow:0 0 0 7px #65e9d22d,0 0 14px #65e9d266}}
+    html[data-motion="off"] .hero-copy::before{opacity:.37}
+    html[data-motion="off"] .hero-star,html[data-motion="off"] .eyebrow::before,html[data-motion="off"] .is-hero-animating .headline-word,html[data-motion="off"] .is-hero-animating .headline-word--gradient,html[data-motion="off"] .is-hero-animating .headline-underline,html[data-motion="off"] .is-hero-animating .headline-spark,html[data-motion="off"] .is-hero-animating .eyebrow,html[data-motion="off"] .is-hero-animating > p,html[data-motion="off"] .is-hero-animating .hero-pills span,html[data-motion="off"] .is-hero-animating .hero-actions{animation:none!important;opacity:1;transform:none;filter:none}
+    @media (prefers-reduced-motion:reduce){.hero-star,.hero-copy .eyebrow::before,.is-hero-animating .headline-word,.is-hero-animating .headline-word--gradient,.is-hero-animating .headline-underline,.is-hero-animating .headline-spark,.is-hero-animating .eyebrow,.is-hero-animating > p,.is-hero-animating .hero-pills span,.is-hero-animating .hero-actions{animation:none!important;opacity:1!important;transform:none!important;filter:none!important}}
+    @media(pointer:coarse){.hero-copy::before{opacity:.5}.hero-microhint{display:none}}
+    @media(max-width:750px){.hero-copy::before{inset:-22px -6px 0 -10px}.hero-halo{width:190px;height:190px}.kinetic-title{width:auto;max-width:100%;padding-right:4px}.headline-spark{right:2px;top:-21px;font-size:18px}.hero h1 .headline-row{column-gap:.20em;row-gap:0}.hero-actions{margin-top:13px}.hero-star.hs-2{right:7%;top:10%}}
+    @media(max-width:920px){.hero-atmosphere{left:0;right:0;top:-30px;bottom:0}.hero-copy::before{inset:-12px 0 0 0}}
+    @media(max-width:450px){.hero h1.kinetic-title{font-size:clamp(34px,9.6vw,41px);letter-spacing:-.047em!important}.headline-underline{width:57%}.hero-copy .hero-pills{margin-top:17px}}
   </style>
 </head>
 <body>
@@ -237,12 +308,18 @@
 
   <main>
     <section class="hero" aria-labelledby="hero-title">
-      <div>
-        <div class="eyebrow">Fisiologi reproduksi • Visual, dinamis & interaktif</div>
-        <h1 id="hero-title">Satu siklus.<br><span>Ribuan perubahan.</span></h1>
+    <div class="hero-copy is-hero-animating" id="hero-copy">
+      <div class="hero-atmosphere" aria-hidden="true"><span class="hero-star hs-1">✦</span><span class="hero-star hs-2">✧</span><span class="hero-star hs-3">·</span><span class="hero-star hs-4">✦</span><span class="hero-star hs-5">✧</span><span class="hero-halo"></span></div>
+      <div class="eyebrow">Fisiologi reproduksi • Visual, dinamis & interaktif</div>
+      <h1 id="hero-title" class="kinetic-title" aria-label="Satu siklus. Ribuan perubahan.">
+        <span class="headline-row" aria-hidden="true"><span class="headline-word" style="--word-delay:.13s">Satu</span><span class="headline-word" style="--word-delay:.26s">siklus.</span></span>
+        <span class="headline-row headline-row-second" aria-hidden="true"><span class="headline-word headline-word--gradient" style="--word-delay:.43s">Ribuan</span><span class="headline-word headline-word--gradient" style="--word-delay:.56s">perubahan.</span></span>
+        <span class="headline-underline" aria-hidden="true"></span><span class="headline-spark" aria-hidden="true">✦</span>
+      </h1>
         <p>Jelajahi bagaimana hipotalamus, hipofisis, ovarium, dan uterus bekerja sinkron. Geser hari untuk melihat perubahan hormon, perkembangan oosit dan folikel, serta struktur endometrium secara bersamaan.</p>
         <div class="hero-pills"><span>◉ <b>4</b> hormon utama</span><span>◎ Siklus ovarium & uterus</span><span>▤ Endometrium dinamis</span><span>🩸 Simulasi perdarahan</span><span>↔ Panjang siklus fleksibel</span></div>
-      </div>
+      <div class="hero-actions"><button id="hero-replay" class="hero-replay" type="button" aria-label="Putar ulang animasi judul"><span class="replay-symbol" aria-hidden="true">↻</span> Putar ulang judul</button><span class="hero-microhint">✧ Gerakkan kursor di area judul</span></div>
+    </div>
       <aside class="glass-state" aria-live="polite"><div class="orbit-layer" aria-hidden="true"><span></span><span></span><span></span></div>
         <div class="state-top"><span><i class="live-dot"></i> KONDISI SAAT INI</span><span id="state-index">01 / 28</span></div>
         <div class="state-day"><span>HARI</span><span id="hero-day">2</span></div>
@@ -374,6 +451,7 @@
   const themeButton=$('theme-toggle');
   const fontSelect=$('font-choice');
   const motionButton=$('motion-toggle');
+  const heroReplayButton=$('hero-replay');
   const safeSave=(key,value)=>{try{localStorage.setItem(key,value);}catch(e){}};
   function syncAppearance(){
     const isLight=root.dataset.theme==='light';
@@ -389,6 +467,8 @@
     motionButton.title=effectsOn?'Nonaktifkan efek visual':'Aktifkan efek visual';
     $('motion-icon').textContent=effectsOn?'✦':'◇';
     $('motion-text').textContent=effectsOn?'Efek aktif':'Efek mati';
+    heroReplayButton.disabled=!effectsOn;
+    heroReplayButton.title=effectsOn?'Putar ulang animasi judul':'Aktifkan Efek agar dapat memutar animasi';
     document.querySelector('meta[name="theme-color"]').setAttribute('content',isLight?'#f4f7fb':'#0a1020');
   }
   themeButton.addEventListener('click',()=>{
@@ -407,6 +487,31 @@
     syncAppearance();
   });
   syncAppearance();
+
+  // Cursor spotlight: pointer tracking on an isolated area only, without layout work.
+  const heroCopy=$('hero-copy');
+  let heroPointerRaf=0;
+  heroCopy.addEventListener('pointermove',event=>{
+    if(root.dataset.motion==='off'||event.pointerType==='touch'||document.hidden)return;
+    if(heroPointerRaf)return;
+    const px=event.clientX,py=event.clientY;
+    heroPointerRaf=requestAnimationFrame(()=>{
+      heroPointerRaf=0;
+      const rect=heroCopy.getBoundingClientRect();
+      heroCopy.style.setProperty('--hero-x',((px-rect.left)/rect.width*100).toFixed(1)+'%');
+      heroCopy.style.setProperty('--hero-y',((py-rect.top)/rect.height*100).toFixed(1)+'%');
+    });
+  },{passive:true});
+  heroCopy.addEventListener('pointerleave',()=>{
+    if(heroPointerRaf){cancelAnimationFrame(heroPointerRaf);heroPointerRaf=0;}
+    heroCopy.style.setProperty('--hero-x','47%');heroCopy.style.setProperty('--hero-y','41%');
+  });
+  heroReplayButton.addEventListener('click',()=>{
+    if(root.dataset.motion==='off'||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    heroCopy.classList.remove('is-hero-animating');
+    void heroCopy.offsetWidth; // Restart entry animations on user request.
+    heroCopy.classList.add('is-hero-animating');
+  });
 
   const colors={FSH:'#ffca77',LH:'#65dce7',E2:'#f582b3',P4:'#b6a1ff'};
   const hormoneLabels={FSH:'FSH',LH:'LH',E2:'Estradiol (E₂)',P4:'Progesteron (P₄)'};
