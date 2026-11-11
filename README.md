@@ -1,3 +1,4 @@
+<img width="2400" height="820" alt="image" src="https://github.com/user-attachments/assets/f8f2059a-58df-40e3-a579-0d6d5e3ea3fe" />
 # Kenali Mens by Fronstellar v1.7
 
 Aplikasi web interaktif berbahasa Indonesia untuk belajar fisiologi siklus menstruasi, termasuk:
