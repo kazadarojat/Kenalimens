@@ -1,8 +1,17 @@
 <img width="2400" height="820" alt="image" src="https://github.com/user-attachments/assets/f8f2059a-58df-40e3-a579-0d6d5e3ea3fe" />
 
-# Kenali Mens by Fronstellar v2.5
+# Kenali Mens by Fronstellar v2.6.1
 
 Aplikasi web interaktif untuk pembelajaran siklus menstruasi dan perubahan fisiologis ovarium, uterus, endometrium, serta kontrol hormonal.
+
+## Pembaruan v2.6.1: Ovulasi pada diagram endometrium
+
+Pada tab **05 / Perubahan Endometrium**, oosit sekunder ditampilkan keluar dari ovarium pada hari ovulasi model, kemudian ditangkap fimbriae dan masuk ke tuba falopi. Jalur dianimasikan secara skematis dan otomatis muncul saat hari pada slider diubah ke hari ovulasi, bukan hanya bila halaman pertama kali dimuat pada hari tersebut.
+
+- **Hari lain:** animasi ovulasi tersembunyi, sementara diagram uterus dan fase lain tetap terlihat.
+- **Saat ovulasi:** animasi bergerak berulang selama hari tersebut dalam model pembelajaran, tanpa menyiratkan bahwa proses biologis berulang atau oosit bertahan selama seluruh hari.
+- **Ketepatan istilah:** yang diovulasikan adalah *oosit sekunder* dalam metafase II, bukan ovum yang telah menyelesaikan meiosis II.
+- Grafik hormon, floating control, animasi perdarahan, pilihan font, dan tema tetap dipertahankan.
 
 ## Pembaruan v2.5: Indikator fase pada Floating Control
 
