@@ -1,5 +1,5 @@
 <img width="2400" height="820" alt="image" src="https://github.com/user-attachments/assets/f8f2059a-58df-40e3-a579-0d6d5e3ea3fe" />
-# Kenali Mens by Fronstellar v1.7
+# Kenali Mens by Fronstellar v2.3
 
 Aplikasi web interaktif berbahasa Indonesia untuk belajar fisiologi siklus menstruasi, termasuk:
 
@@ -14,7 +14,18 @@ Aplikasi web interaktif berbahasa Indonesia untuk belajar fisiologi siklus menst
 - Visual potongan uterus dan skema histologi endometrium (lapisan functionale, basale, kelenjar, dan arteri spiralis)
 - Simulasi perdarahan menstruasi H1–H5: aliran darah dan fragmen lapisan functionale melalui kavum uteri dan serviks dengan gerak kontinu tanpa restart antarhari, indikator intensitas skematis, tombol H1–H5, serta replay simulasi otomatis
 - Transisi mulus lapisan endometrium, ilustrasi ovarium, indikator hormon, dan penunjuk grafik tanpa kedipan saat hari berubah
-- Aksis HPO, ringkasan, kuis 4 soal, dan referensi ilmiah
+- Aksis hipotalamus–hipofisis–ovarium dan referensi ilmiah (tanpa kuis atau rangkuman konsep)
+
+## Pembaruan v2.3: Floating Cycle Controller
+
+Kontrol siklus akan muncul mengambang setelah panel navigasi utama dilewati ketika halaman digulir. Kontrol ini tetap sinkron dengan grafik hormon, siklus ovarium, dan visualisasi uterus/endometrium.
+
+- Geser slider untuk mengubah hari, putar atau jeda, maju/mundur satu hari, serta ubah kecepatan simulasi.
+- Klik **⤢** pada kontrol mengambang untuk mengatur lebar dan posisi.
+- Pilih preset **kiri bawah, tengah bawah, kanan bawah, kiri atas, tengah atas, kanan atas**, atau **manual**.
+- Seret handle **⠿** untuk memilih posisi manual; tekan tombol reset untuk mengembalikan posisi.
+- Ukuran, posisi, dan mode ringkas disimpan di penyimpanan lokal browser.
+- Fitur kuis, rangkuman konsep, panel validasi oogenesis, dan simulasi perjalanan oosit telah dihapus pada versi sebelumnya.
 
 ## Header interaktif v1.4
 
