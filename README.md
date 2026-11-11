@@ -1,8 +1,17 @@
 <img width="2400" height="820" alt="image" src="https://github.com/user-attachments/assets/f8f2059a-58df-40e3-a579-0d6d5e3ea3fe" />
 
-# Kenali Mens by Fronstellar v2.4
+# Kenali Mens by Fronstellar v2.5
 
 Aplikasi web interaktif untuk pembelajaran siklus menstruasi dan perubahan fisiologis ovarium, uterus, endometrium, serta kontrol hormonal.
+
+## Pembaruan v2.5: Indikator fase pada Floating Control
+
+- Menampilkan **fase ovarium** (folikular, ovulasi, luteal) dan **fase uterus** (menstruasi, proliferatif, sekretori) secara bersamaan.
+- Warna panel, tombol putar, dan slider hari berubah otomatis: **merah muda** untuk menstruasi, **toska** untuk folikular/proliferatif, **emas** saat ovulasi, dan **ungu** saat luteal/sekretori.
+- Contoh hari ke-2: ovarium **Folikular**, uterus **Menstruasi**; hari ke-14 pada model 28 hari: ovarium **Ovulasi**, uterus **Proliferatif**.
+- Keterangan ringkas di header tetap terlihat ketika auto-hide aktif. Posisi, drag, ukuran, transparansi, tema terang/gelap, dan snap-to-edge tetap didukung.
+- Kurva hormon dan model fisiologi v2.4 tidak diubah; hari fase adalah gambaran edukatif, bukan prediksi klinis.
+
 
 ## Fitur utama
 
