@@ -1,8 +1,22 @@
 <img width="2400" height="820" alt="image" src="https://github.com/user-attachments/assets/f8f2059a-58df-40e3-a579-0d6d5e3ea3fe" />
 
-# Kenali Mens by Fronstellar v2.6.1
+# Kenali Mens by Fronstellar v2.8
 
 Aplikasi web interaktif untuk pembelajaran siklus menstruasi dan perubahan fisiologis ovarium, uterus, endometrium, serta kontrol hormonal.
+
+## Pembaruan v2.8: Grafik hormon interaktif
+
+- Arahkan kursor (desktop) atau ketuk grafik (ponsel) untuk melihat **hari siklus**, fase ovarium dan uterus, serta **enam indeks hormon relatif** (FSH, LH, estradiol, progesteron, inhibin A, inhibin B).
+- Tooltip dilengkapi penanda pada kurva. Tampilan ponsel meletakkan panel informasi di bawah grafik agar data tetap terbaca.
+- Legenda dapat menyembunyikan/menampilkan masing-masing kurva; tersedia **Sembunyikan semua / Tampilkan semua**.
+- Tombol **Sembunyikan grafik / Tampilkan grafik** melipat visualisasi tanpa menghapus penjelasan fisiologi.
+- Angka yang ditampilkan adalah **indeks relatif model 0–100**, bukan kadar serum absolut.
+
+## Pembaruan v2.7: Panel yang dapat diringkas
+
+- Panel materi dapat diringkas lalu ditampilkan kembali; tersedia mode **Ringkas semua** dan **Fokus pada uterus**.
+- Floating Control dapat disembunyikan menjadi tab kecil dan dipulihkan saat diperlukan.
+- Preferensi tampilan dapat disimpan dalam penyimpanan lokal browser.
 
 ## Pembaruan v2.6.1: Ovulasi pada diagram endometrium
 
