@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0a1020">
   <meta name="description" content="Kenali Mens by Fronstellar, atlas siklus menstruasi interaktif: hormon, folikel ovarium, ovulasi, dan perubahan endometrium. Media pembelajaran fisiologi reproduksi.">
-  <title>Kenali Mens by Fronstellar v1.8 | Fisiologi Reproduksi Interaktif</title>
+  <title>Kenali Mens by Fronstellar v2.7 | Fisiologi Reproduksi Interaktif</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Rubik:wght@400;500;600;700;800&family=Lato:wght@400;700;900&family=Space+Grotesk:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
@@ -701,6 +701,87 @@
       .dock-caption-phase{font-size:9px}
     }
     @media(prefers-reduced-motion:reduce){.floating-dock,.dock-play{transition:none!important}}
+
+    /* v2.7: user-controlled feature box visibility. */
+    .feature-toolbar{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1px solid var(--border);border-radius:17px;padding:12px 16px;margin:0 0 20px;background:linear-gradient(115deg,rgba(123,107,192,.12),rgba(65,183,189,.055));}
+    .feature-toolbar-info{display:flex;gap:10px;align-items:center;min-width:0}
+    .feature-toolbar-info>span:last-child{display:grid;gap:2px}
+    .feature-toolbar-icon{display:grid;place-items:center;width:35px;height:35px;border-radius:11px;background:rgba(162,141,231,.18);color:#d7c8ff;font-size:21px}
+    .feature-toolbar-info strong{color:var(--text);font-size:12px;font-weight:800}
+    .feature-toolbar-info small{color:var(--muted);font-size:10px;line-height:1.5}
+    .feature-toolbar-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+    .feature-status{color:var(--muted);font-size:10px;font-weight:700;white-space:nowrap}
+    .feature-toolbar-button,.feature-toggle{background:#263653;border:1px solid #586782;color:#eef3ff;border-radius:10px;font-size:11px;font-weight:750;padding:9px 12px;cursor:pointer;transition:background-color .2s,border-color .2s,transform .2s}
+    .feature-toolbar-button:hover,.feature-toggle:hover{background:#39486a;border-color:#b4a0ee}
+    .feature-toolbar-primary{background:rgba(163,143,234,.18);border-color:#7566a3}
+    .feature-panel{position:relative;min-width:0}
+    .feature-panel>.card-kicker{padding-right:110px}
+    .feature-toggle{position:absolute;right:20px;top:18px;min-height:32px;z-index:2;padding:6px 10px;display:inline-flex;align-items:center;gap:7px;line-height:1.25}
+    .feature-toggle-icon{font-size:18px;line-height:1}
+    .feature-panel.feature-collapsed{padding:17px 20px;min-height:68px;align-self:start}
+    .feature-panel.feature-collapsed>.card-kicker{margin:4px 0 0;line-height:1.7}
+    .feature-panel.feature-collapsed>:not(.card-kicker):not(.feature-toggle){display:none!important}
+    .feature-panel.feature-collapsed .feature-toggle{top:17px;right:19px}
+    html[data-theme="light"] .feature-toolbar{background:linear-gradient(115deg,#f7f3ff,#eef7fc)}
+    html[data-theme="light"] .feature-toolbar-button,html[data-theme="light"] .feature-toggle{background:#eef2fb;color:#263a5c;border-color:#bdcce0}
+    html[data-theme="light"] .feature-toolbar-primary{background:#e7dff9;color:#47336e;border-color:#b3a1dc}
+    html[data-theme="light"] .feature-toolbar-icon{background:#e9e1f8;color:#6a4da0}
+    /* Hidden floating box becomes a small recovery tab instead of disappearing. */
+    .floating-dock>.dock-peek-button{display:none;align-items:center;gap:9px;width:100%;height:52px;text-align:left;background:transparent;border:0;color:inherit;padding:9px 12px;font-size:11px;font-weight:800;cursor:pointer}
+    .dock-peek-button>span:first-child{display:grid;place-items:center;width:29px;height:29px;flex:0 0 29px;border-radius:9px;background:var(--dock-accent,#c6b0ff);color:#182039;font-size:15px}
+    .dock-peek-button #dock-peek-caption{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .dock-peek-expand{font-size:18px;opacity:.85}
+    .floating-dock.is-peek{width:min(222px,calc(100vw - 20px))!important;max-height:54px!important;min-height:0;opacity:.96;transition:max-height .25s,width .25s,opacity .25s;}
+    .floating-dock.is-peek .dock-header,.floating-dock.is-peek .dock-body{display:none!important}
+    .floating-dock.is-peek>.dock-peek-button{display:flex}
+    .floating-dock.is-peek.is-idle{max-height:54px!important}
+    .floating-dock.is-peek:before{background:var(--dock-accent,#bbaaff)}
+    html[data-theme="light"] .floating-dock>.dock-peek-button{color:#263b57}
+    @media(max-width:600px){
+      .feature-toolbar{padding:11px;gap:10px}
+      .feature-toolbar-actions{width:100%;justify-content:flex-start}
+      .feature-toolbar-button{padding:8px 10px;font-size:10px}
+      .feature-toggle{top:14px;right:13px;min-height:30px;font-size:10px;padding:5px 8px}
+      .feature-panel>.card-kicker{padding-right:98px;font-size:9px;letter-spacing:.7px}
+      .feature-panel.feature-collapsed{padding:16px 13px;min-height:64px}
+      .feature-panel.feature-collapsed .feature-toggle{top:14px;right:13px}
+      .feature-status{flex-basis:100%}
+    }
+    @media(prefers-reduced-motion:reduce){.feature-toolbar-button,.feature-toggle,.floating-dock.is-peek{transition:none!important}}
+
+    /* v2.8: interactive chart inspection, selective curve visibility and graph hide. */
+    .chart-control-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:12px 0 11px}
+    .chart-control-button{display:inline-flex;align-items:center;gap:7px;min-height:35px;padding:8px 11px;background:#21324e;border:1px solid #4a5d7d;border-radius:10px;color:#dbe9ff;font-size:10.5px;font-weight:750;cursor:pointer;transition:border-color .2s,background-color .2s,transform .2s}
+    .chart-control-button:hover{background:#314568;border-color:#baa5ed;transform:translateY(-1px)}
+    .chart-control-button:focus-visible{outline:2px solid #8be5f2;outline-offset:2px}
+    .chart-control-button[aria-pressed="true"]{border-color:#bda1f4;background:#3b345b;color:#fff}
+    .chart-control-help{font-size:10px;color:#8fa7c5;line-height:1.5;margin-left:auto}
+    .chart-plot-wrap{position:relative;min-width:0;isolation:isolate}
+    .chart-plot-wrap[hidden],.chart-hover-tooltip[hidden]{display:none!important}
+    .chart-plot-wrap .plot{display:block}
+    .chart-hover-tooltip{position:absolute;z-index:7;left:0;top:0;width:207px;max-width:calc(100% - 16px);padding:12px 13px;border-radius:12px;border:1px solid #7286a7;background:rgba(16,26,46,.97);box-shadow:0 12px 34px rgba(0,0,0,.35);color:#eaf3ff;font-size:11px;line-height:1.4;pointer-events:none;backdrop-filter:blur(12px)}
+    .chart-tooltip-title{display:flex;justify-content:space-between;align-items:center;gap:7px;font-size:12px;font-weight:850;margin-bottom:4px}
+    .chart-tooltip-phase{font-size:9.5px;font-weight:650;color:#aabed8;margin-bottom:9px}
+    .chart-tooltip-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:3px 0}
+    .chart-tooltip-name{display:flex;align-items:center;gap:7px;min-width:0}
+    .chart-tooltip-dot{display:inline-block;flex:0 0 8px;width:8px;height:8px;border-radius:50%}
+    .chart-tooltip-value{font-variant-numeric:tabular-nums;font-weight:850;color:#f2f5ff;white-space:nowrap}
+    .chart-tooltip-foot{margin-top:9px;padding-top:7px;border-top:1px solid #ffffff20;font-size:9.2px;line-height:1.5;color:#a3b6d0}
+    .chart-empty-state{border:1px dashed #64738e;border-radius:9px;background:#172840;padding:18px;margin:6px 0 12px;font-size:12px;color:#c5d6ec}
+    .chart-empty-state[hidden]{display:none!important}
+    .chart-legend .legend-item{cursor:pointer;transition:opacity .2s,background-color .2s,border-color .2s}
+    .chart-legend .legend-item:hover{border-color:#a99cea;background:#ffffff0b}
+    .chart-legend .legend-item:focus-visible{outline:2px solid #87e2eb;outline-offset:2px}
+    html[data-theme="light"] .chart-control-button{background:#edf2f9;border-color:#c9d8e9;color:#2a4160}
+    html[data-theme="light"] .chart-control-button[aria-pressed="true"]{background:#e8defa;color:#503f7e;border-color:#9982d8}
+    html[data-theme="light"] .chart-control-help{color:#59718f}
+    html[data-theme="light"] .chart-hover-tooltip{background:rgba(255,255,255,.98);color:#233650;border-color:#b6c6dc;box-shadow:0 12px 34px rgba(40,60,90,.2)}
+    html[data-theme="light"] .chart-tooltip-phase,html[data-theme="light"] .chart-tooltip-foot{color:#506d88}
+    html[data-theme="light"] .chart-tooltip-value{color:#243953}
+    html[data-theme="light"] .chart-tooltip-foot{border-color:#d9e2ed}
+    html[data-theme="light"] .chart-empty-state{background:#eef5fb;border-color:#b7c8da;color:#3b5370}
+    @media(max-width:600px){.chart-control-row{gap:6px}.chart-control-button{padding:8px 9px;font-size:9.5px}.chart-control-help{flex-basis:100%;margin-left:0}.chart-hover-tooltip{position:relative!important;top:auto!important;left:auto!important;box-sizing:border-box;width:100%;max-width:100%!important;margin:8px 0 12px;padding:10px 11px}.chart-tooltip-row{font-size:10px}}
+    @media(prefers-reduced-motion:reduce){.chart-control-button{transition:none!important;transform:none!important}}
   </style>
 </head>
 <body>
@@ -782,16 +863,38 @@
       <div class="timeline-wrap"><div class="timeline-row"><div class="timeline-label">Siklus ovarium</div><div class="timeline-track" id="ovarian-timeline" tabindex="0" role="slider" aria-label="Linimasa siklus ovarium" aria-valuemin="1" aria-valuemax="28" aria-valuenow="14"></div></div><div class="timeline-row"><div class="timeline-label">Siklus uterus</div><div class="timeline-track" id="uterine-timeline" tabindex="0" role="slider" aria-label="Linimasa siklus uterus" aria-valuemin="1" aria-valuemax="28" aria-valuenow="14"></div></div></div>
     </section>
 
+    <div class="feature-toolbar" role="group" aria-label="Pengaturan tampilan kotak fitur">
+      <div class="feature-toolbar-info"><span class="feature-toolbar-icon" aria-hidden="true">◫</span><span><strong>Tampilan kotak fitur</strong><small>Ringkas bagian yang tidak digunakan, tanpa menghentikan simulasi.</small></span></div>
+      <div class="feature-toolbar-actions">
+        <span id="feature-status" class="feature-status" aria-live="polite">5 panel terbuka</span>
+        <button type="button" id="feature-focus" class="feature-toolbar-button" aria-label="Fokus pada ilustrasi uterus dan ringkas panel lain">◎ Fokus pada uterus</button>
+        <button type="button" id="feature-hide-all" class="feature-toolbar-button" aria-label="Ringkas semua kotak fitur">▤ Ringkas semua</button>
+        <button type="button" id="feature-show-all" class="feature-toolbar-button feature-toolbar-primary" aria-label="Tampilkan semua kotak fitur">▦ Tampilkan semua</button>
+      </div>
+    </div>
+
     <div class="dashboard-grid">
-      <section class="section chart-card" aria-labelledby="chart-title">
+      <section class="section feature-panel chart-card" aria-labelledby="chart-title" data-feature-panel="chart">
+        <button type="button" class="feature-toggle" data-feature-toggle="chart" aria-expanded="true" aria-label="Ringkas Dinamika hormon" title="Ringkas Dinamika hormon"><span class="feature-toggle-icon" aria-hidden="true">⌃</span><span class="feature-toggle-label">Ringkas</span></button>
         <div class="card-kicker"><span class="tiny-icon">∿</span>02 / DINAMIKA ENDOKRIN</div>
         <div class="chart-head"><div><h2 id="chart-title">Dinamika enam hormon</h2><div class="sub">FSH, LH, estradiol, progesteron, inhibin A, dan inhibin B berubah relatif terhadap fase ovarium.</div></div></div>
-        <svg class="plot" id="hormone-chart" role="img" aria-label="Kurva pola relatif enam hormon FSH, LH, estradiol, progesteron, inhibin A, dan inhibin B sepanjang siklus" viewBox="0 0 900 320"></svg>
-        <div class="chart-legend" id="chart-legend" aria-label="Pilih kurva hormon"></div>
+        <div class="chart-control-row" role="group" aria-label="Tampilan kurva hormon">
+          <button type="button" class="chart-control-button" id="chart-toggle-plot" aria-expanded="true" aria-controls="chart-plot-wrap">◫ Sembunyikan grafik</button>
+          <button type="button" class="chart-control-button" id="chart-show-all">◎ Tampilkan semua hormon</button>
+          <button type="button" class="chart-control-button" id="chart-hide-all">◌ Sembunyikan semua kurva</button>
+          <span class="chart-control-help">Arahkan kursor atau ketuk grafik untuk melihat nilai setiap hormon.</span>
+        </div>
+        <div class="chart-plot-wrap" id="chart-plot-wrap">
+          <svg class="plot" id="hormone-chart" role="img" tabindex="0" aria-label="Kurva pola relatif enam hormon. Arahkan kursor atau ketuk untuk melihat nilainya. Panah kanan/kiri mengubah hari." viewBox="0 0 900 320"></svg>
+          <div class="chart-hover-tooltip" id="chart-hover-tooltip" hidden aria-live="off"></div>
+        </div>
+        <div class="chart-empty-state" id="chart-hidden-message" hidden>Grafik sedang disembunyikan. Gunakan tombol <b>Tampilkan grafik</b> untuk membukanya kembali.</div>
+        <div class="chart-legend" id="chart-legend" aria-label="Pilih kurva hormon satu per satu"></div>
         <div class="chart-note"><b>Skala 0–100 adalah indeks pola ilustratif per hormon (unit arbitrer), bukan kadar plasma, persentase biologis, atau data pasien.</b> Amplitudo tidak dapat dibandingkan antarhormon. Kurva ini menggambarkan urutan fisiologis, bukan pengukuran atau prediksi masa subur. <a href="https://www.ncbi.nlm.nih.gov/books/NBK279054/" target="_blank" rel="noopener noreferrer">Sumber: Endotext</a>.</div>
         <div class="mechanism-annotations" id="chart-mechanism" aria-live="polite"><span class="annotation-dot"></span><div><strong id="chart-mechanism-title">Fase folikular</strong><p id="chart-mechanism-detail">FSH membantu pertumbuhan folikel.</p></div></div>
       </section>
-      <section class="section metrics-card" aria-labelledby="metrics-title">
+      <section class="section feature-panel metrics-card" aria-labelledby="metrics-title" data-feature-panel="hormones">
+        <button type="button" class="feature-toggle" data-feature-toggle="hormones" aria-expanded="true" aria-label="Ringkas Profil hormonal" title="Ringkas Profil hormonal"><span class="feature-toggle-icon" aria-hidden="true">⌃</span><span class="feature-toggle-label">Ringkas</span></button>
         <div class="card-kicker"><span class="tiny-icon">◈</span>03 / PROFIL HORMONAL</div>
         <h2 id="metrics-title">Pola hormonal hari ini</h2><div class="sub">Indeks skematis masing-masing hormon, mengikuti hari yang dipilih.</div>
         <div class="hormone-list" id="hormone-list"></div>
@@ -800,7 +903,8 @@
     </div>
 
     <div class="anatomy-grid" id="anatomi">
-      <section class="section anatomy-card" aria-labelledby="ovary-title">
+      <section class="section feature-panel anatomy-card" aria-labelledby="ovary-title" data-feature-panel="ovary">
+        <button type="button" class="feature-toggle" data-feature-toggle="ovary" aria-expanded="true" aria-label="Ringkas Perkembangan ovarium" title="Ringkas Perkembangan ovarium"><span class="feature-toggle-icon" aria-hidden="true">⌃</span><span class="feature-toggle-label">Ringkas</span></button>
         <div class="card-kicker"><span class="tiny-icon">◎</span>04 / PERKEMBANGAN OVARIUM</div>
         <h2 id="ovary-title">Perjalanan folikel & oosit</h2><div class="sub">Morfologi disederhanakan. Folikel primordial sampai preantral telah berkembang jauh sebelum siklus yang sedang disimulasikan.</div>
         <div class="anatomy-visual"><span class="image-watermark">ILUSTRASI OVARIUM</span><svg id="ovary-svg" viewBox="0 0 500 290" role="img" aria-label="Ilustrasi dinamis perkembangan folikel di dalam ovarium"></svg></div>
@@ -832,7 +936,8 @@
         <p class="anatomy-explainer" id="ovary-explainer"></p>
         <div class="keypoint" id="oocyte-note"></div>
       </section>
-      <section class="section anatomy-card" aria-labelledby="uterus-title">
+      <section class="section feature-panel anatomy-card" aria-labelledby="uterus-title" data-feature-panel="uterus">
+        <button type="button" class="feature-toggle" data-feature-toggle="uterus" aria-expanded="true" aria-label="Ringkas Perubahan endometrium" title="Ringkas Perubahan endometrium"><span class="feature-toggle-icon" aria-hidden="true">⌃</span><span class="feature-toggle-label">Ringkas</span></button>
         <div class="card-kicker"><span class="tiny-icon">▤</span>05 / PERUBAHAN ENDOMETRIUM</div>
         <h2 id="uterus-title">Traktus reproduksi wanita & endometrium</h2><div class="sub">Skema anatomi ovarium, fimbriae, tuba uterina, uterus, serviks, dan vagina. Lapisan endometrium mengikuti hari siklus.</div>
         <div class="anatomy-visual"><span class="image-watermark">TRAKTUS REPRODUKSI WANITA</span><svg id="uterus-svg" viewBox="0 0 700 455" role="img" aria-label="Skema anatomi uterus, tuba falopi, fimbriae, ovarium, serviks, dan vagina"></svg></div>
@@ -863,7 +968,8 @@
     </div>
 
 
-    <section class="section mechanism" id="mekanisme" aria-labelledby="mech-title">
+    <section class="section feature-panel mechanism" id="mekanisme" aria-labelledby="mech-title" data-feature-panel="mechanism">
+        <button type="button" class="feature-toggle" data-feature-toggle="mechanism" aria-expanded="true" aria-label="Ringkas Mekanisme hormonal" title="Ringkas Mekanisme hormonal"><span class="feature-toggle-icon" aria-hidden="true">⌃</span><span class="feature-toggle-label">Ringkas</span></button>
       <div class="card-kicker">06 / AKSIS HIPOTALAMUS–HIPOFISIS–OVARIUM</div>
       <h2 id="mech-title">Mengapa semuanya bergerak bersama?</h2>
       <div class="sub">Tiga hubungan kunci yang menggerakkan siklus menstruasi.</div>
@@ -893,15 +999,17 @@
   <footer class="footer" id="referensi">
     <div class="foot-title">Referensi medis</div>
     <div>Dasar fisiologi: <a href="https://www.ncbi.nlm.nih.gov/books/NBK279054/" target="_blank" rel="noopener noreferrer">Endotext: The Normal Menstrual Cycle</a> · <a href="https://www.ncbi.nlm.nih.gov/books/NBK500020/" target="_blank" rel="noopener noreferrer">StatPearls: Physiology, Menstrual Cycle</a> · <a href="https://www.msdmanuals.com/home/women-s-health-issues/biology-of-the-female-reproductive-system/menstrual-cycle" target="_blank" rel="noopener noreferrer">MSD Manual: Menstrual Cycle</a> · <a href="https://www.acog.org/womens-health/faqs/fertility-awareness-based-methods-of-family-planning" target="_blank" rel="noopener noreferrer">ACOG: Fertility Awareness</a> · <a href="https://www.ncbi.nlm.nih.gov/books/NBK278951/" target="_blank" rel="noopener noreferrer">Endotext: Ovarian Morphology</a> · <a href="https://www.ncbi.nlm.nih.gov/books/NBK532300/" target="_blank" rel="noopener noreferrer">Cox & Takov (2025): Follicle Development</a> · <a href="https://www.ncbi.nlm.nih.gov/books/NBK278962/" target="_blank" rel="noopener noreferrer">Endotext: Endocrinology of Pregnancy</a>.</div>
-    <div class="footer-rule"><span>© 2026 Kenali Mens by Fronstellar · v2.6.1 · Media pendidikan biomedis</span><span>Semua ilustrasi dan kurva bersifat skematis. Bukan perangkat diagnosis klinis.</span></div>
+    <div class="footer-rule"><span>© 2026 Kenali Mens by Fronstellar · v2.8 · Media pendidikan biomedis</span><span>Semua ilustrasi dan kurva bersifat skematis. Bukan perangkat diagnosis klinis.</span></div>
   </footer>
 </div>
 <!-- Kontrol mengambang, sinkron dengan kontrol utama, tampil setelah navigasi terlewati. -->
 <div id="floating-cycle-dock" class="floating-dock" role="region" aria-label="Kontrol waktu siklus mengambang" hidden>
+  <button id="dock-show-box" class="dock-peek-button" type="button" title="Tampilkan kembali kotak Floating Control" aria-label="Tampilkan kotak Floating Control"><span aria-hidden="true">◉</span><span id="dock-peek-caption">H2 · Folikular</span><span class="dock-peek-expand" aria-hidden="true">⌃</span></button>
   <div class="dock-header">
     <button id="dock-grab" class="dock-grab" type="button" title="Seret untuk memindahkan kontrol" aria-label="Seret kontrol untuk memindahkan posisi">⠿</button>
     <div class="dock-title"><strong>Kontrol waktu siklus</strong><span class="dock-caption"><b id="dock-day-caption">Hari 2</b><span class="dock-cycle-total"> / <span id="dock-length-caption">28</span></span><span id="dock-phase-caption" class="dock-caption-phase">Folikular · Menstruasi</span></span></div>
     <div class="dock-header-actions">
+      <button id="dock-hide-box" class="dock-icon-button" type="button" title="Sembunyikan kotak, sisakan tombol kecil" aria-label="Sembunyikan kotak Floating Control">▁</button>
       <button id="dock-compact" class="dock-icon-button" type="button" aria-pressed="false" title="Ringkaskan ukuran panel" aria-label="Ringkaskan ukuran panel">▤</button>
       <button id="dock-settings-toggle" class="dock-icon-button" type="button" aria-expanded="false" aria-controls="dock-settings-panel" title="Atur posisi, ukuran, dan transparansi" aria-label="Atur posisi, ukuran, dan transparansi">⤢</button>
       <button id="dock-dismiss" class="dock-icon-button" type="button" title="Matikan kontrol melayang" aria-label="Matikan kontrol mengambang">×</button>
@@ -930,7 +1038,7 @@
       <label class="dock-extra-row">Transparansi latar <input id="dock-opacity" type="range" min="55" max="100" step="5" value="95" aria-label="Transparansi latar kontrol mengambang"><output id="dock-opacity-value">95%</output></label>
       <div class="dock-extra-toggles"><label><input id="dock-auto-hide" type="checkbox"> Auto-hide saat tidak dipakai</label><label><input id="dock-snap" type="checkbox" checked> Snap-to-edge setelah digeser</label></div>
       <label class="dock-extra-row" for="dock-hide-delay">Waktu auto-hide <select id="dock-hide-delay"><option value="3">3 detik</option><option value="5" selected>5 detik</option><option value="10">10 detik</option></select></label>
-      <div class="dock-position-hint">Tips: seret handle ⠿ untuk memindahkan panel. Auto-hide hanya meringkas panel menjadi bilah yang bisa diketuk, bukan menghilangkan kontrol sepenuhnya.</div>
+      <div class="dock-position-hint">Tips: seret handle ⠿ untuk memindahkan panel. Auto-hide meringkas panel saat tidak dipakai. Tombol ▁ menyembunyikan kotak menjadi tab kecil yang tetap dapat diketuk.</div>
       <button id="dock-reset-position" class="dock-reset-position" type="button">↺ Atur ulang ke posisi terpilih</button>
     </div>
   </div>
@@ -945,6 +1053,51 @@
 (() => {
   'use strict';
   const $=id=>document.getElementById(id);
+  /* v2.7: collapse independent feature boxes without removing their simulation state. */
+  const featurePanelIds=['chart','hormones','ovary','uterus','mechanism'];
+  let featureHidden={};
+  try{
+    const stored=JSON.parse(localStorage.getItem('kenalimens:feature-hidden')||'{}');
+    if(stored&&typeof stored==='object'&&!Array.isArray(stored))for(const id of featurePanelIds){featureHidden[id]=stored[id]===true;}
+  }catch(e){}
+  const persistFeatureHidden=()=>{try{localStorage.setItem('kenalimens:feature-hidden',JSON.stringify(featureHidden));}catch(e){}};
+  function syncFeaturePanels(){
+    for(const id of featurePanelIds){
+      const panel=document.querySelector('[data-feature-panel="'+id+'"]');
+      const button=document.querySelector('[data-feature-toggle="'+id+'"]');
+      if(!panel||!button)continue;
+      const hidden=featureHidden[id]===true;
+      const name=panel.querySelector('h2')?.textContent?.trim()||panel.querySelector('.card-kicker')?.textContent.trim()||id;
+      panel.classList.toggle('feature-collapsed',hidden);
+      button.setAttribute('aria-expanded',String(!hidden));
+      button.setAttribute('aria-label',(hidden?'Tampilkan ':'Ringkas ')+name);
+      button.title=(hidden?'Tampilkan ':'Ringkas ')+name;
+      button.querySelector('.feature-toggle-label').textContent=hidden?'Tampilkan':'Ringkas';
+      button.querySelector('.feature-toggle-icon').textContent=hidden?'⌄':'⌃';
+    }
+    const open=featurePanelIds.filter(id=>featureHidden[id]!==true).length;
+    $('feature-status').textContent=open+' dari '+featurePanelIds.length+' kotak terbuka';
+    $('feature-focus').setAttribute('aria-pressed',String(featurePanelIds.every(id=>featureHidden[id]===(id!=='uterus'))));
+  }
+  document.querySelectorAll('[data-feature-toggle]').forEach(button=>button.addEventListener('click',()=>{
+    const id=button.dataset.featureToggle;
+    featureHidden[id]=!(featureHidden[id]===true);
+    persistFeatureHidden();syncFeaturePanels();
+  }));
+  $('feature-hide-all').addEventListener('click',()=>{
+    for(const id of featurePanelIds)featureHidden[id]=true;
+    persistFeatureHidden();syncFeaturePanels();
+  });
+  $('feature-show-all').addEventListener('click',()=>{
+    for(const id of featurePanelIds)featureHidden[id]=false;
+    persistFeatureHidden();syncFeaturePanels();
+  });
+  $('feature-focus').addEventListener('click',()=>{
+    const isFocused=featurePanelIds.every(id=>featureHidden[id]===(id!=='uterus'));
+    for(const id of featurePanelIds)featureHidden[id]=isFocused?false:id!=='uterus';
+    persistFeatureHidden();syncFeaturePanels();
+  });
+  syncFeaturePanels();
   // Dialog pembesaran memindahkan node SVG yang sama agar perubahan hari tetap sinkron.
   const zoomDialog=$('uterus-zoom-dialog');
   const uterusOriginal=$('uterus-svg').parentElement;
@@ -1118,11 +1271,88 @@
     html+=`<text x="${x(Math.max(3,ov-4))}" y="${T+18}" fill="#f5afd1" font-size="11" font-weight="750" text-anchor="end">E₂ tinggi → LH surge</text><path d="M${x(ov-1.5)} ${T+22} L${x(ov-.85)} ${y(96)}" stroke="#f2a1c8" opacity=".65" stroke-dasharray="3 3"/>`;
     html+=`<g id="chart-cursor"><line x1="0" y1="${T}" x2="0" y2="${B}" stroke="#f2f4ff" stroke-width="1.5" stroke-dasharray="5 5" opacity=".75"/><rect id="cursor-bg" y="1" width="62" height="20" rx="6" fill="#eae8ff"/><text id="cursor-label" y="15" text-anchor="middle" font-weight="800" font-size="10" fill="#1b2131">HARI ${state.day}</text>`;
     for(const key of Object.keys(colors))if(state.visible[key])html+=`<circle id="cursor-${key}" cx="0" cy="${y(hormones(state.day)[key])}" r="5" fill="${colors[key]}" stroke="#101a2b" stroke-width="2.4"/>`;
+    html+=`</g><g id="chart-hover-cursor" opacity="0" pointer-events="none"><line x1="0" x2="0" y1="${T}" y2="${B}" stroke="#f4e5ff" stroke-width="1.5" stroke-dasharray="4 5" opacity=".9"/>`;
+    for(const key of Object.keys(colors))if(state.visible[key])html+=`<circle id="hover-dot-${key}" cx="0" cy="${y(hormones(state.day)[key])}" r="6" fill="${colors[key]}" stroke="#111c30" stroke-width="2.5"/>`;
     html+=`</g><rect x="${L}" y="${T}" width="${w}" height="${h}" fill="transparent" id="plot-hit"/>`;
     svg.innerHTML=html;state.chartSig=signature;moveChartCursor(state.day);
-    $('plot-hit').addEventListener('pointerdown',e=>{const r=svg.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*900;setDay(Math.round(1+(clamp(px,L,R)-L)/w*(n-1)));});
+    const hit=$('plot-hit');
+    hit.addEventListener('pointermove',e=>{if(e.pointerType!=='touch')showChartHover(e);});
+    hit.addEventListener('pointerleave',e=>{if(e.pointerType!=='touch')hideChartHover();});
+    hit.addEventListener('pointerdown',e=>{
+      showChartHover(e);
+      const r=svg.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*900;
+      setDay(Math.round(1+(clamp(px,L,R)-L)/w*(n-1)));
+    });
   }
-  function legend(){const root=$('chart-legend');root.innerHTML='';Object.keys(colors).forEach(k=>{const b=document.createElement('button');b.type='button';b.className='legend-item';b.setAttribute('aria-pressed',String(state.visible[k]));b.innerHTML=`<span class="legend-line" style="background:${colors[k]}"></span>${hormoneLabels[k]}`;b.addEventListener('click',()=>{state.visible[k]=!state.visible[k];legend();drawChart();});root.append(b);});}
+  function legend(){const root=$('chart-legend');root.innerHTML='';Object.keys(colors).forEach(k=>{const b=document.createElement('button');b.type='button';b.className='legend-item';b.setAttribute('aria-pressed',String(state.visible[k]));b.title=(state.visible[k]?'Sembunyikan ':'Tampilkan ')+hormoneLabels[k];b.innerHTML=`<span class="legend-line" style="background:${colors[k]}"></span>${hormoneLabels[k]}`;b.addEventListener('click',()=>{state.visible[k]=!state.visible[k];legend();drawChart();hideChartHover();});root.append(b);});}
+
+  // The tooltip is an educational, relative-index readout, never a serum measurement.
+  let chartHoveredDay=null;
+  let chartPlotHidden=false;
+  try{chartPlotHidden=localStorage.getItem('kenalimens:chart-plot-hidden')==='true';}catch(e){}
+  function hideChartHover(){
+    chartHoveredDay=null;
+    const guide=$('chart-hover-cursor');if(guide)guide.setAttribute('opacity','0');
+    $('chart-hover-tooltip').hidden=true;
+  }
+  function showChartHover(e,dayOverride){
+    if(chartPlotHidden||!$('chart-plot-wrap')||$('chart-plot-wrap').hidden)return;
+    const svg=$('hormone-chart'),rect=svg.getBoundingClientRect(),L=62,R=872,T=24,B=265;
+    if(!rect.width)return;
+    const n=state.length,px=clamp((e.clientX-rect.left)/rect.width*900,L,R);
+    const day=Number.isFinite(dayOverride)?dayOverride:Math.round(1+(px-L)/(R-L)*(n-1));
+    const exactX=L+(day-1)/(n-1)*(R-L);
+    const guide=$('chart-hover-cursor'),values=hormones(day);
+    if(guide){guide.setAttribute('transform',`translate(${exactX.toFixed(2)} 0)`);guide.setAttribute('opacity','1');}
+    for(const key of Object.keys(colors)){
+      const dot=$('hover-dot-'+key);
+      if(dot)dot.setAttribute('cy',(B-values[key]/100*(B-T)).toFixed(2));
+    }
+    const tip=$('chart-hover-tooltip');
+    if(chartHoveredDay!==day||tip.hidden){
+      const rows=Object.keys(colors).filter(k=>state.visible[k]).map(k=>`<div class="chart-tooltip-row"><span class="chart-tooltip-name"><i class="chart-tooltip-dot" style="background:${colors[k]}"></i>${hormoneLabels[k]}</span><span class="chart-tooltip-value">${values[k].toFixed(1)}</span></div>`).join('');
+      tip.innerHTML=`<div class="chart-tooltip-title"><span>Hari ${day} / ${n}</span><span>◉</span></div><div class="chart-tooltip-phase">Ovarium: ${ovarianPhase(day)} · Uterus: ${uterinePhase(day)}</div>${rows||'<div class="chart-tooltip-row">Semua kurva disembunyikan</div>'}<div class="chart-tooltip-foot">Indeks relatif (0–100), bukan konsentrasi serum. Nilai antarhormon tidak dapat dibandingkan secara absolut.</div>`;
+      chartHoveredDay=day;
+    }
+    tip.hidden=false;
+    const wrap=$('chart-plot-wrap').getBoundingClientRect();
+    const width=tip.offsetWidth||205,height=tip.offsetHeight||185;
+    const xpos=Number.isFinite(e.clientX)?e.clientX-wrap.left:wrap.width*(exactX/900);
+    const ypos=Number.isFinite(e.clientY)?e.clientY-wrap.top:40;
+    tip.style.left=clamp(xpos+18,8,Math.max(8,wrap.width-width-8))+'px';
+    tip.style.top=clamp(ypos-height*.46,8,Math.max(8,wrap.height-height-8))+'px';
+  }
+  function syncChartPlotVisibility(){
+    const wrap=$('chart-plot-wrap'),button=$('chart-toggle-plot');
+    wrap.hidden=chartPlotHidden;
+    $('chart-hidden-message').hidden=!chartPlotHidden;
+    button.setAttribute('aria-expanded',String(!chartPlotHidden));
+    button.textContent=chartPlotHidden?'▣ Tampilkan grafik':'◫ Sembunyikan grafik';
+    if(chartPlotHidden)hideChartHover();
+  }
+  $('chart-toggle-plot').addEventListener('click',()=>{
+    chartPlotHidden=!chartPlotHidden;
+    try{localStorage.setItem('kenalimens:chart-plot-hidden',String(chartPlotHidden));}catch(e){}
+    syncChartPlotVisibility();
+  });
+  $('chart-hide-all').addEventListener('click',()=>{
+    for(const key of Object.keys(colors))state.visible[key]=false;
+    hideChartHover();legend();drawChart();
+  });
+  $('chart-show-all').addEventListener('click',()=>{
+    for(const key of Object.keys(colors))state.visible[key]=true;
+    hideChartHover();legend();drawChart();
+  });
+  $('hormone-chart').addEventListener('keydown',e=>{
+    if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;
+    e.preventDefault();e.stopPropagation();
+    const d=e.key==='Home'?1:e.key==='End'?state.length:clamp(state.day+(e.key==='ArrowRight'?1:-1),1,state.length);
+    setDay(d);
+    const r=$('hormone-chart').getBoundingClientRect(),px=62+(d-1)/(state.length-1)*810;
+    showChartHover({clientX:r.left+px/900*r.width,clientY:r.top+r.height*.33},d);
+  });
+  document.addEventListener('pointerdown',e=>{if(!e.target.closest('.chart-plot-wrap'))hideChartHover();});
+  syncChartPlotVisibility();
   function hormoneCards(){
     const root=$('hormone-list'),values=hormones(state.day);
     if(!root.children.length){
@@ -1544,7 +1774,7 @@
   const dockSettings=$('dock-settings-panel');
   const floatEnable=$('float-enable-toggle');
   const dockPositionSelect=$('dock-position-select');
-  const dockPrefs={enabled:true,compact:false,width:560,position:null,anchor:'bottom-right',opacity:95,autoHide:false,hideDelay:5,snap:true};
+  const dockPrefs={enabled:true,compact:false,width:560,position:null,anchor:'bottom-right',opacity:95,autoHide:false,hideDelay:5,snap:true,peek:false};
   try{
     const e=localStorage.getItem('kenalimens:dock-enabled');
     if(e==='false')dockPrefs.enabled=false;
@@ -1558,6 +1788,7 @@
     const alpha=Number(localStorage.getItem('kenalimens:dock-opacity'));
     if(alpha>=55&&alpha<=100)dockPrefs.opacity=alpha;
     dockPrefs.autoHide=localStorage.getItem('kenalimens:dock-auto-hide')==='true';
+    dockPrefs.peek=localStorage.getItem('kenalimens:dock-peek')==='true';
     const delay=Number(localStorage.getItem('kenalimens:dock-hide-delay'));
     if([3,5,10].includes(delay))dockPrefs.hideDelay=delay;
     dockPrefs.snap=localStorage.getItem('kenalimens:dock-snap')!=='false';
@@ -1567,6 +1798,7 @@
   let dockIdleTimer=null;
   const wakeDock=()=>{floatingDock.classList.remove('is-idle');scheduleDockIdle();};
   function scheduleDockIdle(){
+    if(dockPrefs.peek)return;
     if(dockIdleTimer)clearTimeout(dockIdleTimer);
     if(!dockPrefs.autoHide||!dockVisible||!dockSettings.hidden||dockDragging)return;
     dockIdleTimer=setTimeout(()=>{
@@ -1601,10 +1833,30 @@
     $('dock-play').textContent=label;
     $('dock-play').setAttribute('aria-label',state.playing?'Jeda animasi':'Putar animasi');
   }
+  function setDockPeek(hidden,focusRestore=false){
+    dockPrefs.peek=!!hidden;
+    floatingDock.classList.toggle('is-peek',dockPrefs.peek);
+    floatingDock.classList.remove('is-idle');
+    if(dockIdleTimer!==null){clearTimeout(dockIdleTimer);dockIdleTimer=null;}
+    saveDock('peek',String(dockPrefs.peek));
+    // Keep the recovery control reachable, while other controls are genuinely hidden.
+    if(dockPrefs.peek){
+      dockSettings.hidden=true;
+      $('dock-settings-toggle').setAttribute('aria-expanded','false');
+      $('dock-show-box').focus({preventScroll:true});
+    }else if(focusRestore){
+      $('dock-hide-box').focus({preventScroll:true});
+      scheduleDockIdle();
+    }
+    clampDock();
+  }
+  $('dock-hide-box').addEventListener('click',()=>setDockPeek(true));
+  $('dock-show-box').addEventListener('click',()=>setDockPeek(false,true));
   function syncDock(){
     dockDay.value=String(state.day);dockDay.max=String(state.length);
     dockDay.style.setProperty('--dock-progress',((state.day-1)/(state.length-1)*100).toFixed(2)+'%');
     $('dock-day-caption').textContent='Hari '+state.day;
+    $('dock-peek-caption').textContent='H'+state.day+' · '+ovarianPhase(state.day)+' / '+uterinePhase(state.day);
     $('dock-length-caption').textContent=String(state.length);
     // Siklus ovarium dan uterus memiliki fase berbeda yang dapat berjalan bersamaan.
     const ovaryPhase=ovarianPhase(state.day);
@@ -1783,6 +2035,7 @@
   setDockWidth(dockPrefs.width);
   setDockCompact(dockPrefs.compact);
   syncDockAnchorUI();
+  floatingDock.classList.toggle('is-peek',dockPrefs.peek);
   applyDockPosition();updateDockToggle();syncDock();updateDockVisibility();syncDockAdvanced();
 
   legend();render();
