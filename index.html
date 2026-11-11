@@ -621,6 +621,50 @@
     html[data-theme="light"] .uterus-zoom-dialog{background:#fbfdff;color:#283950;border-color:#b8c9dc}
     html[data-theme="light"] .uterus-zoom-header p,html[data-theme="light"] .uterus-zoom-note{color:#526d87}
     @media(max-width:650px){.uterus-zoom-dialog{padding:12px}.uterus-zoom-header h2{font-size:14px}.uterus-zoom-header p{font-size:10px}.uterus-zoom-header button{font-size:11px}#uterus-zoom-slot{justify-content:flex-start}#uterus-zoom-slot svg{width:720px;max-width:none;max-height:none}.anatomy-zoom-row{gap:8px}}
+
+    /* v2.5 · Floating Control follows ovarian and uterine cycle phases. */
+    .floating-dock{--dock-accent:#ff97b8;--dock-accent-rgb:255,151,184;--dock-ovary-accent:#94dfe8;--dock-uterus-accent:#ffb0c9;--dock-surface-start:59,32,54;--dock-surface-end:28,32,52;--dock-light-start:255,241,247;--dock-light-end:250,247,253;background:linear-gradient(135deg,rgba(var(--dock-surface-start),var(--dock-alpha,.95)),rgba(var(--dock-surface-end),var(--dock-alpha,.95)));border-color:rgba(var(--dock-accent-rgb),.5);box-shadow:0 17px 51px #0308159c,0 0 26px rgba(var(--dock-accent-rgb),.13);transition:border-color .4s ease,box-shadow .4s ease,background-color .4s ease,opacity .3s ease}
+    .floating-dock[data-cycle-phase="menstrual"]{--dock-accent:#ff97b8;--dock-accent-rgb:255,151,184;--dock-ovary-accent:#8dd8e6;--dock-uterus-accent:#ff9bb7;--dock-surface-start:59,32,54;--dock-surface-end:28,32,52;--dock-light-start:255,239,246;--dock-light-end:249,244,251}
+    .floating-dock[data-cycle-phase="follicular"]{--dock-accent:#79e1d6;--dock-accent-rgb:121,225,214;--dock-ovary-accent:#88e9d8;--dock-uterus-accent:#aacdff;--dock-surface-start:24,55,62;--dock-surface-end:19,34,54;--dock-light-start:234,253,250;--dock-light-end:239,248,253}
+    .floating-dock[data-cycle-phase="ovulation"]{--dock-accent:#ffd385;--dock-accent-rgb:255,211,133;--dock-ovary-accent:#ffda91;--dock-uterus-accent:#acd3ee;--dock-surface-start:67,49,35;--dock-surface-end:40,37,59;--dock-light-start:255,248,226;--dock-light-end:250,247,240}
+    .floating-dock[data-cycle-phase="luteal"]{--dock-accent:#c7b1ff;--dock-accent-rgb:199,177,255;--dock-ovary-accent:#d8bdff;--dock-uterus-accent:#ffb6d9;--dock-surface-start:51,37,77;--dock-surface-end:29,30,58;--dock-light-start:246,239,255;--dock-light-end:249,245,255}
+    html[data-theme="light"] .floating-dock{background:linear-gradient(135deg,rgba(var(--dock-light-start),var(--dock-alpha,.95)),rgba(var(--dock-light-end),var(--dock-alpha,.95)));border-color:rgba(var(--dock-accent-rgb),.66);box-shadow:0 15px 42px #213e672d,0 0 27px rgba(var(--dock-accent-rgb),.13)}
+    .floating-dock::before{height:3px;background:linear-gradient(90deg,transparent,var(--dock-accent),transparent)}
+    .dock-caption{display:flex;flex-wrap:wrap;align-items:center;gap:2px 5px;line-height:1.35;white-space:normal;overflow:visible;text-overflow:clip}
+    .dock-cycle-total{white-space:nowrap;color:#b4c5de}
+    .dock-caption-phase{font-weight:750;color:var(--dock-accent);min-width:0}
+    html[data-theme="light"] .dock-caption-phase{color:#405775;font-weight:800}
+    html[data-theme="light"] .dock-cycle-total{color:#63738e}
+    .dock-phases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:11px}
+    .dock-phase-pill{display:flex;align-items:center;gap:9px;min-width:0;padding:9px 10px;border-radius:11px;border:1px solid #ffffff24;background:#ffffff08}
+    .dock-phase-ovary{border-color:color-mix(in srgb,var(--dock-ovary-accent) 38%,transparent);background:color-mix(in srgb,var(--dock-ovary-accent) 9%,transparent)}
+    .dock-phase-uterus{border-color:color-mix(in srgb,var(--dock-uterus-accent) 38%,transparent);background:color-mix(in srgb,var(--dock-uterus-accent) 9%,transparent)}
+    .dock-phase-symbol{display:grid;place-items:center;flex:0 0 26px;width:26px;height:26px;border-radius:8px;background:#ffffff12;font-size:16px}
+    .dock-phase-ovary .dock-phase-symbol{color:var(--dock-ovary-accent)}
+    .dock-phase-uterus .dock-phase-symbol{color:var(--dock-uterus-accent)}
+    .dock-phase-copy{display:flex;flex-direction:column;gap:3px;min-width:0;line-height:1.3}
+    .dock-phase-copy small{color:#c3cde2;font-size:9px;font-weight:650}
+    .dock-phase-copy strong{color:#f8f7ff;font-size:12px;line-height:1.3;overflow-wrap:anywhere}
+    .dock-phase-ovary .dock-phase-copy strong{color:var(--dock-ovary-accent)}
+    .dock-phase-uterus .dock-phase-copy strong{color:var(--dock-uterus-accent)}
+    .dock-play{background:var(--dock-accent);border-color:var(--dock-accent);color:#182439;transition:background-color .3s,border-color .3s}
+    .dock-play:hover{background:color-mix(in srgb,var(--dock-accent) 82%,white);border-color:var(--dock-accent)}
+    .dock-day-slider{background:linear-gradient(90deg,var(--dock-accent) 0%,var(--dock-accent) var(--dock-progress,0%),#485a75 var(--dock-progress,0%),#485a75 100%)}
+    .dock-day-slider::-webkit-slider-thumb{background:var(--dock-accent);box-shadow:0 0 0 5px rgba(var(--dock-accent-rgb),.24)}
+    .dock-day-slider::-moz-range-thumb{background:var(--dock-accent)}
+    .floating-dock.is-compact .dock-phases{margin-bottom:7px;gap:6px}
+    .floating-dock.is-compact .dock-phase-pill{padding:6px 8px}
+    .floating-dock.is-idle{max-height:79px!important}
+    html[data-theme="light"] .dock-phase-pill{background:#ffffffb5}
+    html[data-theme="light"] .dock-phase-copy small{color:#56657c}
+    html[data-theme="light"] .dock-phase-copy strong{color:#253752}
+    html[data-theme="light"] .dock-phase-ovary .dock-phase-symbol{color:#277c82}
+    html[data-theme="light"] .dock-phase-uterus .dock-phase-symbol{color:#a04f77}
+    html[data-theme="light"] .dock-play{background:var(--dock-accent);border-color:var(--dock-accent);color:#17233b}
+    html[data-theme="light"] .dock-play:hover{background:color-mix(in srgb,var(--dock-accent) 82%,white)}
+    html[data-theme="light"] .dock-day-slider{background:linear-gradient(90deg,var(--dock-accent) 0%,var(--dock-accent) var(--dock-progress,0%),#c5d3e3 var(--dock-progress,0%),#c5d3e3 100%)}
+    @media(max-width:540px){.dock-phases{gap:6px;margin-bottom:8px}.dock-phase-pill{gap:5px;padding:7px 6px}.dock-phase-symbol{width:23px;height:23px;flex-basis:23px;font-size:14px}.dock-phase-copy small{font-size:8px}.dock-phase-copy strong{font-size:10.5px}.dock-caption-phase{font-size:9px}}
+    @media(prefers-reduced-motion:reduce){.floating-dock,.dock-play{transition:none!important}}
   </style>
 </head>
 <body>
@@ -813,14 +857,14 @@
   <footer class="footer" id="referensi">
     <div class="foot-title">Referensi medis</div>
     <div>Dasar fisiologi: <a href="https://www.ncbi.nlm.nih.gov/books/NBK279054/" target="_blank" rel="noopener noreferrer">Endotext: The Normal Menstrual Cycle</a> · <a href="https://www.ncbi.nlm.nih.gov/books/NBK500020/" target="_blank" rel="noopener noreferrer">StatPearls: Physiology, Menstrual Cycle</a> · <a href="https://www.msdmanuals.com/home/women-s-health-issues/biology-of-the-female-reproductive-system/menstrual-cycle" target="_blank" rel="noopener noreferrer">MSD Manual: Menstrual Cycle</a> · <a href="https://www.acog.org/womens-health/faqs/fertility-awareness-based-methods-of-family-planning" target="_blank" rel="noopener noreferrer">ACOG: Fertility Awareness</a> · <a href="https://www.ncbi.nlm.nih.gov/books/NBK278951/" target="_blank" rel="noopener noreferrer">Endotext: Ovarian Morphology</a> · <a href="https://www.ncbi.nlm.nih.gov/books/NBK532300/" target="_blank" rel="noopener noreferrer">Cox & Takov (2025): Follicle Development</a> · <a href="https://www.ncbi.nlm.nih.gov/books/NBK278962/" target="_blank" rel="noopener noreferrer">Endotext: Endocrinology of Pregnancy</a>.</div>
-    <div class="footer-rule"><span>© 2026 Kenali Mens by Fronstellar · v2.4 · Media pendidikan biomedis</span><span>Semua ilustrasi dan kurva bersifat skematis. Bukan perangkat diagnosis klinis.</span></div>
+    <div class="footer-rule"><span>© 2026 Kenali Mens by Fronstellar · v2.5 · Media pendidikan biomedis</span><span>Semua ilustrasi dan kurva bersifat skematis. Bukan perangkat diagnosis klinis.</span></div>
   </footer>
 </div>
 <!-- Kontrol mengambang, sinkron dengan kontrol utama, tampil setelah navigasi terlewati. -->
 <div id="floating-cycle-dock" class="floating-dock" role="region" aria-label="Kontrol waktu siklus mengambang" hidden>
   <div class="dock-header">
     <button id="dock-grab" class="dock-grab" type="button" title="Seret untuk memindahkan kontrol" aria-label="Seret kontrol untuk memindahkan posisi">⠿</button>
-    <div class="dock-title"><strong>Kontrol waktu siklus</strong><span class="dock-caption"><b id="dock-day-caption">Hari 2</b> dari <span id="dock-length-caption">28</span> · <span id="dock-phase-caption">Menstruasi</span></span></div>
+    <div class="dock-title"><strong>Kontrol waktu siklus</strong><span class="dock-caption"><b id="dock-day-caption">Hari 2</b><span class="dock-cycle-total"> / <span id="dock-length-caption">28</span></span><span id="dock-phase-caption" class="dock-caption-phase">Folikular · Menstruasi</span></span></div>
     <div class="dock-header-actions">
       <button id="dock-compact" class="dock-icon-button" type="button" aria-pressed="false" title="Ringkaskan ukuran panel" aria-label="Ringkaskan ukuran panel">▤</button>
       <button id="dock-settings-toggle" class="dock-icon-button" type="button" aria-expanded="false" aria-controls="dock-settings-panel" title="Atur posisi, ukuran, dan transparansi" aria-label="Atur posisi, ukuran, dan transparansi">⤢</button>
@@ -828,6 +872,10 @@
     </div>
   </div>
   <div class="dock-body">
+    <div class="dock-phases" role="group" aria-label="Fase siklus ovarium dan uterus pada hari yang dipilih">
+      <div class="dock-phase-pill dock-phase-ovary" title="Fase siklus ovarium"><span class="dock-phase-symbol" aria-hidden="true">◉</span><span class="dock-phase-copy"><small>Siklus ovarium</small><strong id="dock-ovarian-phase">Folikular</strong></span></div>
+      <div class="dock-phase-pill dock-phase-uterus" title="Fase siklus uterus"><span class="dock-phase-symbol" aria-hidden="true">▤</span><span class="dock-phase-copy"><small>Siklus uterus</small><strong id="dock-uterine-phase">Menstruasi</strong></span></div>
+    </div>
     <div class="dock-actions">
       <button id="dock-prev" class="dock-step" type="button" aria-label="Hari sebelumnya">‹</button>
       <button id="dock-play" class="dock-play" type="button" aria-label="Putar animasi">▶ Putar</button>
@@ -1489,7 +1537,14 @@
     dockDay.style.setProperty('--dock-progress',((state.day-1)/(state.length-1)*100).toFixed(2)+'%');
     $('dock-day-caption').textContent='Hari '+state.day;
     $('dock-length-caption').textContent=String(state.length);
-    $('dock-phase-caption').textContent=state.day<=5?'Menstruasi':state.day<ovDay()?'Proliferatif':state.day===ovDay()?'Ovulasi':'Sekretori';
+    const ovaryPhase=ovarianPhase(state.day);
+    const uterusPhase=uterinePhase(state.day);
+    const cycleColor=uterusPhase==='Menstruasi'?'menstrual':ovaryPhase==='Ovulasi'?'ovulation':ovaryPhase==='Folikular'?'follicular':'luteal';
+    floatingDock.dataset.cyclePhase=cycleColor;
+    $('dock-ovarian-phase').textContent=ovaryPhase;
+    $('dock-uterine-phase').textContent=uterusPhase;
+    $('dock-phase-caption').textContent=ovaryPhase+' · '+uterusPhase;
+    floatingDock.setAttribute('aria-label','Kontrol waktu siklus: hari '+state.day+', ovarium fase '+ovaryPhase+', uterus fase '+uterusPhase);
     $('dock-left-day').textContent='Hari '+state.day+' / '+state.length;
     $('dock-ov-note').textContent='Ovulasi (model): H'+ovDay();
     $('dock-range-ov').textContent='H'+ovDay();
