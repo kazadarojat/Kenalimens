@@ -546,6 +546,81 @@
     }
     @media (prefers-reduced-motion:reduce){.floating-dock{animation:none!important}}
 
+
+    /* v2.4: Advanced physiology & anatomy */
+    .mechanism-annotations{margin-top:15px;display:flex;gap:12px;align-items:flex-start;border:1px solid #466782;background:linear-gradient(120deg,#132940,#17223b);border-radius:12px;padding:12px 14px}
+    .mechanism-annotations .annotation-dot{flex:0 0 9px;width:9px;height:9px;background:#8de3d4;box-shadow:0 0 13px #8de3d475;border-radius:50%;margin-top:5px}
+    .mechanism-annotations strong{color:#def1ff;font-size:12px}.mechanism-annotations p{font-size:11px;line-height:1.65;margin:4px 0 0;color:#aebfd6}
+    .chart-note a,.hpo-disclaimer a{color:#8de0ef;text-underline-offset:2px}
+    .hpo-interactive{margin-top:22px;border:1px solid #415875;border-radius:18px;background:linear-gradient(135deg,#10233a,#1a1f3a);padding:20px;display:grid;gap:14px}
+    .hpo-status{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .hpo-kicker{font-size:10px;color:#8eaac7;letter-spacing:1.5px;font-weight:850}.hpo-status h3{font:800 clamp(16px,2vw,20px) var(--font-display),sans-serif;margin:5px 0 0;color:#f1f5ff}
+    .hpo-pill{background:#30465c;color:#c6e5ed;border:1px solid #5a7b91;border-radius:99px;padding:8px 12px;font-size:11px;font-weight:800}
+    .hpo-interactive[data-feedback="positive"]{border-color:#a572bb}.hpo-interactive[data-feedback="positive"] .hpo-pill{background:#5e3661;border-color:#c37ea9;color:#ffdaed}
+    .hpo-flow{display:grid;grid-template-columns:minmax(0,1fr) 25px minmax(0,1fr) 25px minmax(0,1fr);align-items:stretch;gap:8px}
+    .hpo-node{padding:16px;border-radius:13px;border:1px solid #41516c;background:#182b43;display:grid;align-content:start;gap:7px;min-width:0}
+    .hpo-node-icon{font-size:23px;color:#aee0ea}.hpo-node small{font-size:9px;letter-spacing:1.2px;color:#91adc9;font-weight:850}.hpo-node strong{font-size:14px;color:#edf6ff}.hpo-node p{font-size:11px;line-height:1.6;margin:0;color:#adc1d7}
+    .hpo-flow-arrow{display:grid;place-items:center;color:#8ce0da;font-size:29px;font-weight:800}
+    .hpo-feedback{border:1px dashed #597c98;border-radius:12px;display:flex;gap:14px;align-items:center;padding:13px 16px;background:#16415540}
+    .hpo-feedback>span{font-size:30px;color:#8ee2d7;font-weight:850}.hpo-feedback strong{font-size:12px;color:#f1f8ff}.hpo-feedback p{font-size:11px;line-height:1.7;color:#bed2e3;margin:4px 0 0}
+    .hpo-interactive[data-feedback="positive"] .hpo-feedback{background:#63304c50;border-color:#b774af}.hpo-interactive[data-feedback="positive"] .hpo-feedback>span{color:#f6a6cf}
+    .hpo-cell-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.hpo-cell-grid>div{padding:12px 14px;border-radius:11px;border:1px solid #3b506b;background:#101b31;display:grid;gap:5px}
+    .hpo-cell-grid b{font-size:11px;color:#dbedfa}.hpo-cell-grid span{font-size:10.5px;color:#98b3c9;line-height:1.6}.hpo-disclaimer{font-size:10px;line-height:1.7;color:#92abc6;margin:0}
+    .follicle-detail{margin-top:16px;border-radius:14px;padding:14px;background:#0f2238;border:1px solid #314963;overflow:hidden}
+    .follicle-detail-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}.follicle-detail-head strong{font-size:12px;color:#f1ddef}.follicle-detail-head span{font-size:10px;color:#a3b8cc}
+    .follicle-detail-grid{display:grid;grid-template-columns:minmax(0,.96fr) minmax(150px,1fr);gap:12px;align-items:center}
+    #follicle-zoom{width:100%;height:auto;max-height:280px;overflow:visible}
+    .follicle-structure{transition:opacity .28s ease,filter .28s ease}
+    .follicle-detail[data-part] .follicle-structure:not(.focused){opacity:.21}
+    .follicle-detail[data-part] .follicle-structure.focused{filter:drop-shadow(0 0 5px #ffe2b9a8);opacity:1}
+    .follicle-structure-list{display:grid;gap:5px}.follicle-structure-list button{border:1px solid #3e5776;background:#1b3049;color:#c9dff1;border-radius:8px;min-height:32px;display:flex;align-items:center;gap:9px;text-align:left;padding:6px 8px;cursor:pointer;font-size:10px}
+    .follicle-structure-list button[aria-pressed="true"]{background:#563e5b;border-color:#d6a5d7;color:white}
+    .follicle-structure-list i,.anatomy-key i{display:inline-block;flex:0 0 8px;width:8px;height:8px;border-radius:50%;background:#f1a9d1}
+    .follicle-structure-list button:nth-child(3) i{background:#7bd7ef}.follicle-structure-list button:nth-child(5) i{background:#ffe7a0}
+    .follicle-part-note{font-size:10.5px;line-height:1.6;color:#e5dcf4;margin:7px 0;border-left:2px solid #bd9de9;padding:5px 9px}
+    .follicle-detail-caption{font-size:9.7px;line-height:1.6;color:#92aac5}
+    .anatomy-key{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px;color:#a9c3da;font-size:10px;line-height:1.5}.anatomy-key span{display:flex;gap:6px;align-items:center}
+    .floating-dock{--dock-alpha:.95;background:linear-gradient(139deg,rgba(27,39,65,var(--dock-alpha)),rgba(15,27,46,var(--dock-alpha)))}
+    html[data-theme="light"] .floating-dock{background:linear-gradient(139deg,rgba(255,255,255,var(--dock-alpha)),rgba(241,246,253,var(--dock-alpha)))}
+    .dock-extra-row{display:grid;grid-template-columns:115px minmax(70px,1fr) auto;gap:10px;align-items:center;font-size:10px}
+    .dock-extra-row input[type="range"]{accent-color:#bba4ff;min-width:0;width:100%}
+    .dock-extra-row select{border:1px solid #526783;background:#243550;color:#eef4ff;border-radius:8px;padding:7px;font-size:10px}
+    .dock-extra-toggles{display:grid;grid-template-columns:1fr 1fr;gap:8px}.dock-extra-toggles label{display:flex;gap:7px;align-items:center;line-height:1.5;cursor:pointer}.dock-extra-toggles input{accent-color:#9e8fed}
+    .floating-dock.is-idle{max-height:53px!important;opacity:.89;box-shadow:0 5px 20px #040c1b70;transition:max-height .28s,opacity .28s,box-shadow .28s}
+    .floating-dock.is-idle .dock-body{opacity:0;pointer-events:none;visibility:hidden;max-height:0;padding-top:0;padding-bottom:0;overflow:hidden}
+    .floating-dock.is-idle .dock-header{border-bottom-color:transparent}
+    .floating-dock.is-idle .dock-title strong::after{content:' · ketuk untuk membuka';font-weight:500;font-size:9px;opacity:.75}
+    html[data-theme="light"] .mechanism-annotations,html[data-theme="light"] .hpo-interactive,html[data-theme="light"] .follicle-detail{background:#f4f8fc;border-color:#cfdbeb}
+    html[data-theme="light"] .mechanism-annotations strong,html[data-theme="light"] .hpo-status h3,html[data-theme="light"] .hpo-node strong,html[data-theme="light"] .hpo-feedback strong,html[data-theme="light"] .follicle-detail-head strong{color:#2b3c58}
+    html[data-theme="light"] .mechanism-annotations p,html[data-theme="light"] .hpo-node p,html[data-theme="light"] .hpo-feedback p,html[data-theme="light"] .follicle-detail-caption{color:#56708d}
+    html[data-theme="light"] .hpo-node,html[data-theme="light"] .hpo-cell-grid>div,html[data-theme="light"] .follicle-structure-list button{background:#fff;color:#36506e;border-color:#ced9e7}
+    html[data-theme="light"] .hpo-cell-grid b,html[data-theme="light"] .follicle-structure-list button{color:#36506e}
+    html[data-theme="light"] .hpo-feedback{background:#e7f0f8;border-color:#9cbdcb}
+    html[data-theme="light"] .hpo-interactive[data-feedback="positive"] .hpo-feedback{background:#fae7f1}
+    html[data-theme="light"] .follicle-part-note{color:#4c5575}
+    html[data-theme="light"] .follicle-structure-list button[aria-pressed="true"]{background:#e9d6ef;border-color:#a58bc7}
+    html[data-theme="light"] .dock-extra-row select{background:#f9fbff;color:#334c67;border-color:#c0cfe0}
+    @media(max-width:760px){.hpo-flow{grid-template-columns:1fr}.hpo-flow-arrow{transform:rotate(90deg);font-size:20px}.hpo-cell-grid{grid-template-columns:1fr}.hpo-interactive{padding:14px}.follicle-detail-grid{grid-template-columns:1fr}.follicle-structure-list{grid-template-columns:1fr 1fr}}
+    @media(max-width:450px){.follicle-structure-list button{font-size:9px}.dock-extra-row{grid-template-columns:84px minmax(60px,1fr) auto;gap:6px}.dock-extra-toggles{grid-template-columns:1fr}}
+    @media(prefers-reduced-motion:reduce){.follicle-structure,.floating-dock.is-idle{transition:none!important}}
+
+    /* Detail-oriented anatomy viewing: SVG remains synchronized in modal. */
+    .anatomy-zoom-row{margin:11px 0 6px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;color:#96aac4;font-size:10px}
+    .anatomy-zoom-row button{border:1px solid #536e8c;border-radius:9px;color:#d8e9f9;background:#263852;padding:8px 12px;font-size:10px;font-weight:750;cursor:pointer}
+    .anatomy-zoom-row button:hover{background:#344c68}
+    .tract-labels{font-size:13.3px}
+    .uterus-zoom-dialog{width:min(96vw,1050px);max-width:min(96vw,1050px);max-height:94dvh;padding:18px;background:#102036;border:1px solid #61758c;border-radius:20px;color:#ecf3ff;box-shadow:0 30px 110px #020813a6}
+    .uterus-zoom-dialog::backdrop{background:#040815db;backdrop-filter:blur(6px)}
+    .uterus-zoom-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+    .uterus-zoom-header h2{font-size:17px;margin:0 0 4px}.uterus-zoom-header p{font-size:11px;color:#a4c0d5;margin:0}
+    .uterus-zoom-header button{border:1px solid #7385a2;background:#253951;border-radius:9px;padding:9px 13px;color:white;cursor:pointer;flex-shrink:0}
+    #uterus-zoom-slot{display:flex;justify-content:center;overflow-x:auto;max-height:calc(94dvh - 120px);min-height:250px;overscroll-behavior:contain}
+    #uterus-zoom-slot svg{flex:0 0 auto;display:block;width:min(920px,calc(94vw - 55px));height:auto;max-height:calc(94dvh - 134px)}
+    .uterus-zoom-note{font-size:10px;color:#a7bfd5;margin:8px 0 0}
+    html[data-theme="light"] .anatomy-zoom-row button{color:#364765;background:#eff3fa;border-color:#b8c9df}
+    html[data-theme="light"] .uterus-zoom-dialog{background:#fbfdff;color:#283950;border-color:#b8c9dc}
+    html[data-theme="light"] .uterus-zoom-header p,html[data-theme="light"] .uterus-zoom-note{color:#526d87}
+    @media(max-width:650px){.uterus-zoom-dialog{padding:12px}.uterus-zoom-header h2{font-size:14px}.uterus-zoom-header p{font-size:10px}.uterus-zoom-header button{font-size:11px}#uterus-zoom-slot{justify-content:flex-start}#uterus-zoom-slot svg{width:720px;max-width:none;max-height:none}.anatomy-zoom-row{gap:8px}}
   </style>
 </head>
 <body>
@@ -630,16 +705,17 @@
     <div class="dashboard-grid">
       <section class="section chart-card" aria-labelledby="chart-title">
         <div class="card-kicker"><span class="tiny-icon">∿</span>02 / DINAMIKA ENDOKRIN</div>
-        <div class="chart-head"><div><h2 id="chart-title">Grafik empat hormon</h2><div class="sub">Amati lonjakan LH, puncak estradiol praovulasi, dan dominasi progesteron setelah ovulasi.</div></div></div>
-        <svg class="plot" id="hormone-chart" role="img" aria-label="Kurva kadar relatif FSH, LH, estradiol, dan progesteron sepanjang siklus" viewBox="0 0 900 320"></svg>
+        <div class="chart-head"><div><h2 id="chart-title">Dinamika enam hormon</h2><div class="sub">FSH, LH, estradiol, progesteron, inhibin A, dan inhibin B berubah relatif terhadap fase ovarium.</div></div></div>
+        <svg class="plot" id="hormone-chart" role="img" aria-label="Kurva pola relatif enam hormon FSH, LH, estradiol, progesteron, inhibin A, dan inhibin B sepanjang siklus" viewBox="0 0 900 320"></svg>
         <div class="chart-legend" id="chart-legend" aria-label="Pilih kurva hormon"></div>
-        <div class="chart-note">* Keempat kurva menampilkan <b>intensitas relatif pada skala masing-masing hormon</b>, bukan konsentrasi serum absolut. Peningkatan FSH awal, puncak estradiol sebelum LH surge, dan progesteron luteal mencerminkan pola kualitatif, bukan nilai laboratorium. Klik/sentuh kurva untuk memilih hari. Rujukan: <a href="https://www.ncbi.nlm.nih.gov/books/NBK279054/" target="_blank" rel="noopener noreferrer">Reed & Carr, Endotext</a>.</div>
+        <div class="chart-note"><b>Skala 0–100 adalah indeks pola ilustratif per hormon (unit arbitrer), bukan kadar plasma, persentase biologis, atau data pasien.</b> Amplitudo tidak dapat dibandingkan antarhormon. Kurva ini menggambarkan urutan fisiologis, bukan pengukuran atau prediksi masa subur. <a href="https://www.ncbi.nlm.nih.gov/books/NBK279054/" target="_blank" rel="noopener noreferrer">Sumber: Endotext</a>.</div>
+        <div class="mechanism-annotations" id="chart-mechanism" aria-live="polite"><span class="annotation-dot"></span><div><strong id="chart-mechanism-title">Fase folikular</strong><p id="chart-mechanism-detail">FSH membantu pertumbuhan folikel.</p></div></div>
       </section>
       <section class="section metrics-card" aria-labelledby="metrics-title">
         <div class="card-kicker"><span class="tiny-icon">◈</span>03 / PROFIL HORMONAL</div>
-        <h2 id="metrics-title">Kadar relatif hari ini</h2><div class="sub">Indikator mengikuti garis pada grafik di samping.</div>
+        <h2 id="metrics-title">Pola hormonal hari ini</h2><div class="sub">Indeks skematis masing-masing hormon, mengikuti hari yang dipilih.</div>
         <div class="hormone-list" id="hormone-list"></div>
-        <div class="metrics-note">FSH dan LH berasal dari hipofisis anterior; estradiol dan progesteron terutama diproduksi ovarium. Kadar sesungguhnya berfluktuasi dalam satu hari dan berbeda antarindividu.</div>
+        <div class="metrics-note">FSH dan LH berasal dari hipofisis anterior; estradiol dan progesteron terutama diproduksi ovarium. Inhibin B terutama berasal dari granulosa folikel berkembang; inhibin A meningkat setelah luteinisasi dan dominan dalam fase luteal. Kedua inhibin menghambat sekresi FSH. Ini bukan kadar serum.</div>
       </section>
     </div>
 
@@ -648,6 +724,30 @@
         <div class="card-kicker"><span class="tiny-icon">◎</span>04 / PERKEMBANGAN OVARIUM</div>
         <h2 id="ovary-title">Perjalanan folikel & oosit</h2><div class="sub">Morfologi disederhanakan. Folikel primordial sampai preantral telah berkembang jauh sebelum siklus yang sedang disimulasikan.</div>
         <div class="anatomy-visual"><span class="image-watermark">ILUSTRASI OVARIUM</span><svg id="ovary-svg" viewBox="0 0 500 290" role="img" aria-label="Ilustrasi dinamis perkembangan folikel di dalam ovarium"></svg></div>
+        <div class="follicle-detail" aria-label="Perbesaran struktur folikel antral">
+          <div class="follicle-detail-head"><strong>Detail folikel antral</strong><span>Ketuk nama struktur untuk menyorot</span></div>
+          <div class="follicle-detail-grid">
+            <svg id="follicle-zoom" viewBox="0 0 320 285" role="img" aria-label="Penampang folikel antral: teka, granulosa, antrum, kumulus ooforus, zona pelusida, dan oosit">
+              <defs><radialGradient id="az-fluid"><stop stop-color="#4a9dba"/><stop offset="1" stop-color="#265e83"/></radialGradient><radialGradient id="az-ovum"><stop stop-color="#ffe2b1"/><stop offset="1" stop-color="#d99275"/></radialGradient></defs>
+              <g class="follicle-structure" data-folpart="theca"><circle cx="160" cy="141" r="117" fill="#6c3d57" stroke="#e6a0b8" stroke-width="8"/><circle cx="160" cy="141" r="108" fill="#96526c" stroke="#e3a2bc" stroke-width="3"/><circle cx="160" cy="141" r="100" fill="#bb6486" stroke="#fac3d1" stroke-width="2"/></g>
+              <g class="follicle-structure" data-folpart="granulosa"><circle cx="160" cy="141" r="94" fill="#a75d81" stroke="#ffd0dc" stroke-width="8"/><circle cx="251.0" cy="141.0" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="250.0" cy="154.6" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="247.0" cy="167.8" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="242.0" cy="180.5" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="235.2" cy="192.3" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="226.7" cy="202.9" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="216.7" cy="212.1" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="205.5" cy="219.8" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="193.2" cy="225.7" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="180.2" cy="229.7" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="166.8" cy="231.7" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="153.2" cy="231.7" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="139.8" cy="229.7" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="126.8" cy="225.7" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="114.5" cy="219.8" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="103.3" cy="212.1" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="93.3" cy="202.9" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="84.8" cy="192.3" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="78.0" cy="180.5" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="73.0" cy="167.8" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="70.0" cy="154.6" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="69.0" cy="141.0" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="70.0" cy="127.4" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="73.0" cy="114.2" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="78.0" cy="101.5" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="84.8" cy="89.7" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="93.3" cy="79.1" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="103.3" cy="69.9" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="114.5" cy="62.2" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="126.8" cy="56.3" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="139.8" cy="52.3" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="153.2" cy="50.3" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="166.8" cy="50.3" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="180.2" cy="52.3" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="193.2" cy="56.3" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="205.5" cy="62.2" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="216.7" cy="69.9" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="226.7" cy="79.1" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="235.2" cy="89.7" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="242.0" cy="101.5" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="247.0" cy="114.2" r="2.9" fill="#f8bfcd" opacity=".89"/><circle cx="250.0" cy="127.4" r="2.9" fill="#f8bfcd" opacity=".89"/></g>
+              <g class="follicle-structure" data-folpart="antrum"><circle cx="160" cy="141" r="80" fill="url(#az-fluid)" stroke="#8bd9ec" stroke-width="3"/><path d="M95 114 Q152 75 210 105" stroke="#8deaf0" stroke-width="4" opacity=".23" fill="none"/></g>
+              <g class="follicle-structure" data-folpart="cumulus"><path d="M81 169 Q106 136 124 155 Q147 171 147 194 Q116 218 90 193Z" fill="#e79cb2" stroke="#ffcede" stroke-width="5"/><circle cx="111" cy="181" r="24" fill="#d87b9a" stroke="#fff1dc" stroke-width="2"/></g>
+              <g class="follicle-structure" data-folpart="zona"><circle cx="109" cy="181" r="20" fill="#f6d2ae" stroke="#ffe8ad" stroke-width="8"/></g>
+              <g class="follicle-structure" data-folpart="oocyte"><circle cx="109" cy="181" r="13" fill="url(#az-ovum)" stroke="#ffe7b8" stroke-width="2"/><circle cx="111" cy="181" r="4.5" fill="#9f6988" opacity=".72"/></g>
+            </svg>
+            <div class="follicle-structure-list" role="group" aria-label="Pilih struktur folikel">
+              <button type="button" data-part="theca"><i></i><b>Teka interna/eksterna</b></button>
+              <button type="button" data-part="granulosa"><i></i><b>Sel granulosa</b></button>
+              <button type="button" data-part="antrum"><i></i><b>Antrum</b></button>
+              <button type="button" data-part="cumulus"><i></i><b>Kumulus ooforus</b></button>
+              <button type="button" data-part="zona"><i></i><b>Zona pelusida</b></button>
+              <button type="button" data-part="oocyte"><i></i><b>Oosit</b></button>
+            </div>
+          </div>
+          <p class="follicle-part-note" id="follicle-part-note" aria-live="polite">Folikel antral ditampilkan sebagai perbesaran referensi. Struktur dan ukurannya skematis.</p>
+          <div class="follicle-detail-caption">Pembesaran referensi folikel antral matang, <b>bukan</b> tampilan yang selalu ada pada setiap hari. Pada fase luteal yang dominan adalah korpus luteum.</div>
+        </div>
         <div class="stage-tag" id="ovary-stage">◉ Folikel dominan</div>
         <p class="anatomy-explainer" id="ovary-explainer"></p>
         <div class="keypoint" id="oocyte-note"></div>
@@ -655,8 +755,10 @@
       <section class="section anatomy-card" aria-labelledby="uterus-title">
         <div class="card-kicker"><span class="tiny-icon">▤</span>05 / PERUBAHAN ENDOMETRIUM</div>
         <h2 id="uterus-title">Traktus reproduksi wanita & endometrium</h2><div class="sub">Skema anatomi ovarium, fimbriae, tuba uterina, uterus, serviks, dan vagina. Lapisan endometrium mengikuti hari siklus.</div>
-        <div class="anatomy-visual"><span class="image-watermark">TRAKTUS REPRODUKSI WANITA</span><svg id="uterus-svg" viewBox="0 0 500 382" role="img" aria-label="Skema anatomi uterus, tuba falopi, fimbriae, ovarium, serviks, dan vagina"></svg></div>
-        <div class="anatomy-label-key" aria-label="Keterangan struktur ilustrasi uterus"><span><i style="background:#bd7697"></i>Miometrium</span><span><i style="background:#ffc6dd"></i>Endometrium</span><span><i style="background:#b76f94"></i>Tuba uterina & fimbriae</span><span><i style="background:#d58db2"></i>Ovarium</span><span><i style="background:#cca2bd"></i>Serviks & vagina</span></div>
+        <div class="anatomy-visual"><span class="image-watermark">TRAKTUS REPRODUKSI WANITA</span><svg id="uterus-svg" viewBox="0 0 700 455" role="img" aria-label="Skema anatomi uterus, tuba falopi, fimbriae, ovarium, serviks, dan vagina"></svg></div>
+        
+        <div class="anatomy-zoom-row"><span>Diagram anatomi dilengkapi label. Perbesar untuk memeriksa detail.</span><button id="uterus-zoom-open" type="button" aria-haspopup="dialog">⤢ Perbesar ilustrasi</button></div>
+        <div class="anatomy-key"><span><i style="background:#df98b6"></i>Uterus: fundus, korpus, serviks</span><span><i style="background:#e1b1cd"></i>Tuba: isthmus, ampula, infundibulum, fimbriae</span><span><i style="background:#be759d"></i>Ovarium terpisah dari ujung tuba</span></div>
         <div class="bleeding-dashboard" id="perdarahan" aria-labelledby="bleeding-heading">
           <div class="bleeding-top">
             <div class="bleeding-title-wrap"><div class="bleeding-kicker"><span class="bleeding-bullet" id="bleed-indicator"></span> SIMULASI ALIRAN MENSTRUASI</div><strong id="bleeding-heading">Tidak ada perdarahan</strong><span id="bleeding-current" class="bleeding-current">Fase nonmenstruasi</span></div>
@@ -685,6 +787,19 @@
       <div class="card-kicker">06 / AKSIS HIPOTALAMUS–HIPOFISIS–OVARIUM</div>
       <h2 id="mech-title">Mengapa semuanya bergerak bersama?</h2>
       <div class="sub">Tiga hubungan kunci yang menggerakkan siklus menstruasi.</div>
+      <div class="hpo-interactive" id="hpo-interactive" data-feedback="negative" aria-label="Diagram alur dan umpan balik aksis hipotalamus hipofisis ovarium">
+        <div class="hpo-status"><div><span class="hpo-kicker">ALUR ENDOKRIN · <b id="hpo-day">HARI 2</b></span><h3 id="hpo-phase">Umpan balik negatif</h3></div><span class="hpo-pill" id="hpo-feedback-badge">− Negatif dominan</span></div>
+        <div class="hpo-flow" role="group" aria-label="Hipotalamus menuju hipofisis anterior lalu ovarium">
+          <div class="hpo-node" id="hpo-hypothalamus"><span class="hpo-node-icon">◎</span><small>01 / HIPOTALAMUS</small><strong>GnRH pulsatif</strong><p>Mengatur sekresi gonadotropin dari hipofisis anterior</p></div>
+          <span class="hpo-flow-arrow" aria-hidden="true">→</span>
+          <div class="hpo-node" id="hpo-pituitary"><span class="hpo-node-icon">⚡</span><small>02 / HIPOFISIS ANTERIOR</small><strong>FSH + LH</strong><p>FSH → granulosa; LH → teka interna dan luteinisasi</p></div>
+          <span class="hpo-flow-arrow" aria-hidden="true">→</span>
+          <div class="hpo-node" id="hpo-ovary"><span class="hpo-node-icon">◉</span><small>03 / OVARIUM</small><strong>E₂ · P₄ · inhibin</strong><p>Folikel berkembang atau korpus luteum aktif sesuai fase</p></div>
+        </div>
+        <div class="hpo-feedback" id="hpo-feedback" aria-live="polite"><span id="hpo-feedback-symbol">↶</span><div><strong id="hpo-feedback-title">Umpan balik negatif</strong><p id="hpo-feedback-detail">Estradiol dan inhibin menurunkan FSH melalui aksis hipofisis.</p></div></div>
+        <div class="hpo-cell-grid"><div><b>LH → sel teka interna</b><span>Steroidogenesis androgen dari prekursor kolesterol</span></div><div><b>FSH → sel granulosa</b><span>Aromatase mengubah androgen menjadi estradiol (model dua sel, dua gonadotropin)</span></div></div>
+        <p class="hpo-disclaimer">Indikator menandai mekanisme dominan secara kualitatif, bukan pengukuran frekuensi pulsa GnRH atau kadar hormon. Estrogen tinggi dan menetap praovulasi memicu umpan balik positif sehingga terjadi lonjakan LH. <a href="https://www.ncbi.nlm.nih.gov/books/NBK500020/" target="_blank" rel="noopener noreferrer">Referensi fisiologi</a>.</p>
+      </div>
       <div class="mechanism-grid">
         <div class="mechanism-node"><div class="mechanism-number">01</div><h3>GnRH → FSH & LH</h3><p>Pulsa GnRH dari hipotalamus merangsang hipofisis anterior. FSH mendukung pertumbuhan folikel dan fungsi sel granulosa, sedangkan LH merangsang sel teka serta memicu ovulasi dan luteinisasi.</p></div>
         <div class="mechanism-node"><div class="mechanism-number">02</div><h3>Estrogen → Umpan balik positif</h3><p>Estradiol yang tinggi dan menetap menjelang ovulasi membalik umpan balik negatif menjadi positif. Akibatnya terjadi <i>LH surge</i>, disertai peningkatan FSH yang lebih kecil.</p></div>
@@ -698,7 +813,7 @@
   <footer class="footer" id="referensi">
     <div class="foot-title">Referensi medis</div>
     <div>Dasar fisiologi: <a href="https://www.ncbi.nlm.nih.gov/books/NBK279054/" target="_blank" rel="noopener noreferrer">Endotext: The Normal Menstrual Cycle</a> · <a href="https://www.ncbi.nlm.nih.gov/books/NBK500020/" target="_blank" rel="noopener noreferrer">StatPearls: Physiology, Menstrual Cycle</a> · <a href="https://www.msdmanuals.com/home/women-s-health-issues/biology-of-the-female-reproductive-system/menstrual-cycle" target="_blank" rel="noopener noreferrer">MSD Manual: Menstrual Cycle</a> · <a href="https://www.acog.org/womens-health/faqs/fertility-awareness-based-methods-of-family-planning" target="_blank" rel="noopener noreferrer">ACOG: Fertility Awareness</a> · <a href="https://www.ncbi.nlm.nih.gov/books/NBK278951/" target="_blank" rel="noopener noreferrer">Endotext: Ovarian Morphology</a> · <a href="https://www.ncbi.nlm.nih.gov/books/NBK532300/" target="_blank" rel="noopener noreferrer">Cox & Takov (2025): Follicle Development</a> · <a href="https://www.ncbi.nlm.nih.gov/books/NBK278962/" target="_blank" rel="noopener noreferrer">Endotext: Endocrinology of Pregnancy</a>.</div>
-    <div class="footer-rule"><span>© 2026 Kenali Mens by Fronstellar · v2.3 · Media pendidikan biomedis</span><span>Semua ilustrasi dan kurva bersifat skematis. Bukan perangkat diagnosis klinis.</span></div>
+    <div class="footer-rule"><span>© 2026 Kenali Mens by Fronstellar · v2.4 · Media pendidikan biomedis</span><span>Semua ilustrasi dan kurva bersifat skematis. Bukan perangkat diagnosis klinis.</span></div>
   </footer>
 </div>
 <!-- Kontrol mengambang, sinkron dengan kontrol utama, tampil setelah navigasi terlewati. -->
@@ -708,7 +823,7 @@
     <div class="dock-title"><strong>Kontrol waktu siklus</strong><span class="dock-caption"><b id="dock-day-caption">Hari 2</b> dari <span id="dock-length-caption">28</span> · <span id="dock-phase-caption">Menstruasi</span></span></div>
     <div class="dock-header-actions">
       <button id="dock-compact" class="dock-icon-button" type="button" aria-pressed="false" title="Ringkaskan ukuran panel" aria-label="Ringkaskan ukuran panel">▤</button>
-      <button id="dock-settings-toggle" class="dock-icon-button" type="button" aria-expanded="false" aria-controls="dock-settings-panel" title="Atur ukuran dan posisi panel" aria-label="Atur ukuran dan posisi panel">⤢</button>
+      <button id="dock-settings-toggle" class="dock-icon-button" type="button" aria-expanded="false" aria-controls="dock-settings-panel" title="Atur posisi, ukuran, dan transparansi" aria-label="Atur posisi, ukuran, dan transparansi">⤢</button>
       <button id="dock-dismiss" class="dock-icon-button" type="button" title="Matikan kontrol melayang" aria-label="Matikan kontrol mengambang">×</button>
     </div>
   </div>
@@ -728,16 +843,37 @@
       <div class="dock-size-presets" role="group" aria-label="Ukuran cepat"><button type="button" data-dock-width="360">Kecil</button><button type="button" data-dock-width="560">Sedang</button><button type="button" data-dock-width="800">Lebar</button></div>
       <label class="dock-position-control" for="dock-position-select">Posisi <select id="dock-position-select" aria-label="Pilih posisi kontrol mengambang"><option value="bottom-left">Kiri bawah</option><option value="bottom-center">Tengah bawah</option><option value="bottom-right">Kanan bawah</option><option value="top-left">Kiri atas</option><option value="top-center">Tengah atas</option><option value="top-right">Kanan atas</option><option value="manual">Manual (drag)</option></select><span></span></label>
       <div class="dock-position-presets" role="group" aria-label="Posisi cepat"><button type="button" data-dock-anchor="bottom-left">↙ Kiri bawah</button><button type="button" data-dock-anchor="bottom-center">↓ Tengah bawah</button><button type="button" data-dock-anchor="bottom-right">↘ Kanan bawah</button><button type="button" data-dock-anchor="top-left">↖ Kiri atas</button><button type="button" data-dock-anchor="top-right">↗ Kanan atas</button></div>
-      <div class="dock-position-hint">Tips: pilih posisi cepat atau seret handle ⠿ untuk memakai posisi manual. Preferensi posisi akan diingat browser.</div>
+      <label class="dock-extra-row">Transparansi latar <input id="dock-opacity" type="range" min="55" max="100" step="5" value="95" aria-label="Transparansi latar kontrol mengambang"><output id="dock-opacity-value">95%</output></label>
+      <div class="dock-extra-toggles"><label><input id="dock-auto-hide" type="checkbox"> Auto-hide saat tidak dipakai</label><label><input id="dock-snap" type="checkbox" checked> Snap-to-edge setelah digeser</label></div>
+      <label class="dock-extra-row" for="dock-hide-delay">Waktu auto-hide <select id="dock-hide-delay"><option value="3">3 detik</option><option value="5" selected>5 detik</option><option value="10">10 detik</option></select></label>
+      <div class="dock-position-hint">Tips: seret handle ⠿ untuk memindahkan panel. Auto-hide hanya meringkas panel menjadi bilah yang bisa diketuk, bukan menghilangkan kontrol sepenuhnya.</div>
       <button id="dock-reset-position" class="dock-reset-position" type="button">↺ Atur ulang ke posisi terpilih</button>
     </div>
   </div>
 </div>
+<dialog id="uterus-zoom-dialog" class="uterus-zoom-dialog" aria-labelledby="uterus-zoom-title">
+  <div class="uterus-zoom-header"><div><h2 id="uterus-zoom-title">Atlas anatomi reproduksi</h2><p>Geser horizontal pada ponsel untuk melihat seluruh detail dan label.</p></div><button id="uterus-zoom-close" type="button" aria-label="Tutup perbesaran anatomi">× Tutup</button></div>
+  <div id="uterus-zoom-slot"></div>
+  <p class="uterus-zoom-note">Ilustrasi anatomi dan ukuran struktur bersifat skematis, tidak digambar menurut skala klinis.</p>
+</dialog>
 
 <script>
 (() => {
   'use strict';
   const $=id=>document.getElementById(id);
+  // Dialog pembesaran memindahkan node SVG yang sama agar perubahan hari tetap sinkron.
+  const zoomDialog=$('uterus-zoom-dialog');
+  const uterusOriginal=$('uterus-svg').parentElement;
+  $('uterus-zoom-open').addEventListener('click',()=>{
+    const el=$('uterus-svg');$('uterus-zoom-slot').appendChild(el);
+    try{zoomDialog.showModal();}catch(e){uterusOriginal.appendChild(el);}
+  });
+  $('uterus-zoom-close').addEventListener('click',()=>zoomDialog.close());
+  zoomDialog.addEventListener('close',()=>{
+    const el=$('uterus-svg');if(el.parentElement!==uterusOriginal)uterusOriginal.appendChild(el);
+  });
+  zoomDialog.addEventListener('click',e=>{if(e.target===zoomDialog)zoomDialog.close();});
+
 
   // Pengaturan tersimpan secara lokal tanpa login atau server.
   const fontChoices=["poppins","inter","dm-sans","outfit","plus-jakarta","manrope","nunito","montserrat","rubik","lato","space-grotesk","source-sans","ibm-plex","quicksand","merriweather"];
@@ -807,10 +943,10 @@
     heroCopy.classList.add('is-hero-animating');
   });
 
-  const colors={FSH:'#ffca77',LH:'#65dce7',E2:'#f582b3',P4:'#b6a1ff'};
-  const hormoneLabels={FSH:'FSH',LH:'LH',E2:'Estradiol (E₂)',P4:'Progesteron (P₄)'};
-  const descriptions={FSH:'Rekrutmen & maturasi folikel melalui sel granulosa.',LH:'Lonjakan praovulasi memicu pelepasan oosit.',E2:'Mendorong proliferasi endometrium & LH surge.',P4:'Mengubah endometrium menjadi sekretorik.'};
-  const state={day:2,length:28,playing:false,timer:null,demo:false,speed:1,chartSig:"",chartDay:2,chartRaf:null,visible:{FSH:true,LH:true,E2:true,P4:true}};
+  const colors={FSH:'#ffca77',LH:'#65dce7',E2:'#f582b3',P4:'#b6a1ff',INHA:'#f08f68',INHB:'#79d5a1'};
+  const hormoneLabels={FSH:'FSH',LH:'LH',E2:'Estradiol (E₂)',P4:'Progesteron (P₄)',INHA:'Inhibin A',INHB:'Inhibin B'};
+  const descriptions={FSH:'Mendukung kohort folikel antral dan granulosa.',LH:'Merangsang teka interna, lalu surge praovulasi.',E2:'Dominan praovulasi; feedback positif bila tinggi menetap.',P4:'Diproduksi korpus luteum; mempertahankan fase sekretori.',INHA:'Dominan fase luteal; menekan FSH.',INHB:'Lebih dominan fase folikular; menekan FSH.'};
+  const state={day:2,length:28,playing:false,timer:null,demo:false,speed:1,chartSig:"",chartDay:2,chartRaf:null,visible:{FSH:true,LH:true,E2:true,P4:true,INHA:true,INHB:true}};
   const gauss=(x,mu,s)=>Math.exp(-0.5*((x-mu)/s)**2);
   const clamp=(x,min,max)=>Math.max(min,Math.min(max,x));
   const ovDay=()=>state.length-14;
@@ -818,7 +954,9 @@
     FSH:clamp(12+23*gauss(day,2,2.8)+29*gauss(day,ov-.8,1.15)+7*gauss(day,state.length,1.8),0,100),
     LH:clamp(7+91*gauss(day,ov-.85,.8),0,100),
     E2:clamp(10+77*gauss(day,ov-1.8,2.95)+40*gauss(day,ov+7,3.4),0,100),
-    P4:clamp(4+85*gauss(day,ov+7.2,3.7)/(1+Math.exp(-(day-ov-1)*2)),0,100)
+    P4:clamp(4+85*gauss(day,ov+7.2,3.7)/(1+Math.exp(-(day-ov-1)*2)),0,100),
+    INHA:clamp(6+11*gauss(day,ov-1.5,1.6)+76*gauss(day,ov+7,3.4),0,100),
+    INHB:clamp(9+65*gauss(day,6.5,3.5)+33*gauss(day,ov+.45,1.5),0,100)
   }};
   const ovarianPhase=(d)=>d<ovDay()?'Folikular':d===ovDay()?'Ovulasi':'Luteal';
   const uterinePhase=(d)=>d<=5?'Menstruasi':d<=ovDay()?'Proliferatif':'Sekretori';
@@ -888,11 +1026,12 @@
     [0,25,50,75,100].forEach(v=>{let yy=y(v);html+=`<line x1="${L}" x2="${R}" y1="${yy}" y2="${yy}" stroke="#45516b" stroke-width=".8" stroke-dasharray="4 6" opacity=".65"/><text x="${L-15}" y="${yy+4}" fill="#8495af" font-size="11" text-anchor="end">${v}</text>`;});
     let ticks=[1];for(let d=7;d<n-2;d+=7)ticks.push(d);ticks.push(n);
     [...new Set(ticks)].forEach(d=>{html+=`<text x="${x(d)}" y="${B+23}" font-size="11" fill="#91a3be" text-anchor="middle">${d}</text>`;});
-    html+=`<text x="${(L+R)/2}" y="${B+42}" font-size="11" fill="#879bb8" text-anchor="middle">Hari siklus</text><text x="${L}" y="14" font-size="10" fill="#879bb8">Kadar relatif (%)</text>`;
-    for(const key of ['FSH','LH','E2','P4'])if(state.visible[key]){
+    html+=`<text x="${(L+R)/2}" y="${B+42}" font-size="11" fill="#879bb8" text-anchor="middle">Hari siklus</text><text x="${L}" y="14" font-size="10" fill="#879bb8">Indeks relatif (unit arbitrer)</text>`;
+    for(const key of Object.keys(colors))if(state.visible[key]){
       let path='';for(let i=0;i<=n*8;i++){let d=1+(n-1)*i/(n*8),v=hormones(d)[key];path+=(i?'L':'M')+x(d).toFixed(2)+' '+y(v).toFixed(2)+' ';}
       html+=`<path d="${path}" fill="none" stroke="${colors[key]}" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>`;
     }
+    html+=`<text x="${x(Math.max(3,ov-4))}" y="${T+18}" fill="#f5afd1" font-size="11" font-weight="750" text-anchor="end">E₂ tinggi → LH surge</text><path d="M${x(ov-1.5)} ${T+22} L${x(ov-.85)} ${y(96)}" stroke="#f2a1c8" opacity=".65" stroke-dasharray="3 3"/>`;
     html+=`<g id="chart-cursor"><line x1="0" y1="${T}" x2="0" y2="${B}" stroke="#f2f4ff" stroke-width="1.5" stroke-dasharray="5 5" opacity=".75"/><rect id="cursor-bg" y="1" width="62" height="20" rx="6" fill="#eae8ff"/><text id="cursor-label" y="15" text-anchor="middle" font-weight="800" font-size="10" fill="#1b2131">HARI ${state.day}</text>`;
     for(const key of Object.keys(colors))if(state.visible[key])html+=`<circle id="cursor-${key}" cx="0" cy="${y(hormones(state.day)[key])}" r="5" fill="${colors[key]}" stroke="#101a2b" stroke-width="2.4"/>`;
     html+=`</g><rect x="${L}" y="${T}" width="${w}" height="${h}" fill="transparent" id="plot-hit"/>`;
@@ -903,11 +1042,11 @@
   function hormoneCards(){
     const root=$('hormone-list'),values=hormones(state.day);
     if(!root.children.length){
-      for(const k of ['FSH','LH','E2','P4']){
+      for(const k of Object.keys(colors)){
         root.insertAdjacentHTML('beforeend',`<div class="hormone-item"><div class="hormone-head"><span class="hormone-name"><i class="hormone-dot" style="background:${colors[k]}"></i>${hormoneLabels[k]}</span><span class="hormone-state" id="hstate-${k}"></span></div><div class="meter"><div class="meter-fill" id="hbar-${k}" style="width:0%;background:${colors[k]}"></div></div><div class="hormone-desc">${descriptions[k]}</div></div>`);
       }
     }
-    for(const k of ['FSH','LH','E2','P4']){
+    for(const k of Object.keys(colors)){
       let v=values[k],level=v>=70?'Puncak / tinggi':v>=31?'Sedang':'Rendah';
       $('hstate-'+k).textContent=level;
       $('hbar-'+k).style.width=v.toFixed(1)+'%';
@@ -928,6 +1067,47 @@
     setTimeout(()=>old.forEach(node=>{if(node.isConnected)node.remove();}),830);
   }
   const dot=(x,y,r,fill,opacity=1)=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${fill}" opacity="${opacity}"/>`;
+  const follicleDescriptions={
+    theca:'Teka eksterna memberi sokongan fibromuskular; teka interna kaya vaskularisasi dan reseptor LH, menghasilkan androgen.',
+    granulosa:'Granulosa menerima stimulasi FSH; aromatase mengubah androgen teka menjadi estradiol. Lapisan ini mengelilingi antrum.',
+    antrum:'Antrum adalah rongga berisi cairan folikel yang membesar saat folikel berkembang menjadi antral/dominan.',
+    cumulus:'Kumulus ooforus merupakan kelompok sel granulosa yang menopang oosit di dalam folikel antral.',
+    zona:'Zona pelusida adalah matriks glikoprotein yang menyelubungi oosit, terletak di antara oosit dan sel kumulus/corona radiata.',
+    oocyte:'Pada sebagian besar fase folikular oosit masih primer; menjelang ovulasi, lonjakan LH memicu kelanjutan meiosis I.'
+  };
+  function focusFolliclePart(part){
+    const box=document.querySelector('.follicle-detail');if(!box)return;
+    if(!follicleDescriptions[part]){box.removeAttribute('data-part');$('follicle-part-note').textContent='Pilih struktur untuk melihat fungsi spesifiknya.';}
+    else{box.dataset.part=part;$('follicle-part-note').textContent=follicleDescriptions[part];}
+    document.querySelectorAll('[data-folpart]').forEach(el=>el.classList.toggle('focused',el.dataset.folpart===part));
+    document.querySelectorAll('[data-part]').forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset.part===part)));
+  }
+  document.querySelectorAll('.follicle-structure-list [data-part]').forEach(btn=>btn.addEventListener('click',()=>focusFolliclePart(btn.dataset.part)));
+  function renderChartMechanism(){
+    const d=state.day,ov=ovDay();let title,detail;
+    if(d<=5){title='Awal folikular · FSH dan inhibin B';detail='Setelah regresi korpus luteum, penurunan progesteron, estradiol, dan inhibin A melepaskan inhibisi FSH; kohort folikel antral mulai direkrut.';}
+    else if(d<ov-3){title='Pertumbuhan folikel · inhibin B menekan FSH';detail='Folikel yang berkembang menghasilkan estradiol dan inhibin B. Umpan balik negatif berkontribusi menurunkan FSH sehingga folikel dominan terseleksi.';}
+    else if(d<=ov){title='Periovulasi · estradiol tinggi menetap memicu LH surge';detail='Estradiol tinggi selama periode praovulasi memicu umpan balik positif pada aksis hipotalamus–hipofisis, menghasilkan lonjakan LH serta peningkatan FSH yang lebih kecil.';}
+    else if(d<state.length-3){title='Fase luteal · progesteron dan inhibin A';detail='Korpus luteum menghasilkan progesteron, estradiol, dan inhibin A. Umpan balik negatif menghambat aktivitas gonadotropin, terutama FSH oleh inhibin A.';}
+    else{title='Luteolisis · hambatan hormonal berkurang';detail='Korpus luteum beregresi bila tidak ada dukungan hCG; progesteron, estradiol, serta inhibin A turun sehingga rekrutmen berikutnya dapat dimulai.';}
+    $('chart-mechanism-title').textContent=title;$('chart-mechanism-detail').textContent=detail;
+  }
+  function renderHPO(){
+    const day=state.day,ov=ovDay(),positive=day>=ov-2&&day<=ov;
+    const hpo=$('hpo-interactive');hpo.dataset.feedback=positive?'positive':'negative';
+    $('hpo-day').textContent='HARI '+day;
+    const title=positive?'Umpan balik positif praovulasi':'Umpan balik negatif dominan';
+    $('hpo-phase').textContent=title;
+    $('hpo-feedback-badge').textContent=positive?'+ Positif · LH surge':'− Negatif dominan';
+    $('hpo-feedback-symbol').textContent=positive?'↺ +':'↶ −';
+    $('hpo-feedback-title').textContent=positive?'Estradiol tinggi menetap → LH surge':'Estradiol / progesteron / inhibin → inhibisi';
+    let desc;
+    if(positive)desc='Estradiol tinggi yang menetap sebelum ovulasi mengubah feedback menjadi positif dan meningkatkan respons gonadotrop terhadap GnRH. Lonjakan LH memicu ovulasi.';
+    else if(day<ov-2)desc='Estradiol dan inhibin B dari folikel berkembang terutama menekan FSH. Progesteron rendah; FSH menyeleksi folikel dominan.';
+    else desc=day>state.length-4?'Korpus luteum beregresi: progesteron, estradiol dan inhibin A menurun, sehingga hambatan pada FSH berkurang menjelang siklus baru.':'Progesteron dan estradiol dari korpus luteum menghambat aksis hipotalamus–hipofisis. Inhibin A terutama menekan sekresi FSH.';
+    $('hpo-feedback-detail').textContent=desc;
+    $('hpo-ovary').querySelector('p').textContent=day<ov?'Granulosa: estradiol dan inhibin B · Teka: androgen':day===ov?'Lonjakan LH → ruptur folikel dan luteinisasi':'Korpus luteum: progesteron, estradiol, inhibin A';
+  }
   function drawOvary(){let s=stages(),k=s.kind,d=state.day,ov=ovDay(),isFol=['early','antral','dominant','preov','ovulation'].includes(k);
     let svg=`<defs><radialGradient id="ov-bg"><stop stop-color="#783c70"/><stop offset=".75" stop-color="#552f5d"/><stop offset="1" stop-color="#382345"/></radialGradient><radialGradient id="fol-fluid"><stop stop-color="#7fe8f0" stop-opacity=".24"/><stop offset="1" stop-color="#87d8ef" stop-opacity=".65"/></radialGradient><radialGradient id="cl-bg"><stop stop-color="#ffe29c"/><stop offset=".75" stop-color="#e9a24b"/><stop offset="1" stop-color="#b96a3e"/></radialGradient></defs>`;
     svg+=`<path d="M63 162 C48 99 88 60 150 52 C225 31 328 60 382 91 C431 116 433 199 379 231 C310 272 204 252 117 241 C78 236 60 200 63 162Z" fill="url(#ov-bg)" stroke="#cc7fb5" stroke-width="3"/><path d="M78 152 C72 101 112 78 169 65 C251 49 330 80 377 105 C406 121 408 193 365 216" fill="none" stroke="#e99bcb" stroke-opacity=".18" stroke-width="14" stroke-linecap="round"/>`;
@@ -1039,7 +1219,7 @@
       <linearGradient id="tube-fill" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e8abc6"/><stop offset="1" stop-color="#a26184"/></linearGradient>
       <radialGradient id="ovary-fill" cx="38%" cy="34%"><stop stop-color="#c978a3"/><stop offset="1" stop-color="#6e3d5c"/></radialGradient>
     </defs>
-      <g id="tract-scene">
+      <g id="tract-scene" transform="translate(101 23)">
         <ellipse cx="76" cy="153" rx="33" ry="23" fill="url(#ovary-fill)" stroke="#de9fbc" stroke-width="3"/>
         <ellipse cx="424" cy="153" rx="33" ry="23" fill="url(#ovary-fill)" stroke="#de9fbc" stroke-width="3"/>
         ${leftOvaryCore}
@@ -1071,21 +1251,24 @@
         <path d="M246 300 C246 312 244 322 243 333 L257 333 C256 322 254 312 254 300" fill="#172438" stroke="#f4bfd1" stroke-width="2"/>
         <path d="M239 341 L261 341 L270 362 Q250 369 230 362 Z" fill="#6e4360" stroke="#ca89a8" stroke-width="3"/>
 
+        
+        <path d="M151 155 Q181 192 190 222 M349 155 Q319 192 310 222" fill="none" stroke="#f3a1b6" stroke-width="1.4" opacity=".4" stroke-dasharray="3 5"/>
+        <path d="M230 307 Q226 325 235 340 M270 307 Q274 325 265 340" fill="none" stroke="#f2aec7" stroke-width="1.4" opacity=".36"/>
+
         ${bleedingSvg()}
 
-        <path d="M306 169 L370 196" fill="none" stroke="#ffd2df" stroke-width="1.1"/><circle cx="306" cy="169" r="3" fill="#ffcee0"/><text x="375" y="200" font-size="11" fill="#e9b4ca">Endometrium</text>
-        <path d="M183 182 L112 215" fill="none" stroke="#deb0c8" stroke-width="1.1"/><circle cx="183" cy="182" r="3" fill="#deb0c8"/><text x="31" y="224" font-size="11" fill="#d4b0ce">Miometrium</text>
-        <path d="M227 86 L185 58" fill="none" stroke="#e5bfd1" stroke-width="1.05"/><circle cx="227" cy="86" r="2.5" fill="#ffd4e4"/><text x="126" y="57" font-size="10.5" fill="#f0cadc">Fundus uteri</text>
-        <path d="M250 160 L250 103" fill="none" stroke="#e5bfd1" stroke-width="1.05"/><circle cx="250" cy="160" r="2.5" fill="#ffd4e4"/><text x="262" y="107" font-size="10.5" fill="#f0cadc">Kavum uteri</text>
-        <path d="M111 99 L42 94" fill="none" stroke="#e5bfd1" stroke-width="1.05"/><circle cx="111" cy="99" r="2.5" fill="#ffd4e4"/><text x="12" y="98" font-size="10.5" fill="#f0cadc">Infundibulum + fimbriae</text>
-        <path d="M170 84 L142 63" fill="none" stroke="#e5bfd1" stroke-width="1.05"/><circle cx="170" cy="84" r="2.5" fill="#ffd4e4"/><text x="119" y="62" font-size="10.5" fill="#f0cadc">Ampula</text>
-        <path d="M207 92 L206 63" fill="none" stroke="#e5bfd1" stroke-width="1.05"/><circle cx="207" cy="92" r="2.5" fill="#ffd4e4"/><text x="184" y="58" font-size="10.5" fill="#f0cadc">Isthmus</text>
-        <path d="M103 151 L29 154" fill="none" stroke="#e5bfd1" stroke-width="1.05"/><circle cx="103" cy="151" r="2.5" fill="#ffd4e4"/><text x="9" y="159" font-size="10.5" fill="#f0cadc">Ovarium kiri</text>
-        <path d="M397 151 L470 145" fill="none" stroke="#e5bfd1" stroke-width="1.05"/><circle cx="397" cy="151" r="2.5" fill="#ffd4e4"/><text x="401" y="141" font-size="10.5" fill="#f0cadc">Ovarium kanan</text>
-        <path d="M255 315 L320 325" fill="none" stroke="#e5bfd1" stroke-width="1.05"/><circle cx="255" cy="315" r="2.5" fill="#ffd4e4"/><text x="325" y="329" font-size="10.5" fill="#f0cadc">Kanalis servikalis</text>
-        <path d="M250 352 L302 354" fill="none" stroke="#e5bfd1" stroke-width="1.05"/><circle cx="250" cy="352" r="2.5" fill="#ffd4e4"/><text x="307" y="359" font-size="10.5" fill="#f0cadc">Vagina</text>
-        <text x="250" y="376" font-size="10.3" fill="#9fb5cd" text-anchor="middle">Skema anatomi: uterus, tuba uterina, ovarium, serviks, dan vagina</text>
-      </g>`;
+      </g>
+      <g class="tract-callouts" stroke="#b9a4c6" stroke-width="1.2" fill="none" opacity=".93">
+        <path d="M163 106 L83 81 L18 81"/><path d="M193 124 L94 126 L18 126"/><path d="M188 176 L92 193 L18 193"/>
+        <path d="M370 113 L438 81 L668 81"/><path d="M446 136 L545 125 L668 125"/><path d="M426 185 L531 194 L668 194"/>
+        <path d="M436 256 L534 258 L668 258"/><path d="M354 352 L538 356 L668 356"/>
+      </g>
+      <g class="tract-labels" fill="#e6c9db" font-size="11" font-weight="600">
+        <text x="16" y="75">Ampula</text><text x="16" y="120">Infundibulum</text><text x="16" y="136" font-size="9" fill="#aac9db">+ fimbriae</text><text x="16" y="187">Ovarium kiri</text>
+        <text x="680" y="75" text-anchor="end">Isthmus tuba</text><text x="680" y="119" text-anchor="end">Tuba falopi</text><text x="680" y="188" text-anchor="end">Ovarium kanan</text><text x="680" y="252" text-anchor="end">Endometrium</text><text x="680" y="350" text-anchor="end">Serviks + vagina</text>
+        <text x="350" y="64" text-anchor="middle" font-size="11" fill="#ffe2e8">Fundus uteri</text><text x="350" y="403" text-anchor="middle" font-size="10" fill="#9fbbd2">Miometrium · kavum uteri · kanalis servikalis (skematis)</text>
+      </g>
+`;
     if(!$('uterus-svg').childElementCount)$('uterus-svg').innerHTML=svg;
     $('uterus-lining').style.strokeWidth=sw.toFixed(2);
     updateBleedingVisual();
@@ -1203,7 +1386,7 @@
     $('hero-day').textContent=d;$('hero-phase').textContent=title;$('hero-desc').textContent=desc;$('state-index').textContent=String(d).padStart(2,'0')+' / '+state.length;
     $('hero-ov').textContent='OVARIUM · '+o;$('hero-ut').textContent='UTERUS · '+u;
   }
-  function render(){state.day=clamp(state.day,1,state.length);updateInteractiveUI();$('day').max=state.length;$('day').value=state.day;$('day').style.setProperty('--p',`${(state.day-1)/(state.length-1)*100}%`);updateHero();updateTimeline();drawChart();hormoneCards();drawOvary();drawUterus();syncDock();}
+  function render(){state.day=clamp(state.day,1,state.length);updateInteractiveUI();$('day').max=state.length;$('day').value=state.day;$('day').style.setProperty('--p',`${(state.day-1)/(state.length-1)*100}%`);updateHero();updateTimeline();drawChart();hormoneCards();renderChartMechanism();renderHPO();drawOvary();drawUterus();syncDock();}
   function setDay(d){if(!Number.isFinite(d))return;const next=clamp(d,1,state.length);if(next===state.day)return;state.day=next;render();}
   function stop(){
     if(state.timer!==null)clearInterval(state.timer);
@@ -1244,7 +1427,7 @@
   const dockSettings=$('dock-settings-panel');
   const floatEnable=$('float-enable-toggle');
   const dockPositionSelect=$('dock-position-select');
-  const dockPrefs={enabled:true,compact:false,width:560,position:null,anchor:'bottom-right'};
+  const dockPrefs={enabled:true,compact:false,width:560,position:null,anchor:'bottom-right',opacity:95,autoHide:false,hideDelay:5,snap:true};
   try{
     const e=localStorage.getItem('kenalimens:dock-enabled');
     if(e==='false')dockPrefs.enabled=false;
@@ -1255,9 +1438,41 @@
     if(pos&&Number.isFinite(pos.x)&&Number.isFinite(pos.y))dockPrefs.position=pos;
     const anchor=localStorage.getItem('kenalimens:dock-anchor');
     if(['bottom-left','bottom-center','bottom-right','top-left','top-center','top-right','manual'].includes(anchor||''))dockPrefs.anchor=anchor;
+    const alpha=Number(localStorage.getItem('kenalimens:dock-opacity'));
+    if(alpha>=55&&alpha<=100)dockPrefs.opacity=alpha;
+    dockPrefs.autoHide=localStorage.getItem('kenalimens:dock-auto-hide')==='true';
+    const delay=Number(localStorage.getItem('kenalimens:dock-hide-delay'));
+    if([3,5,10].includes(delay))dockPrefs.hideDelay=delay;
+    dockPrefs.snap=localStorage.getItem('kenalimens:dock-snap')!=='false';
   }catch(e){}
   const saveDock=(key,value)=>{try{localStorage.setItem('kenalimens:dock-'+key,typeof value==='string'?value:JSON.stringify(value));}catch(e){}};
   let dockVisible=false;
+  let dockIdleTimer=null;
+  const wakeDock=()=>{floatingDock.classList.remove('is-idle');scheduleDockIdle();};
+  function scheduleDockIdle(){
+    if(dockIdleTimer)clearTimeout(dockIdleTimer);
+    if(!dockPrefs.autoHide||!dockVisible||!dockSettings.hidden||dockDragging)return;
+    dockIdleTimer=setTimeout(()=>{
+      if(dockVisible&&dockPrefs.autoHide&&dockSettings.hidden&&!floatingDock.matches(':hover')&&!(floatingDock.contains(document.activeElement)&&document.activeElement.matches(':focus-visible')))floatingDock.classList.add('is-idle');
+    },dockPrefs.hideDelay*1000);
+  }
+  function syncDockAdvanced(){
+    floatingDock.style.setProperty('--dock-alpha',String(dockPrefs.opacity/100));
+    $('dock-opacity').value=String(dockPrefs.opacity);$('dock-opacity-value').textContent=dockPrefs.opacity+'%';
+    $('dock-auto-hide').checked=dockPrefs.autoHide;
+    $('dock-hide-delay').value=String(dockPrefs.hideDelay);
+    $('dock-snap').checked=dockPrefs.snap;
+    scheduleDockIdle();
+  }
+  $('dock-opacity').addEventListener('input',e=>{dockPrefs.opacity=Number(e.target.value);saveDock('opacity',String(dockPrefs.opacity));syncDockAdvanced();});
+  $('dock-auto-hide').addEventListener('change',e=>{dockPrefs.autoHide=e.target.checked;saveDock('auto-hide',String(dockPrefs.autoHide));floatingDock.classList.remove('is-idle');syncDockAdvanced();});
+  $('dock-hide-delay').addEventListener('change',e=>{dockPrefs.hideDelay=Number(e.target.value);saveDock('hide-delay',String(dockPrefs.hideDelay));syncDockAdvanced();});
+  $('dock-snap').addEventListener('change',e=>{dockPrefs.snap=e.target.checked;saveDock('snap',String(dockPrefs.snap));syncDockAdvanced();});
+  floatingDock.addEventListener('pointerenter',wakeDock);
+  floatingDock.addEventListener('pointerleave',scheduleDockIdle);
+  floatingDock.addEventListener('focusin',wakeDock);
+  floatingDock.addEventListener('focusout',()=>setTimeout(scheduleDockIdle,0));
+  floatingDock.querySelector('.dock-header').addEventListener('click',()=>{if(floatingDock.classList.contains('is-idle'))wakeDock();});
   function updateDockToggle(){
     floatEnable.setAttribute('aria-pressed',String(dockPrefs.enabled));
     $('float-enable-label').textContent=dockPrefs.enabled?'Kontrol melayang: aktif':'Kontrol melayang: mati';
@@ -1358,7 +1573,7 @@
     const rect=$('eksplorasi').getBoundingClientRect();
     // Appear only after the source controls have moved above the viewport.
     const shouldShow=dockPrefs.enabled&&rect.bottom<50;
-    if(shouldShow!==dockVisible){dockVisible=shouldShow;floatingDock.hidden=!shouldShow;}
+    if(shouldShow!==dockVisible){dockVisible=shouldShow;floatingDock.hidden=!shouldShow;if(!shouldShow)floatingDock.classList.remove('is-idle');else scheduleDockIdle();}
     if(shouldShow&&dockPrefs.position)clampDock();
   }
   let dockScrollFrame=null;
@@ -1387,6 +1602,7 @@
     dockSettings.hidden=!dockSettings.hidden;
     $('dock-settings-toggle').setAttribute('aria-expanded',String(!dockSettings.hidden));
     clampDock();
+    wakeDock();
   });
   dockPositionSelect.addEventListener('change',e=>setDockAnchor(e.target.value));
   document.querySelectorAll('[data-dock-anchor]').forEach(b=>b.addEventListener('click',()=>setDockAnchor(b.dataset.dockAnchor)));
@@ -1402,7 +1618,7 @@
     if(event.button!==0)return;
     const r=floatingDock.getBoundingClientRect();
     dockDragging={id:event.pointerId,dx:event.clientX-r.left,dy:event.clientY-r.top};
-    dockPrefs.anchor='manual'; syncDockAnchorUI(); saveDock('anchor','manual');
+    dockPrefs.anchor='manual'; syncDockAnchorUI(); saveDock('anchor','manual');floatingDock.classList.remove('is-idle');
     dockPrefs.position={x:r.left,y:r.top};
     dockGrab.setPointerCapture(event.pointerId);
     event.preventDefault();
@@ -1415,7 +1631,18 @@
   function finishDockDrag(event){
     if(!dockDragging||dockDragging.id!==event.pointerId)return;
     dockDragging=null;
+    if(dockPrefs.snap && dockPrefs.position){
+      const rect=floatingDock.getBoundingClientRect(),margin=window.innerWidth<=540?10:12;
+      const maxX=Math.max(margin,window.innerWidth-rect.width-margin),maxY=Math.max(margin,window.innerHeight-rect.height-margin);
+      const sides=[{side:'left',dist:Math.abs(rect.left-margin)},{side:'right',dist:Math.abs(maxX-rect.left)},{side:'top',dist:Math.abs(rect.top-margin)},{side:'bottom',dist:Math.abs(maxY-rect.top)}].sort((a,b)=>a.dist-b.dist);
+      if(sides[0].side==='left')dockPrefs.position.x=margin;
+      else if(sides[0].side==='right')dockPrefs.position.x=maxX;
+      else if(sides[0].side==='top')dockPrefs.position.y=margin;
+      else dockPrefs.position.y=maxY;
+      clampDock();
+    }
     saveDock('position',dockPrefs.position);
+    scheduleDockIdle();
   }
   dockGrab.addEventListener('pointerup',finishDockDrag);
   dockGrab.addEventListener('pointercancel',finishDockDrag);
@@ -1431,7 +1658,7 @@
   setDockWidth(dockPrefs.width);
   setDockCompact(dockPrefs.compact);
   syncDockAnchorUI();
-  applyDockPosition();updateDockToggle();syncDock();updateDockVisibility();
+  applyDockPosition();updateDockToggle();syncDock();updateDockVisibility();syncDockAdvanced();
 
   legend();render();
 })();
